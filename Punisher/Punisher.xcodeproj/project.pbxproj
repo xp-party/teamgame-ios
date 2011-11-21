@@ -1,0 +1,522 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B15EBFDF1452B3DE00772300 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B15EBFDE1452B3DE00772300 /* UIKit.framework */; };
+		B15EBFE11452B3DE00772300 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B15EBFE01452B3DE00772300 /* Foundation.framework */; };
+		B15EBFE31452B3DE00772300 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B15EBFE21452B3DE00772300 /* CoreGraphics.framework */; };
+		B15EBFE91452B3DE00772300 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B15EBFE71452B3DE00772300 /* InfoPlist.strings */; };
+		B15EBFEB1452B3DF00772300 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B15EBFEA1452B3DF00772300 /* main.m */; };
+		B15EBFEF1452B3DF00772300 /* PunisherAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B15EBFEE1452B3DF00772300 /* PunisherAppDelegate.m */; };
+		B15EBFF21452B3DF00772300 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = B15EBFF01452B3DF00772300 /* MainWindow.xib */; };
+		B15EBFF51452B3DF00772300 /* PunisherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B15EBFF41452B3DF00772300 /* PunisherViewController.m */; };
+		B15EBFF81452B3DF00772300 /* PunisherViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B15EBFF61452B3DF00772300 /* PunisherViewController.xib */; };
+		B15EC0001452B3DF00772300 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B15EBFFF1452B3DF00772300 /* SenTestingKit.framework */; };
+		B15EC0011452B3DF00772300 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B15EBFDE1452B3DE00772300 /* UIKit.framework */; };
+		B15EC0021452B3DF00772300 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B15EBFE01452B3DE00772300 /* Foundation.framework */; };
+		B15EC0031452B3DF00772300 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B15EBFE21452B3DE00772300 /* CoreGraphics.framework */; };
+		B15EC00B1452B3DF00772300 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B15EC0091452B3DF00772300 /* InfoPlist.strings */; };
+		B15EC00D1452B3DF00772300 /* PunisherTests.h in Resources */ = {isa = PBXBuildFile; fileRef = B15EC00C1452B3DF00772300 /* PunisherTests.h */; };
+		B15EC00F1452B3DF00772300 /* PunisherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B15EC00E1452B3DF00772300 /* PunisherTests.m */; };
+		B15EC0241452B44500772300 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B15EC0221452B43800772300 /* CFNetwork.framework */; };
+		B15EC0251452B53400772300 /* libZimt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B15EC0201452B40A00772300 /* libZimt.a */; };
+		B15EC0251452B53400772303 /* WebSocketMessageConsumer.m in Sources */ = {isa = PBXBuildFile; fileRef = B15EC0251452B53400772302 /* WebSocketMessageConsumer.m */; };
+		B15EC0251452B53400772307 /* FakeMessagerConsumer.m in Sources */ = {isa = PBXBuildFile; fileRef = B15EC0251452B53400772306 /* FakeMessagerConsumer.m */; };
+		B1DD66D91452C31F000F3969 /* libZimt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B15EC0201452B40A00772300 /* libZimt.a */; };
+		B1DD66DB1452C348000F3969 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1DD66DA1452C348000F3969 /* CFNetwork.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B15EC0041452B3DF00772300 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B15EBFD11452B3DE00772300 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B15EBFD91452B3DE00772300;
+			remoteInfo = Punisher;
+		};
+		B15EC01F1452B40A00772300 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B15EC0181452B40900772300 /* Zimt.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D;
+			remoteInfo = Zimt;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B15EBFDA1452B3DE00772300 /* Punisher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Punisher.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B15EBFDE1452B3DE00772300 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		B15EBFE01452B3DE00772300 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B15EBFE21452B3DE00772300 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		B15EBFE61452B3DE00772300 /* Punisher-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Punisher-Info.plist"; sourceTree = "<group>"; };
+		B15EBFE81452B3DE00772300 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B15EBFEA1452B3DF00772300 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B15EBFEC1452B3DF00772300 /* Punisher-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Punisher-Prefix.pch"; sourceTree = "<group>"; };
+		B15EBFED1452B3DF00772300 /* PunisherAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PunisherAppDelegate.h; sourceTree = "<group>"; };
+		B15EBFEE1452B3DF00772300 /* PunisherAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PunisherAppDelegate.m; sourceTree = "<group>"; };
+		B15EBFF11452B3DF00772300 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		B15EBFF31452B3DF00772300 /* PunisherViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PunisherViewController.h; sourceTree = "<group>"; };
+		B15EBFF41452B3DF00772300 /* PunisherViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PunisherViewController.m; sourceTree = "<group>"; };
+		B15EBFF71452B3DF00772300 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/PunisherViewController.xib; sourceTree = "<group>"; };
+		B15EBFFE1452B3DF00772300 /* PunisherTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PunisherTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B15EBFFF1452B3DF00772300 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		B15EC0081452B3DF00772300 /* PunisherTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PunisherTests-Info.plist"; sourceTree = "<group>"; };
+		B15EC00A1452B3DF00772300 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B15EC00C1452B3DF00772300 /* PunisherTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PunisherTests.h; sourceTree = "<group>"; };
+		B15EC00E1452B3DF00772300 /* PunisherTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PunisherTests.m; sourceTree = "<group>"; };
+		B15EC0181452B40900772300 /* Zimt.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Zimt.xcodeproj; path = ../zimt/src/Zimt.xcodeproj; sourceTree = "<group>"; };
+		B15EC0221452B43800772300 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		B15EC0251452B53400772301 /* MessageConsumer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageConsumer.h; sourceTree = "<group>"; };
+		B15EC0251452B53400772302 /* WebSocketMessageConsumer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebSocketMessageConsumer.m; sourceTree = "<group>"; };
+		B15EC0251452B53400772304 /* WebSocketMessageConsumer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebSocketMessageConsumer.h; sourceTree = "<group>"; };
+		B15EC0251452B53400772305 /* MessageConsumerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageConsumerDelegate.h; sourceTree = "<group>"; };
+		B15EC0251452B53400772306 /* FakeMessagerConsumer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakeMessagerConsumer.m; sourceTree = "<group>"; };
+		B15EC0251452B53400772308 /* FakeMessagerConsumer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeMessagerConsumer.h; sourceTree = "<group>"; };
+		B1DD66DA1452C348000F3969 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B15EBFD71452B3DE00772300 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B15EC0241452B44500772300 /* CFNetwork.framework in Frameworks */,
+				B15EC0251452B53400772300 /* libZimt.a in Frameworks */,
+				B15EBFDF1452B3DE00772300 /* UIKit.framework in Frameworks */,
+				B15EBFE11452B3DE00772300 /* Foundation.framework in Frameworks */,
+				B15EBFE31452B3DE00772300 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B15EBFFA1452B3DF00772300 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B1DD66DB1452C348000F3969 /* CFNetwork.framework in Frameworks */,
+				B15EC0001452B3DF00772300 /* SenTestingKit.framework in Frameworks */,
+				B1DD66D91452C31F000F3969 /* libZimt.a in Frameworks */,
+				B15EC0011452B3DF00772300 /* UIKit.framework in Frameworks */,
+				B15EC0021452B3DF00772300 /* Foundation.framework in Frameworks */,
+				B15EC0031452B3DF00772300 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B15EBFCF1452B3DE00772300 = {
+			isa = PBXGroup;
+			children = (
+				B1DD66DA1452C348000F3969 /* CFNetwork.framework */,
+				B15EBFE41452B3DE00772300 /* Punisher */,
+				B15EC0061452B3DF00772300 /* PunisherTests */,
+				B15EBFDD1452B3DE00772300 /* Frameworks */,
+				B15EBFDB1452B3DE00772300 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B15EBFDB1452B3DE00772300 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B15EBFDA1452B3DE00772300 /* Punisher.app */,
+				B15EBFFE1452B3DF00772300 /* PunisherTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B15EBFDD1452B3DE00772300 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B15EC0221452B43800772300 /* CFNetwork.framework */,
+				B15EC0181452B40900772300 /* Zimt.xcodeproj */,
+				B15EBFDE1452B3DE00772300 /* UIKit.framework */,
+				B15EBFE01452B3DE00772300 /* Foundation.framework */,
+				B15EBFE21452B3DE00772300 /* CoreGraphics.framework */,
+				B15EBFFF1452B3DF00772300 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B15EBFE41452B3DE00772300 /* Punisher */ = {
+			isa = PBXGroup;
+			children = (
+				B15EC0251452B53400772308 /* FakeMessagerConsumer.h */,
+				B15EC0251452B53400772306 /* FakeMessagerConsumer.m */,
+				B15EC0251452B53400772305 /* MessageConsumerDelegate.h */,
+				B15EC0251452B53400772304 /* WebSocketMessageConsumer.h */,
+				B15EC0251452B53400772302 /* WebSocketMessageConsumer.m */,
+				B15EC0251452B53400772301 /* MessageConsumer.h */,
+				B15EBFED1452B3DF00772300 /* PunisherAppDelegate.h */,
+				B15EBFEE1452B3DF00772300 /* PunisherAppDelegate.m */,
+				B15EBFF01452B3DF00772300 /* MainWindow.xib */,
+				B15EBFF31452B3DF00772300 /* PunisherViewController.h */,
+				B15EBFF41452B3DF00772300 /* PunisherViewController.m */,
+				B15EBFF61452B3DF00772300 /* PunisherViewController.xib */,
+				B15EBFE51452B3DE00772300 /* Supporting Files */,
+			);
+			path = Punisher;
+			sourceTree = "<group>";
+		};
+		B15EBFE51452B3DE00772300 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B15EBFE61452B3DE00772300 /* Punisher-Info.plist */,
+				B15EBFE71452B3DE00772300 /* InfoPlist.strings */,
+				B15EBFEA1452B3DF00772300 /* main.m */,
+				B15EBFEC1452B3DF00772300 /* Punisher-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B15EC0061452B3DF00772300 /* PunisherTests */ = {
+			isa = PBXGroup;
+			children = (
+				B15EC00C1452B3DF00772300 /* PunisherTests.h */,
+				B15EC00E1452B3DF00772300 /* PunisherTests.m */,
+				B15EC0071452B3DF00772300 /* Supporting Files */,
+			);
+			path = PunisherTests;
+			sourceTree = "<group>";
+		};
+		B15EC0071452B3DF00772300 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B15EC0081452B3DF00772300 /* PunisherTests-Info.plist */,
+				B15EC0091452B3DF00772300 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B15EC0191452B40900772300 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B15EC0201452B40A00772300 /* libZimt.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B15EBFD91452B3DE00772300 /* Punisher */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B15EC0121452B3DF00772300 /* Build configuration list for PBXNativeTarget "Punisher" */;
+			buildPhases = (
+				B15EBFD61452B3DE00772300 /* Sources */,
+				B15EBFD71452B3DE00772300 /* Frameworks */,
+				B15EBFD81452B3DE00772300 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Punisher;
+			productName = Punisher;
+			productReference = B15EBFDA1452B3DE00772300 /* Punisher.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B15EBFFD1452B3DF00772300 /* PunisherTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B15EC0151452B3DF00772300 /* Build configuration list for PBXNativeTarget "PunisherTests" */;
+			buildPhases = (
+				B15EBFF91452B3DF00772300 /* Sources */,
+				B15EBFFA1452B3DF00772300 /* Frameworks */,
+				B15EBFFB1452B3DF00772300 /* Resources */,
+				B15EBFFC1452B3DF00772300 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B15EC0051452B3DF00772300 /* PBXTargetDependency */,
+			);
+			name = PunisherTests;
+			productName = PunisherTests;
+			productReference = B15EBFFE1452B3DF00772300 /* PunisherTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B15EBFD11452B3DE00772300 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = B15EBFD41452B3DE00772300 /* Build configuration list for PBXProject "Punisher" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = B15EBFCF1452B3DE00772300;
+			productRefGroup = B15EBFDB1452B3DE00772300 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = B15EC0191452B40900772300 /* Products */;
+					ProjectRef = B15EC0181452B40900772300 /* Zimt.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				B15EBFD91452B3DE00772300 /* Punisher */,
+				B15EBFFD1452B3DF00772300 /* PunisherTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		B15EC0201452B40A00772300 /* libZimt.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libZimt.a;
+			remoteRef = B15EC01F1452B40A00772300 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B15EBFD81452B3DE00772300 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B15EBFE91452B3DE00772300 /* InfoPlist.strings in Resources */,
+				B15EBFF21452B3DF00772300 /* MainWindow.xib in Resources */,
+				B15EBFF81452B3DF00772300 /* PunisherViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B15EBFFB1452B3DF00772300 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B15EC00B1452B3DF00772300 /* InfoPlist.strings in Resources */,
+				B15EC00D1452B3DF00772300 /* PunisherTests.h in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B15EBFFC1452B3DF00772300 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B15EBFD61452B3DE00772300 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B15EBFEB1452B3DF00772300 /* main.m in Sources */,
+				B15EBFEF1452B3DF00772300 /* PunisherAppDelegate.m in Sources */,
+				B15EBFF51452B3DF00772300 /* PunisherViewController.m in Sources */,
+				B15EC0251452B53400772303 /* WebSocketMessageConsumer.m in Sources */,
+				B15EC0251452B53400772307 /* FakeMessagerConsumer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B15EBFF91452B3DF00772300 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B15EC00F1452B3DF00772300 /* PunisherTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B15EC0051452B3DF00772300 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B15EBFD91452B3DE00772300 /* Punisher */;
+			targetProxy = B15EC0041452B3DF00772300 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B15EBFE71452B3DE00772300 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B15EBFE81452B3DE00772300 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		B15EBFF01452B3DF00772300 /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B15EBFF11452B3DF00772300 /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		B15EBFF61452B3DF00772300 /* PunisherViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B15EBFF71452B3DF00772300 /* en */,
+			);
+			name = PunisherViewController.xib;
+			sourceTree = "<group>";
+		};
+		B15EC0091452B3DF00772300 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B15EC00A1452B3DF00772300 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B15EC0101452B3DF00772300 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "../zimt/src/**";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		B15EC0111452B3DF00772300 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "../zimt/src/**";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B15EC0131452B3DF00772300 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Punisher/Punisher-Prefix.pch";
+				INFOPLIST_FILE = "Punisher/Punisher-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/../zimt/src/**";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		B15EC0141452B3DF00772300 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Punisher/Punisher-Prefix.pch";
+				INFOPLIST_FILE = "Punisher/Punisher-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		B15EC0161452B3DF00772300 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Punisher.app/Punisher";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Punisher/Punisher-Prefix.pch";
+				INFOPLIST_FILE = "PunisherTests/PunisherTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/../zimt/src/** \"${PROJECT_DIR}/../zimt/src/** \"${PROJECT_DIR}/../zimt/src/** \"${PROJECT_DIR}/../zimt/src/** \"${PROJECT_DIR}/../zimt/src/** \"${PROJECT_DIR}/../zimt/src/**";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		B15EC0171452B3DF00772300 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Punisher.app/Punisher";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Punisher/Punisher-Prefix.pch";
+				INFOPLIST_FILE = "PunisherTests/PunisherTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B15EBFD41452B3DE00772300 /* Build configuration list for PBXProject "Punisher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B15EC0101452B3DF00772300 /* Debug */,
+				B15EC0111452B3DF00772300 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B15EC0121452B3DF00772300 /* Build configuration list for PBXNativeTarget "Punisher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B15EC0131452B3DF00772300 /* Debug */,
+				B15EC0141452B3DF00772300 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B15EC0151452B3DF00772300 /* Build configuration list for PBXNativeTarget "PunisherTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B15EC0161452B3DF00772300 /* Debug */,
+				B15EC0171452B3DF00772300 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B15EBFD11452B3DE00772300 /* Project object */;
+}
