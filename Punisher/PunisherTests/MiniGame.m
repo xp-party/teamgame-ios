@@ -7,6 +7,12 @@
 
 #import "MiniGame.h"
 
+NSString * const STATE_PROPERTY = @"state";
+
+@interface MiniGame ()
+- (void)changeState:(State)newState;
+
+@end
 
 @implementation MiniGame
 
@@ -16,10 +22,21 @@
 
 - (void)chooseAnswer:(Answer)chosenAnswer {
     if (chosenAnswer == _answer) {
-        _state = WIN;
+        [self changeState:WIN];
     }
     else {
-        _state = LOSE;
+        [self changeState:LOSE];
     }
 }
+
+- (void)changeState:(State)newState {
+    [self willChangeValueForKey:STATE_PROPERTY];
+    _state = newState;
+    [self didChangeValueForKey:STATE_PROPERTY];
+}
+
+- (void)addObserver:(NSObject *)observer {
+    [self addObserver:observer forKeyPath:STATE_PROPERTY options:0 context:nil];
+}
+
 @end

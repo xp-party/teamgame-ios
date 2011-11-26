@@ -18,6 +18,8 @@ typedef enum Answer {
     ONE = 1
 } Answer;
 
+extern NSString * const STATE_PROPERTY;
+
 @interface MiniGame : NSObject {
 
 @private
@@ -30,7 +32,7 @@ typedef enum Answer {
 @property(nonatomic, readonly) Answer answer;
 
 
-
+- (void)addObserver:(NSObject *)observer;
 
 - (void)chooseAnswer:(Answer)chosenAnswer;
 @end

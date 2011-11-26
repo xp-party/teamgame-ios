@@ -30,6 +30,7 @@
 		B1DD66DB1452C348000F396C /* MiniGameTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F396B /* MiniGameTest.m */; };
 		B1DD66DB1452C348000F396E /* MiniGame.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F396D /* MiniGame.m */; };
 		B1DD66DB1452C348000F396F /* MiniGame.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F396D /* MiniGame.m */; };
+		B1DD66DB1452C348000F3973 /* LTAsynchronousTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F3972 /* LTAsynchronousTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,8 @@
 		B1DD66DB1452C348000F396B /* MiniGameTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MiniGameTest.m; sourceTree = "<group>"; };
 		B1DD66DB1452C348000F396D /* MiniGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MiniGame.m; sourceTree = "<group>"; };
 		B1DD66DB1452C348000F3970 /* MiniGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniGame.h; sourceTree = "<group>"; };
+		B1DD66DB1452C348000F3971 /* LTAsynchronousTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTAsynchronousTest.h; sourceTree = "<group>"; };
+		B1DD66DB1452C348000F3972 /* LTAsynchronousTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTAsynchronousTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +182,8 @@
 		B15EC0061452B3DF00772300 /* PunisherTests */ = {
 			isa = PBXGroup;
 			children = (
+				B1DD66DB1452C348000F3972 /* LTAsynchronousTest.m */,
+				B1DD66DB1452C348000F3971 /* LTAsynchronousTest.h */,
 				B1DD66DB1452C348000F3970 /* MiniGame.h */,
 				B1DD66DB1452C348000F396D /* MiniGame.m */,
 				B1DD66DB1452C348000F396B /* MiniGameTest.m */,
@@ -340,6 +345,7 @@
 			files = (
 				B1DD66DB1452C348000F396C /* MiniGameTest.m in Sources */,
 				B1DD66DB1452C348000F396F /* MiniGame.m in Sources */,
+				B1DD66DB1452C348000F3973 /* LTAsynchronousTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
