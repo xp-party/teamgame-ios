@@ -21,14 +21,15 @@
 		B15EC0021452B3DF00772300 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B15EBFE01452B3DE00772300 /* Foundation.framework */; };
 		B15EC0031452B3DF00772300 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B15EBFE21452B3DE00772300 /* CoreGraphics.framework */; };
 		B15EC00B1452B3DF00772300 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B15EC0091452B3DF00772300 /* InfoPlist.strings */; };
-		B15EC00D1452B3DF00772300 /* PunisherTests.h in Resources */ = {isa = PBXBuildFile; fileRef = B15EC00C1452B3DF00772300 /* PunisherTests.h */; };
-		B15EC00F1452B3DF00772300 /* PunisherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B15EC00E1452B3DF00772300 /* PunisherTests.m */; };
 		B15EC0241452B44500772300 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B15EC0221452B43800772300 /* CFNetwork.framework */; };
 		B15EC0251452B53400772300 /* libZimt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B15EC0201452B40A00772300 /* libZimt.a */; };
 		B15EC0251452B53400772303 /* WebSocketMessageConsumer.m in Sources */ = {isa = PBXBuildFile; fileRef = B15EC0251452B53400772302 /* WebSocketMessageConsumer.m */; };
 		B15EC0251452B53400772307 /* FakeMessagerConsumer.m in Sources */ = {isa = PBXBuildFile; fileRef = B15EC0251452B53400772306 /* FakeMessagerConsumer.m */; };
 		B1DD66D91452C31F000F3969 /* libZimt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B15EC0201452B40A00772300 /* libZimt.a */; };
 		B1DD66DB1452C348000F3969 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1DD66DA1452C348000F3969 /* CFNetwork.framework */; };
+		B1DD66DB1452C348000F396C /* MiniGameTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F396B /* MiniGameTest.m */; };
+		B1DD66DB1452C348000F396E /* MiniGame.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F396D /* MiniGame.m */; };
+		B1DD66DB1452C348000F396F /* MiniGame.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F396D /* MiniGame.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,8 +68,6 @@
 		B15EBFFF1452B3DF00772300 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		B15EC0081452B3DF00772300 /* PunisherTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PunisherTests-Info.plist"; sourceTree = "<group>"; };
 		B15EC00A1452B3DF00772300 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		B15EC00C1452B3DF00772300 /* PunisherTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PunisherTests.h; sourceTree = "<group>"; };
-		B15EC00E1452B3DF00772300 /* PunisherTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PunisherTests.m; sourceTree = "<group>"; };
 		B15EC0181452B40900772300 /* Zimt.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Zimt.xcodeproj; path = ../zimt/src/Zimt.xcodeproj; sourceTree = "<group>"; };
 		B15EC0221452B43800772300 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		B15EC0251452B53400772301 /* MessageConsumer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageConsumer.h; sourceTree = "<group>"; };
@@ -78,6 +77,10 @@
 		B15EC0251452B53400772306 /* FakeMessagerConsumer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakeMessagerConsumer.m; sourceTree = "<group>"; };
 		B15EC0251452B53400772308 /* FakeMessagerConsumer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeMessagerConsumer.h; sourceTree = "<group>"; };
 		B1DD66DA1452C348000F3969 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		B1DD66DB1452C348000F396A /* MiniGameTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniGameTest.h; sourceTree = "<group>"; };
+		B1DD66DB1452C348000F396B /* MiniGameTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MiniGameTest.m; sourceTree = "<group>"; };
+		B1DD66DB1452C348000F396D /* MiniGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MiniGame.m; sourceTree = "<group>"; };
+		B1DD66DB1452C348000F3970 /* MiniGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniGame.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,8 +179,10 @@
 		B15EC0061452B3DF00772300 /* PunisherTests */ = {
 			isa = PBXGroup;
 			children = (
-				B15EC00C1452B3DF00772300 /* PunisherTests.h */,
-				B15EC00E1452B3DF00772300 /* PunisherTests.m */,
+				B1DD66DB1452C348000F3970 /* MiniGame.h */,
+				B1DD66DB1452C348000F396D /* MiniGame.m */,
+				B1DD66DB1452C348000F396B /* MiniGameTest.m */,
+				B1DD66DB1452C348000F396A /* MiniGameTest.h */,
 				B15EC0071452B3DF00772300 /* Supporting Files */,
 			);
 			path = PunisherTests;
@@ -294,7 +299,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B15EC00B1452B3DF00772300 /* InfoPlist.strings in Resources */,
-				B15EC00D1452B3DF00772300 /* PunisherTests.h in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,6 +330,7 @@
 				B15EBFF51452B3DF00772300 /* PunisherViewController.m in Sources */,
 				B15EC0251452B53400772303 /* WebSocketMessageConsumer.m in Sources */,
 				B15EC0251452B53400772307 /* FakeMessagerConsumer.m in Sources */,
+				B1DD66DB1452C348000F396E /* MiniGame.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,7 +338,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B15EC00F1452B3DF00772300 /* PunisherTests.m in Sources */,
+				B1DD66DB1452C348000F396C /* MiniGameTest.m in Sources */,
+				B1DD66DB1452C348000F396F /* MiniGame.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
