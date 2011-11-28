@@ -14,8 +14,9 @@
 
 @class MiniGame;
 
-@interface MiniGameTest : LTAsynchronousTest
-BOOL notified;
-MiniGame *miniGame;
+@interface MiniGameTest : LTAsynchronousTest {
+    BOOL notified;
+    MiniGame *miniGame;
+}
 
 @end
