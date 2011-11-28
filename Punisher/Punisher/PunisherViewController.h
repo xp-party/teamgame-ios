@@ -31,4 +31,6 @@
 @property(nonatomic, retain) IBOutlet UILabel *resultLabel;
 @property(nonatomic, retain) IBOutlet UILabel *debugLabel;
 
+@property (retain, nonatomic) IBOutlet MiniGame *theGame;
+
 @end
