@@ -9,6 +9,8 @@
 #import "PunisherViewController.h"
 #import "MiniGame.h"
 
+NSString * const HELLO_MESSAGE = @"Press the button, please. ^_^";
+
 @implementation PunisherViewController
 
 @synthesize zeroButton;
@@ -45,7 +47,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    resultLabel.text = @"Press the button, please. ^_^";
+    resultLabel.text = HELLO_MESSAGE;
     [self.theGame addObserver:self];
 }
 

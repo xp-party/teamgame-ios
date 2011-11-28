@@ -12,6 +12,7 @@
 
 @class MiniGame;
 
+extern NSString * const HELLO_MESSAGE;
 
 @interface PunisherViewController : UIViewController {
 
