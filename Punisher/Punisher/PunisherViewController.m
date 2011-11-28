@@ -16,6 +16,8 @@
 @synthesize resultLabel;
 @synthesize debugLabel;
 
+@synthesize theGame;
+
 - (void)didReceiveMemoryWarning
 {
     // Releases the view if it doesn't have a superview.
@@ -44,7 +46,6 @@
 {
     [super viewDidLoad];
     resultLabel.text = @"Press the button, please. ^_^";
-    theGame = [MiniGame alloc];
 }
 
 - (void)viewDidUnload
@@ -55,7 +56,8 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    return ((interfaceOrientation == UIInterfaceOrientationPortrait) || 
+            (interfaceOrientation == UIInterfaceOrientationPortraitUpsideDown));
 }
 
 - (void)dealloc {
