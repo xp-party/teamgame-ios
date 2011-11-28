@@ -80,8 +80,8 @@
 		B1DD66DA1452C348000F3969 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		B1DD66DB1452C348000F396A /* MiniGameTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniGameTest.h; sourceTree = "<group>"; };
 		B1DD66DB1452C348000F396B /* MiniGameTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MiniGameTest.m; sourceTree = "<group>"; };
-		B1DD66DB1452C348000F396D /* MiniGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MiniGame.m; sourceTree = "<group>"; };
-		B1DD66DB1452C348000F3970 /* MiniGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniGame.h; sourceTree = "<group>"; };
+		B1DD66DB1452C348000F396D /* MiniGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MiniGame.m; path = PunisherTests/MiniGame.m; sourceTree = SOURCE_ROOT; };
+		B1DD66DB1452C348000F3970 /* MiniGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MiniGame.h; path = PunisherTests/MiniGame.h; sourceTree = SOURCE_ROOT; };
 		B1DD66DB1452C348000F3971 /* LTAsynchronousTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTAsynchronousTest.h; sourceTree = "<group>"; };
 		B1DD66DB1452C348000F3972 /* LTAsynchronousTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTAsynchronousTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -115,6 +115,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		40BE1C4814840C27005DB17A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B1DD66DB1452C348000F3970 /* MiniGame.h */,
+				B1DD66DB1452C348000F396D /* MiniGame.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		40BE1C4914840FBB005DB17A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B1DD66DB1452C348000F396B /* MiniGameTest.m */,
+				B1DD66DB1452C348000F396A /* MiniGameTest.h */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		B15EBFCF1452B3DE00772300 = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +169,7 @@
 		B15EBFE41452B3DE00772300 /* Punisher */ = {
 			isa = PBXGroup;
 			children = (
+				40BE1C4814840C27005DB17A /* Model */,
 				B15EC0251452B53400772308 /* FakeMessagerConsumer.h */,
 				B15EC0251452B53400772306 /* FakeMessagerConsumer.m */,
 				B15EC0251452B53400772305 /* MessageConsumerDelegate.h */,
@@ -182,12 +201,9 @@
 		B15EC0061452B3DF00772300 /* PunisherTests */ = {
 			isa = PBXGroup;
 			children = (
+				40BE1C4914840FBB005DB17A /* Model */,
 				B1DD66DB1452C348000F3972 /* LTAsynchronousTest.m */,
 				B1DD66DB1452C348000F3971 /* LTAsynchronousTest.h */,
-				B1DD66DB1452C348000F3970 /* MiniGame.h */,
-				B1DD66DB1452C348000F396D /* MiniGame.m */,
-				B1DD66DB1452C348000F396B /* MiniGameTest.m */,
-				B1DD66DB1452C348000F396A /* MiniGameTest.h */,
 				B15EC0071452B3DF00772300 /* Supporting Files */,
 			);
 			path = PunisherTests;
