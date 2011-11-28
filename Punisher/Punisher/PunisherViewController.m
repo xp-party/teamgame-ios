@@ -46,6 +46,7 @@
 {
     [super viewDidLoad];
     resultLabel.text = @"Press the button, please. ^_^";
+    [self.theGame addObserver:self];
 }
 
 - (void)viewDidUnload
@@ -61,6 +62,7 @@
 }
 
 - (void)dealloc {
+    [self.theGame removeObserver:self forKeyPath:STATE_PROPERTY context:nil];
     [debugLabel release];
     [theGame release];
     [zeroButton release];
@@ -69,5 +71,10 @@
     [super dealloc];
 }
 
+#pragma mark - K-V Observing
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    self.resultLabel.text = @"Win";
+}
 
 @end

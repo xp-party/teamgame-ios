@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		40BE1C74148420DA005DB17A /* PunisherViewControllerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 40BE1C73148420DA005DB17A /* PunisherViewControllerTest.m */; };
 		B15EBFDF1452B3DE00772300 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B15EBFDE1452B3DE00772300 /* UIKit.framework */; };
 		B15EBFE11452B3DE00772300 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B15EBFE01452B3DE00772300 /* Foundation.framework */; };
 		B15EBFE31452B3DE00772300 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B15EBFE21452B3DE00772300 /* CoreGraphics.framework */; };
@@ -29,7 +30,6 @@
 		B1DD66DB1452C348000F3969 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1DD66DA1452C348000F3969 /* CFNetwork.framework */; };
 		B1DD66DB1452C348000F396C /* MiniGameTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F396B /* MiniGameTest.m */; };
 		B1DD66DB1452C348000F396E /* MiniGame.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F396D /* MiniGame.m */; };
-		B1DD66DB1452C348000F396F /* MiniGame.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F396D /* MiniGame.m */; };
 		B1DD66DB1452C348000F3973 /* LTAsynchronousTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F3972 /* LTAsynchronousTest.m */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +51,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		40BE1C72148420DA005DB17A /* PunisherViewControllerTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PunisherViewControllerTest.h; sourceTree = "<group>"; };
+		40BE1C73148420DA005DB17A /* PunisherViewControllerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PunisherViewControllerTest.m; sourceTree = "<group>"; };
 		B15EBFDA1452B3DE00772300 /* Punisher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Punisher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B15EBFDE1452B3DE00772300 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B15EBFE01452B3DE00772300 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -205,6 +207,8 @@
 				B1DD66DB1452C348000F3972 /* LTAsynchronousTest.m */,
 				B1DD66DB1452C348000F3971 /* LTAsynchronousTest.h */,
 				B15EC0071452B3DF00772300 /* Supporting Files */,
+				40BE1C72148420DA005DB17A /* PunisherViewControllerTest.h */,
+				40BE1C73148420DA005DB17A /* PunisherViewControllerTest.m */,
 			);
 			path = PunisherTests;
 			sourceTree = "<group>";
@@ -360,8 +364,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1DD66DB1452C348000F396C /* MiniGameTest.m in Sources */,
-				B1DD66DB1452C348000F396F /* MiniGame.m in Sources */,
 				B1DD66DB1452C348000F3973 /* LTAsynchronousTest.m in Sources */,
+				40BE1C74148420DA005DB17A /* PunisherViewControllerTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
