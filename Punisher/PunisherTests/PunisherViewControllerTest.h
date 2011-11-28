@@ -11,6 +11,10 @@
 
 #import <SenTestingKit/SenTestingKit.h>
 
-@interface PunisherViewControllerTest : SenTestCase
+@class PunisherViewController;
+
+@interface PunisherViewControllerTest : SenTestCase {
+    PunisherViewController *controller;
+}
 
 @end
