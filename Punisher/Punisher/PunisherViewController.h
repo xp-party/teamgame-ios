@@ -10,18 +10,25 @@
 #import "MessageConsumerDelegate.h"
 #import "MessageConsumer.h"
 
+@class MiniGame;
 
-@interface PunisherViewController : UIViewController <MessageConsumerDelegate> {
-@private
-    UILabel *_messageLabel;
-    id <MessageConsumer> _consumer;
-    UITextField *_input;
-    ZTWebSocket *_webSocket;
+
+@interface PunisherViewController : UIViewController {
+
+    UIButton *zeroButton;
+    UIButton *oneButton;
+    UILabel *debugLabel;
+    UILabel *resultLabel;
+
+    MiniGame *theGame;
 }
-@property (nonatomic, retain) UILabel *messageLabel;
 
-@property (nonatomic, retain) UITextField *input;
-@property (nonatomic, retain) id<MessageConsumer> consumer;
-@property (nonatomic, retain) ZTWebSocket *webSocket;
+-(IBAction) zeroButtonClicked;
+-(IBAction) oneButtonClicked;
+
+@property(nonatomic, retain) IBOutlet UIButton *zeroButton;
+@property(nonatomic, retain) IBOutlet UIButton *oneButton;
+@property(nonatomic, retain) IBOutlet UILabel *resultLabel;
+@property(nonatomic, retain) IBOutlet UILabel *debugLabel;
 
 @end
