@@ -17,28 +17,25 @@
     [controller.view setNeedsDisplay];
 }
 
-- (void)testResult_Label_Should_Be_Initialized_With_Hello_Message
-{
+- (void)tearDown {
+    [controller release];
+}
+
+- (void)testResult_Label_Should_Be_Initialized_With_Hello_Message {
     STAssertEqualObjects(controller.resultLabel.text, HELLO_MESSAGE, @"");
 }
 
 
-
-- (void)testShould_Change_Result_Label_After_Mini_Game_State_Changed_To_Win
-{
+- (void)testShould_Change_Result_Label_After_Mini_Game_State_Changed_To_Win {
     [controller.theGame chooseAnswer:ZERO];
-    STAssertEqualObjects(controller.resultLabel.text, @"Win", @"");    
+    STAssertEqualObjects(controller.resultLabel.text, @"Win", @"");
 }
 
 
-- (void)testShould_Change_Result_Label_After_Mini_Game_State_Changed_To_Lose
-{
+- (void)testShould_Change_Result_Label_After_Mini_Game_State_Changed_To_Lose {
     [controller.theGame chooseAnswer:ONE];
-    STAssertEqualObjects(controller.resultLabel.text, @"Loose", @"");    
-}
 
-- (void)tearDown {
-    [controller release];
+    STAssertEqualObjects(controller.resultLabel.text, @"Loose", @"");
 }
 
 

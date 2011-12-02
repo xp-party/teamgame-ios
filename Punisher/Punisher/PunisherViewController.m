@@ -9,7 +9,7 @@
 #import "PunisherViewController.h"
 #import "MiniGame.h"
 
-NSString * const HELLO_MESSAGE = @"Press the button, please. ^_^";
+NSString *const HELLO_MESSAGE = @"Press the button, please. ^_^";
 
 @implementation PunisherViewController
 
@@ -20,8 +20,7 @@ NSString * const HELLO_MESSAGE = @"Press the button, please. ^_^";
 
 @synthesize theGame;
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
     // Release any cached data, images, etc that aren't in use.
@@ -29,37 +28,34 @@ NSString * const HELLO_MESSAGE = @"Press the button, please. ^_^";
 
 #pragma mark - Realization
 
--(IBAction) zeroButtonClicked {
+- (IBAction)zeroButtonClicked {
     NSLog(@"You clicked 0");
     debugLabel.text = @"0";
-    [theGame chooseAnswer: ZERO];
+    [theGame chooseAnswer:ZERO];
 }
 
--(IBAction) oneButtonClicked{
+- (IBAction)oneButtonClicked {
     NSLog(@"You clicked 1");
     debugLabel.text = @"1";
-    [theGame chooseAnswer: ONE];
+    [theGame chooseAnswer:ONE];
 }
 
 #pragma mark - View lifecycle
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     resultLabel.text = HELLO_MESSAGE;
     [self.theGame addObserver:self];
 }
 
-- (void)viewDidUnload
-{
+- (void)viewDidUnload {
     [super viewDidUnload];
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     // Return YES for supported orientations
-    return ((interfaceOrientation == UIInterfaceOrientationPortrait) || 
+    return ((interfaceOrientation == UIInterfaceOrientationPortrait) ||
             (interfaceOrientation == UIInterfaceOrientationPortraitUpsideDown));
 }
 
@@ -74,9 +70,12 @@ NSString * const HELLO_MESSAGE = @"Press the button, please. ^_^";
 }
 
 #pragma mark - K-V Observing
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
-{
-    self.resultLabel.text = @"Win";
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    if (self.theGame.state == WIN) {
+        self.resultLabel.text = @"Win";
+    } else if (self.theGame.state == LOSE) {
+        self.resultLabel.text = @"Loose";
+    }
 }
 
 @end

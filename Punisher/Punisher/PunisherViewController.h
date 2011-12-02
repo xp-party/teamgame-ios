@@ -12,7 +12,7 @@
 
 @class MiniGame;
 
-extern NSString * const HELLO_MESSAGE;
+extern NSString *const HELLO_MESSAGE;
 
 @interface PunisherViewController : UIViewController {
 
@@ -24,14 +24,15 @@ extern NSString * const HELLO_MESSAGE;
     MiniGame *theGame;
 }
 
--(IBAction) zeroButtonClicked;
--(IBAction) oneButtonClicked;
+- (IBAction)zeroButtonClicked;
+
+- (IBAction)oneButtonClicked;
 
 @property(nonatomic, retain) IBOutlet UIButton *zeroButton;
 @property(nonatomic, retain) IBOutlet UIButton *oneButton;
 @property(nonatomic, retain) IBOutlet UILabel *resultLabel;
 @property(nonatomic, retain) IBOutlet UILabel *debugLabel;
 
-@property (retain, nonatomic) IBOutlet MiniGame *theGame;
+@property(retain, nonatomic) IBOutlet MiniGame *theGame;
 
 @end
