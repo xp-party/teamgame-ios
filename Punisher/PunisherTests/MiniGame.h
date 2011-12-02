@@ -6,17 +6,14 @@
 
 
 #import <Foundation/Foundation.h>
+#import "Constants.h"
+
 
 typedef enum State {
     UNDEFINED = 0,
     WIN = 1,
     LOSE = 2
 } State;
-
-typedef enum Answer {
-    ZERO = 0,
-    ONE = 1
-} Answer;
 
 extern NSString * const STATE_PROPERTY;
 
