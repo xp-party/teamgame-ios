@@ -5,7 +5,6 @@
 //
 
 
-#import <i386/param.h>
 #import "AnswerRandomizerTest.h"
 #import "../Punisher/AnswerRandomizer.h"
 
@@ -16,7 +15,6 @@ const float ACCURACY = 1.0f * PERCENTS;
 
 @implementation AnswerRandomizerTest {
     AnswerRandomizer *randomizer;
-
 }
 
 - (void)tearDown {
