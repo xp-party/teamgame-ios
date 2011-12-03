@@ -7,18 +7,20 @@
 //
 
 #import "PunisherViewController.h"
-#import "MiniGame.h"
 
 NSString *const HELLO_MESSAGE = @"Press the button, please. ^_^";
 
-@implementation PunisherViewController
-
+@implementation PunisherViewController {
+@private
+    id <GameCompletionMessenger> _gameOverMessenger;
+}
 @synthesize zeroButton;
 @synthesize oneButton;
-@synthesize resultLabel;
 @synthesize debugLabel;
 
 @synthesize theGame;
+@synthesize gameOverMessenger = _gameOverMessenger;
+
 
 - (void)didReceiveMemoryWarning {
     // Releases the view if it doesn't have a superview.
@@ -66,16 +68,13 @@ NSString *const HELLO_MESSAGE = @"Press the button, please. ^_^";
     [zeroButton release];
     [oneButton release];
     [resultLabel release];
+    [_gameOverMessenger release];
     [super dealloc];
 }
 
 #pragma mark - K-V Observing
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-    if (self.theGame.state == WIN) {
-        self.resultLabel.text = @"Win";
-    } else if (self.theGame.state == LOSE) {
-        self.resultLabel.text = @"Loose";
-    }
+    [self.gameOverMessenger showGameOver:self.theGame.state];
 }
 
 @end

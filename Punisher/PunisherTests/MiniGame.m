@@ -10,7 +10,7 @@
 NSString * const STATE_PROPERTY = @"state";
 
 @interface MiniGame ()
-- (void)changeState:(State)newState;
+- (void)changeState:(GameState)newState;
 
 @end
 
@@ -29,7 +29,7 @@ NSString * const STATE_PROPERTY = @"state";
     }
 }
 
-- (void)changeState:(State)newState {
+- (void)changeState:(GameState)newState {
     [self willChangeValueForKey:STATE_PROPERTY];
     _state = newState;
     [self didChangeValueForKey:STATE_PROPERTY];

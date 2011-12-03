@@ -12,9 +12,11 @@
 #import <SenTestingKit/SenTestingKit.h>
 
 @class PunisherViewController;
+@class GameCompletionMessengerStub;
 
 @interface PunisherViewControllerTest : SenTestCase {
     PunisherViewController *controller;
+    GameCompletionMessengerStub *gameCompletionMessengerStub;
 }
 
 @end

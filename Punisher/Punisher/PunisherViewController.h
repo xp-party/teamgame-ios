@@ -9,8 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "MessageConsumerDelegate.h"
 #import "MessageConsumer.h"
+#import "GameCompletionMessenger.h"
 
 @class MiniGame;
+@class GameCompletionMessengerStub;
 
 extern NSString *const HELLO_MESSAGE;
 
@@ -30,9 +32,9 @@ extern NSString *const HELLO_MESSAGE;
 
 @property(nonatomic, retain) IBOutlet UIButton *zeroButton;
 @property(nonatomic, retain) IBOutlet UIButton *oneButton;
-@property(nonatomic, retain) IBOutlet UILabel *resultLabel;
 @property(nonatomic, retain) IBOutlet UILabel *debugLabel;
 
 @property(retain, nonatomic) IBOutlet MiniGame *theGame;
 
+@property(nonatomic, retain) IBOutlet id<GameCompletionMessenger> gameOverMessenger;
 @end

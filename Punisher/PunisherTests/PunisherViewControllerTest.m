@@ -9,34 +9,27 @@
 #import "PunisherViewControllerTest.h"
 #import "PunisherViewController.h"
 #import "MiniGame.h"
+#import "GameCompletionMessengerStub.h"
 
 @implementation PunisherViewControllerTest
 
 - (void)setUp {
+    gameCompletionMessengerStub = [[GameCompletionMessengerStub alloc] init];
+
     controller = [[PunisherViewController alloc] initWithNibName:@"PunisherViewController" bundle:NULL];
+    controller.gameOverMessenger = gameCompletionMessengerStub;
     [controller.view setNeedsDisplay];
 }
 
 - (void)tearDown {
     [controller release];
+    [gameCompletionMessengerStub release];
 }
 
-- (void)testResult_Label_Should_Be_Initialized_With_Hello_Message {
-    STAssertEqualObjects(controller.resultLabel.text, HELLO_MESSAGE, @"");
-}
-
-
-- (void)testShould_Change_Result_Label_After_Mini_Game_State_Changed_To_Win {
-    [controller.theGame chooseAnswer:ZERO];
-    STAssertEqualObjects(controller.resultLabel.text, @"Win", @"");
-}
-
-
-- (void)testShould_Change_Result_Label_After_Mini_Game_State_Changed_To_Lose {
+- (void)testShould_Show_Alert {
     [controller.theGame chooseAnswer:ONE];
+    STAssertTrue(gameCompletionMessengerStub.called, @"Should show alert");
 
-    STAssertEqualObjects(controller.resultLabel.text, @"Loose", @"");
 }
-
 
 @end

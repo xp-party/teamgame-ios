@@ -34,6 +34,8 @@
 		B1DD66DB1452C348000F3975 /* AnswerRandomizerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F3974 /* AnswerRandomizerTest.m */; };
 		B1DD66DB1452C348000F3978 /* AnswerRandomizer.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F3977 /* AnswerRandomizer.m */; };
 		B1DD66DB1452C348000F397B /* Constants.h in Resources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F397A /* Constants.h */; };
+		B1DD66DB1452C348000F397D /* GameCompleteController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F397C /* GameCompleteController.m */; };
+		B1DD66DB1452C348000F3982 /* GameCompletionMessengerStub.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F3981 /* GameCompletionMessengerStub.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +96,11 @@
 		B1DD66DB1452C348000F3977 /* AnswerRandomizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AnswerRandomizer.m; path = Punisher/AnswerRandomizer.m; sourceTree = SOURCE_ROOT; };
 		B1DD66DB1452C348000F3979 /* AnswerRandomizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnswerRandomizer.h; path = Punisher/AnswerRandomizer.h; sourceTree = SOURCE_ROOT; };
 		B1DD66DB1452C348000F397A /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Constants.h; sourceTree = "<group>"; };
+		B1DD66DB1452C348000F397C /* GameCompleteController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameCompleteController.m; sourceTree = "<group>"; };
+		B1DD66DB1452C348000F397E /* GameCompleteController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameCompleteController.h; sourceTree = "<group>"; };
+		B1DD66DB1452C348000F397F /* GameCompletionMessenger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameCompletionMessenger.h; sourceTree = "<group>"; };
+		B1DD66DB1452C348000F3981 /* GameCompletionMessengerStub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameCompletionMessengerStub.m; sourceTree = "<group>"; };
+		B1DD66DB1452C348000F3983 /* GameCompletionMessengerStub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameCompletionMessengerStub.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +186,9 @@
 		B15EBFE41452B3DE00772300 /* Punisher */ = {
 			isa = PBXGroup;
 			children = (
+				B1DD66DB1452C348000F397F /* GameCompletionMessenger.h */,
+				B1DD66DB1452C348000F397E /* GameCompleteController.h */,
+				B1DD66DB1452C348000F397C /* GameCompleteController.m */,
 				B1DD66DB1452C348000F397A /* Constants.h */,
 				40BE1C4814840C27005DB17A /* Model */,
 				B15EC0251452B53400772308 /* FakeMessagerConsumer.h */,
@@ -222,6 +232,7 @@
 				B15EC0071452B3DF00772300 /* Supporting Files */,
 				40BE1C72148420DA005DB17A /* PunisherViewControllerTest.h */,
 				40BE1C73148420DA005DB17A /* PunisherViewControllerTest.m */,
+				B1DD66DB1452C348000F3980 /* Stubs */,
 			);
 			path = PunisherTests;
 			sourceTree = "<group>";
@@ -241,6 +252,15 @@
 				B15EC0201452B40A00772300 /* libZimt.a */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		B1DD66DB1452C348000F3980 /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				B1DD66DB1452C348000F3983 /* GameCompletionMessengerStub.h */,
+				B1DD66DB1452C348000F3981 /* GameCompletionMessengerStub.m */,
+			);
+			path = Stubs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -374,6 +394,8 @@
 				B15EC0251452B53400772307 /* FakeMessagerConsumer.m in Sources */,
 				B1DD66DB1452C348000F396E /* MiniGame.m in Sources */,
 				B1DD66DB1452C348000F3978 /* AnswerRandomizer.m in Sources */,
+				B1DD66DB1452C348000F397D /* GameCompleteController.m in Sources */,
+				B1DD66DB1452C348000F3982 /* GameCompletionMessengerStub.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

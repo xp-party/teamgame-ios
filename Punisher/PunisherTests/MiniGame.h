@@ -9,22 +9,22 @@
 #import "Constants.h"
 
 
-typedef enum State {
+typedef enum {
     UNDEFINED = 0,
     WIN = 1,
     LOSE = 2
-} State;
+} GameState;
 
 extern NSString * const STATE_PROPERTY;
 
 @interface MiniGame : NSObject {
 
 @private
-    State _state;
+    GameState _state;
     Answer _answer;
 }
 
-@property(nonatomic, readonly) State state;
+@property(nonatomic, readonly) GameState state;
 
 @property(nonatomic, readonly) Answer answer;
 
