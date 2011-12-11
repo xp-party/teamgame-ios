@@ -6,6 +6,7 @@
 
 
 #import "MiniGame.h"
+#import "AnswerRandomizer.h"
 
 NSString * const STATE_PROPERTY = @"state";
 
@@ -18,6 +19,21 @@ NSString * const STATE_PROPERTY = @"state";
 
 @synthesize state = _state;
 @synthesize answer = _answer;
+
+- (void)emulateAnswer {
+    AnswerRandomizer *randomizer = [AnswerRandomizer alloc];
+    _answer = [randomizer getNextPossibleAnswer];
+    [randomizer release];
+}
+
+- (id)init {
+    self = [super init];
+    if (self) {
+        [self emulateAnswer];
+    }
+
+    return self;
+}
 
 
 - (void)chooseAnswer:(Answer)chosenAnswer {

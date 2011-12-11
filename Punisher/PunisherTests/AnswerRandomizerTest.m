@@ -6,16 +6,14 @@
 
 
 #import "AnswerRandomizerTest.h"
-#import "../Punisher/AnswerRandomizer.h"
+#import "AnswerRandomizer.h"
 
 #define PERCENTS 1E-2
 
 const int MAX_EXPERIMENTS = 1000000;
 const float ACCURACY = 1.0f * PERCENTS;
 
-@implementation AnswerRandomizerTest {
-    AnswerRandomizer *randomizer;
-}
+@implementation AnswerRandomizerTest
 
 - (void)tearDown {
     [super tearDown];

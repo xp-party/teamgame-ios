@@ -32,8 +32,8 @@
 		B1DD66DB1452C348000F396E /* MiniGame.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F396D /* MiniGame.m */; };
 		B1DD66DB1452C348000F3973 /* LTAsynchronousTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F3972 /* LTAsynchronousTest.m */; };
 		B1DD66DB1452C348000F3975 /* AnswerRandomizerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F3974 /* AnswerRandomizerTest.m */; };
-		B1DD66DB1452C348000F3978 /* AnswerRandomizer.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F3977 /* AnswerRandomizer.m */; };
 		B1DD66DB1452C348000F397B /* Constants.h in Resources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F397A /* Constants.h */; };
+		B1DD66DB1452C348000F397D /* AnswerRandomizer.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F397C /* AnswerRandomizer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,9 +91,9 @@
 		B1DD66DB1452C348000F3972 /* LTAsynchronousTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTAsynchronousTest.m; sourceTree = "<group>"; };
 		B1DD66DB1452C348000F3974 /* AnswerRandomizerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswerRandomizerTest.m; sourceTree = "<group>"; };
 		B1DD66DB1452C348000F3976 /* AnswerRandomizerTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnswerRandomizerTest.h; sourceTree = "<group>"; };
-		B1DD66DB1452C348000F3977 /* AnswerRandomizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AnswerRandomizer.m; path = Punisher/AnswerRandomizer.m; sourceTree = SOURCE_ROOT; };
-		B1DD66DB1452C348000F3979 /* AnswerRandomizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnswerRandomizer.h; path = Punisher/AnswerRandomizer.h; sourceTree = SOURCE_ROOT; };
 		B1DD66DB1452C348000F397A /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Constants.h; sourceTree = "<group>"; };
+		B1DD66DB1452C348000F397C /* AnswerRandomizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswerRandomizer.m; sourceTree = "<group>"; };
+		B1DD66DB1452C348000F397E /* AnswerRandomizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnswerRandomizer.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +179,8 @@
 		B15EBFE41452B3DE00772300 /* Punisher */ = {
 			isa = PBXGroup;
 			children = (
+				B1DD66DB1452C348000F397E /* AnswerRandomizer.h */,
+				B1DD66DB1452C348000F397C /* AnswerRandomizer.m */,
 				B1DD66DB1452C348000F397A /* Constants.h */,
 				40BE1C4814840C27005DB17A /* Model */,
 				B15EC0251452B53400772308 /* FakeMessagerConsumer.h */,
@@ -212,8 +214,6 @@
 		B15EC0061452B3DF00772300 /* PunisherTests */ = {
 			isa = PBXGroup;
 			children = (
-				B1DD66DB1452C348000F3979 /* AnswerRandomizer.h */,
-				B1DD66DB1452C348000F3977 /* AnswerRandomizer.m */,
 				B1DD66DB1452C348000F3976 /* AnswerRandomizerTest.h */,
 				B1DD66DB1452C348000F3974 /* AnswerRandomizerTest.m */,
 				40BE1C4914840FBB005DB17A /* Model */,
@@ -373,7 +373,7 @@
 				B15EC0251452B53400772303 /* WebSocketMessageConsumer.m in Sources */,
 				B15EC0251452B53400772307 /* FakeMessagerConsumer.m in Sources */,
 				B1DD66DB1452C348000F396E /* MiniGame.m in Sources */,
-				B1DD66DB1452C348000F3978 /* AnswerRandomizer.m in Sources */,
+				B1DD66DB1452C348000F397D /* AnswerRandomizer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

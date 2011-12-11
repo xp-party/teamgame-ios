@@ -6,10 +6,9 @@
 
 
 #import <Foundation/Foundation.h>
+#import "Constants.h"
 
 
-@interface AnswerRandomizer : NSObject {
-
-}
-
+@interface AnswerRandomizer : NSObject
+- (Answer)getNextPossibleAnswer;
 @end

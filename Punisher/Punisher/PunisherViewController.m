@@ -76,6 +76,7 @@ NSString *const HELLO_MESSAGE = @"Press the button, please. ^_^";
     } else if (self.theGame.state == LOSE) {
         self.resultLabel.text = @"Loose";
     }
+    [theGame emulateAnswer];
 }
 
 @end
