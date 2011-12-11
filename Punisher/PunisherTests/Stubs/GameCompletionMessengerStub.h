@@ -6,7 +6,12 @@
 
 
 #import <Foundation/Foundation.h>
+#import "GameCompletionMessenger.h"
 
 
-@interface GameCompletionMessengerStub : NSObject
+@interface GameCompletionMessengerStub : NSObject<GameCompletionMessenger>
+
+@property(readonly) BOOL called;
+
+
 @end

@@ -180,7 +180,7 @@
 			<object class="IBUICustomObject" id="199044142">
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 			</object>
-			<object class="IBUICustomObject" id="323614120">
+			<object class="IBUICustomObject" id="554236166">
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 			</object>
 		</object>
@@ -213,14 +213,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">resultLabel</string>
-						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="384811112"/>
-					</object>
-					<int key="connectionID">14</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">debugLabel</string>
 						<reference key="source" ref="372490531"/>
 						<reference key="destination" ref="881812321"/>
@@ -239,7 +231,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">gameOverMessenger</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="323614120"/>
+						<reference key="destination" ref="554236166"/>
 					</object>
 					<int key="connectionID">23</int>
 				</object>
@@ -324,7 +316,7 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">21</int>
-						<reference key="object" ref="323614120"/>
+						<reference key="object" ref="554236166"/>
 						<reference key="parent" ref="0"/>
 					</object>
 				</object>
@@ -439,7 +431,6 @@
 							<string>debugLabel</string>
 							<string>gameOverMessenger</string>
 							<string>oneButton</string>
-							<string>resultLabel</string>
 							<string>theGame</string>
 							<string>zeroButton</string>
 						</object>
@@ -448,7 +439,6 @@
 							<string>UILabel</string>
 							<string>id</string>
 							<string>UIButton</string>
-							<string>UILabel</string>
 							<string>MiniGame</string>
 							<string>UIButton</string>
 						</object>
@@ -460,7 +450,6 @@
 							<string>debugLabel</string>
 							<string>gameOverMessenger</string>
 							<string>oneButton</string>
-							<string>resultLabel</string>
 							<string>theGame</string>
 							<string>zeroButton</string>
 						</object>
@@ -477,10 +466,6 @@
 							<object class="IBToOneOutletInfo">
 								<string key="name">oneButton</string>
 								<string key="candidateClassName">UIButton</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">resultLabel</string>
-								<string key="candidateClassName">UILabel</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">theGame</string>

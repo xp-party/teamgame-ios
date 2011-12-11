@@ -6,7 +6,11 @@
 
 
 #import <Foundation/Foundation.h>
+#import "MiniGame.h"
+#import "GameCompletionMessenger.h"
 
 
-@interface GameCompleteController : NSObject
+@interface GameCompleteController : NSObject <GameCompletionMessenger>
+
+
 @end
