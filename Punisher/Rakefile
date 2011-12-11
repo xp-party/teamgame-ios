@@ -1,0 +1,8 @@
+# Rakefile
+include Rake::DSL
+require 'bundler'
+Bundler.require
+
+Wox::Tasks.create :info_plist => 'Punisher/Punisher-Info.plist' do
+  build :debug, :configuration => 'Debug'
+end
