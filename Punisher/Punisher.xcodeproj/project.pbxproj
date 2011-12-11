@@ -34,6 +34,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		40F647901494E68A00C962CB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B15EC0181452B40900772300 /* Zimt.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
+			remoteInfo = Zimt;
+		};
 		B15EC0041452B3DF00772300 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B15EBFD11452B3DE00772300 /* Project object */;
@@ -244,6 +251,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				40F647911494E68A00C962CB /* PBXTargetDependency */,
 			);
 			name = Punisher;
 			productName = Punisher;
@@ -375,6 +383,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		40F647911494E68A00C962CB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Zimt;
+			targetProxy = 40F647901494E68A00C962CB /* PBXContainerItemProxy */;
+		};
 		B15EC0051452B3DF00772300 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = B15EBFD91452B3DE00772300 /* Punisher */;
