@@ -1,4 +1,5 @@
 .DS_Store
-Punisher/build/
+build/
 Punisher/.idea/workspace.xml
 Punisher/.idea/tasks.xml
+vanger.xcuserdatad/

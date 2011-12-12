@@ -6,11 +6,11 @@ Bundler.require
 Wox::Tasks.create :info_plist => 'Punisher/Punisher-Info.plist', :sdk => 'iphoneos', :configuration => 'Release' do
   build :debug, :configuration => 'Debug'
 
-  build :release, :developer_certificate => 'iPhone Developer: ANTON KATKOV' do
+  build :release, :developer_certificate => 'iPhone Developer: Alexey Rogatkin (LB7JE83C7X)' do
     ipa :app_store, :provisioning_profile => 'App Store'
-    ipa :adhoc, :provisioning_profile => 'Team Provisioning Profile' do
-      testflight :publish, :api_token => 'nphsZ6nVXMl0brDEsevLY0wRfU6iP0NLaQH3nqoh8jG',
-                           :team_token => 'Qfom2HnGGJnXrUVnOKAxKAmpNO3wdQ9panhtqcA',
+    ipa :adhoc, :provisioning_profile => 'E3EC9F6A-E348-4B18-BFEC-A8121F1E8711' do
+      testflight :publish, :api_token => 'af7140355be791bf7248083aab49f055_MTQzNzk0MjAxMS0wOC0zMSAwNjowMDoyMi40MzIzNjI',
+                           :team_token => '2199c962071b6a7c893ae2b1a7ede7be_NDYzOTcyMDExLTEyLTA5IDA4OjMxOjE1Ljk1NjYyNw',
                            :notes => proc { File.read("CHANGELOG") },
                            :distribution_lists => %w[All],
                            :notify => true
