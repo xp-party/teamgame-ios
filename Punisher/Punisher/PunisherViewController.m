@@ -20,7 +20,7 @@ NSString *const HELLO_MESSAGE = @"Press the button, please. ^_^";
 
 @synthesize theGame;
 @synthesize gameOverMessenger = _gameOverMessenger;
-
+@synthesize partnerResultLabel;
 
 - (void)didReceiveMemoryWarning {
     // Releases the view if it doesn't have a superview.
@@ -79,7 +79,8 @@ NSString *const HELLO_MESSAGE = @"Press the button, please. ^_^";
 //    } else if (self.theGame.state == LOSE) {
 //        self.resultLabel.text = @"Loose";
 //    }
-    
+        
+    self.partnerResultLabel.text = [NSString stringWithFormat:@"%d", theGame.answer];
     [_gameOverMessenger showGameOver:theGame.state];
     [theGame emulateAnswer];
 }

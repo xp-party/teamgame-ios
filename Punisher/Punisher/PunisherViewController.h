@@ -22,7 +22,7 @@ extern NSString *const HELLO_MESSAGE;
     UIButton *oneButton;
     UILabel *debugLabel;
     UILabel *resultLabel;
-
+    
     MiniGame *theGame;
 }
 
@@ -33,6 +33,7 @@ extern NSString *const HELLO_MESSAGE;
 @property(nonatomic, retain) IBOutlet UIButton *zeroButton;
 @property(nonatomic, retain) IBOutlet UIButton *oneButton;
 @property(nonatomic, retain) IBOutlet UILabel *debugLabel;
+@property(nonatomic, retain) IBOutlet UILabel *partnerResultLabel;
 
 @property(retain, nonatomic) IBOutlet MiniGame *theGame;
 
