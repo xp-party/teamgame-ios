@@ -7,6 +7,6 @@
 
 #import "MiniGame.h"
 
-@protocol GameCompletionMessenger
+@protocol GameCompletionMessenger <NSObject>
 - (void)showGameOver:(GameState)gameState;
 @end

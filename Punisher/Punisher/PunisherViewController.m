@@ -74,7 +74,14 @@ NSString *const HELLO_MESSAGE = @"Press the button, please. ^_^";
 
 #pragma mark - K-V Observing
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-    [self.gameOverMessenger showGameOver:self.theGame.state];
+//    if (self.theGame.state == WIN) {
+//        self->resultLabel.text = @"Win";
+//    } else if (self.theGame.state == LOSE) {
+//        self.resultLabel.text = @"Loose";
+//    }
+    
+    [_gameOverMessenger showGameOver:theGame.state];
+    [theGame emulateAnswer];
 }
 
 @end

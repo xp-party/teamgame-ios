@@ -7,6 +7,12 @@
 
 #import "AnswerRandomizer.h"
 
+@implementation AnswerRandomizer {
 
-@implementation AnswerRandomizer
+}
+
+- (Answer)getNextPossibleAnswer {
+    uint upperBound = (uint)ONE + 1;
+    return (Answer)arc4random_uniform(upperBound);
+}
 @end

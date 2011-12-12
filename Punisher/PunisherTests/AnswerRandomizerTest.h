@@ -8,5 +8,9 @@
 
 #import <SenTestingKit/SenTestingKit.h>
 
-@interface AnswerRandomizerTest : SenTestCase
+@class AnswerRandomizer;
+
+@interface AnswerRandomizerTest : SenTestCase {
+    AnswerRandomizer *randomizer;
+}
 @end

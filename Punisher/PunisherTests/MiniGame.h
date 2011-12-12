@@ -28,8 +28,7 @@ extern NSString * const STATE_PROPERTY;
 
 @property(nonatomic, readonly) Answer answer;
 
-
 - (void)addObserver:(NSObject *)observer;
-
+- (void)emulateAnswer;
 - (void)chooseAnswer:(Answer)chosenAnswer;
 @end
