@@ -80,7 +80,7 @@ NSString *const HELLO_MESSAGE = @"Press the button, please. ^_^";
 //        self.resultLabel.text = @"Loose";
 //    }
         
-    self.partnerResultLabel.text = [NSString stringWithFormat:@"%d", theGame.answer];
+    self.partnerResultLabel.text = [NSString stringWithFormat:@"%d", theGame.partnersAnswer];
     [_gameOverMessenger showGameOver:theGame.state];
     [theGame emulateAnswer];
 }
