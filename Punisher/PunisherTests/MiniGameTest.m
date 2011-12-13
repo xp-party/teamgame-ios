@@ -14,6 +14,7 @@
 - (void)setUp {
     [super setUp];
     miniGame = [[MiniGame alloc] init];
+    miniGame.partnersAnswer = ZERO;
 }
 
 - (void)tearDown {
@@ -26,7 +27,7 @@
 }
 
 - (void)testShould_Be_With_Answer_Zero_After_Init {
-    STAssertEquals(miniGame.answer, 0, @"");
+    STAssertEquals(miniGame.partnersAnswer, 0, @"");
 }
 
 - (void)testShould_Win_If_Guess_Answer {

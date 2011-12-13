@@ -18,11 +18,11 @@ NSString * const STATE_PROPERTY = @"state";
 @implementation MiniGame
 
 @synthesize state = _state;
-@synthesize answer = _answer;
+@synthesize partnersAnswer;
 
 - (void)emulateAnswer {
     AnswerRandomizer *randomizer = [AnswerRandomizer alloc];
-    _answer = [randomizer getNextPossibleAnswer];
+    self.partnersAnswer = [randomizer getNextPossibleAnswer];
     [randomizer release];
 }
 
@@ -37,7 +37,7 @@ NSString * const STATE_PROPERTY = @"state";
 
 
 - (void)chooseAnswer:(Answer)chosenAnswer {
-    if (chosenAnswer == _answer) {
+    if (chosenAnswer == self.partnersAnswer) {
         [self changeState:WIN];
     }
     else {

@@ -21,12 +21,11 @@ extern NSString * const STATE_PROPERTY;
 
 @private
     GameState _state;
-    Answer _answer;
 }
 
 @property(nonatomic, readonly) GameState state;
 
-@property(nonatomic, readonly) Answer answer;
+@property(nonatomic) Answer partnersAnswer;
 
 - (void)addObserver:(NSObject *)observer;
 - (void)emulateAnswer;

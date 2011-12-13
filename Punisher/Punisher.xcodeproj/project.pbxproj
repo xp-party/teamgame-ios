@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		405D4D771497326E00E1B79F /* AnswerRandomizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 405D4D761497326E00E1B79F /* AnswerRandomizer.m */; };
+		405D4D7A1497331F00E1B79F /* GameCompleteController.m in Sources */ = {isa = PBXBuildFile; fileRef = 405D4D791497331F00E1B79F /* GameCompleteController.m */; };
 		40BE1C74148420DA005DB17A /* PunisherViewControllerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 40BE1C73148420DA005DB17A /* PunisherViewControllerTest.m */; };
 		B15EBFDF1452B3DE00772300 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B15EBFDE1452B3DE00772300 /* UIKit.framework */; };
 		B15EBFE11452B3DE00772300 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B15EBFE01452B3DE00772300 /* Foundation.framework */; };
@@ -32,9 +34,6 @@
 		B1DD66DB1452C348000F396E /* MiniGame.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F396D /* MiniGame.m */; };
 		B1DD66DB1452C348000F3973 /* LTAsynchronousTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F3972 /* LTAsynchronousTest.m */; };
 		B1DD66DB1452C348000F3975 /* AnswerRandomizerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F3974 /* AnswerRandomizerTest.m */; };
-		B1DD66DB1452C348000F3978 /* AnswerRandomizer.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F3977 /* AnswerRandomizer.m */; };
-		B1DD66DB1452C348000F397B /* Constants.h in Resources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F397A /* Constants.h */; };
-		B1DD66DB1452C348000F397D /* GameCompleteController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F397C /* GameCompleteController.m */; };
 		B1DD66DB1452C348000F3982 /* GameCompletionMessengerStub.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F3981 /* GameCompletionMessengerStub.m */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +62,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		405D4D751497326E00E1B79F /* AnswerRandomizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnswerRandomizer.h; sourceTree = "<group>"; };
+		405D4D761497326E00E1B79F /* AnswerRandomizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswerRandomizer.m; sourceTree = "<group>"; };
+		405D4D781497331F00E1B79F /* GameCompleteController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameCompleteController.h; sourceTree = "<group>"; };
+		405D4D791497331F00E1B79F /* GameCompleteController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameCompleteController.m; sourceTree = "<group>"; };
+		405D4D7B149733D500E1B79F /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		40BE1C72148420DA005DB17A /* PunisherViewControllerTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PunisherViewControllerTest.h; sourceTree = "<group>"; };
 		40BE1C73148420DA005DB17A /* PunisherViewControllerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PunisherViewControllerTest.m; sourceTree = "<group>"; };
 		B15EBFDA1452B3DE00772300 /* Punisher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Punisher.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,10 +104,6 @@
 		B1DD66DB1452C348000F3972 /* LTAsynchronousTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTAsynchronousTest.m; sourceTree = "<group>"; };
 		B1DD66DB1452C348000F3974 /* AnswerRandomizerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswerRandomizerTest.m; sourceTree = "<group>"; };
 		B1DD66DB1452C348000F3976 /* AnswerRandomizerTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnswerRandomizerTest.h; sourceTree = "<group>"; };
-		B1DD66DB1452C348000F3977 /* AnswerRandomizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AnswerRandomizer.m; path = Punisher/AnswerRandomizer.m; sourceTree = SOURCE_ROOT; };
-		B1DD66DB1452C348000F397A /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Constants.h; sourceTree = "<group>"; };
-		B1DD66DB1452C348000F397C /* GameCompleteController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameCompleteController.m; sourceTree = "<group>"; };
-		B1DD66DB1452C348000F397E /* GameCompleteController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameCompleteController.h; sourceTree = "<group>"; };
 		B1DD66DB1452C348000F397F /* GameCompletionMessenger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameCompletionMessenger.h; sourceTree = "<group>"; };
 		B1DD66DB1452C348000F3981 /* GameCompletionMessengerStub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameCompletionMessengerStub.m; sourceTree = "<group>"; };
 		B1DD66DB1452C348000F3983 /* GameCompletionMessengerStub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameCompletionMessengerStub.h; sourceTree = "<group>"; };
@@ -192,12 +192,12 @@
 		B15EBFE41452B3DE00772300 /* Punisher */ = {
 			isa = PBXGroup;
 			children = (
+				405D4D7B149733D500E1B79F /* Constants.h */,
+				405D4D751497326E00E1B79F /* AnswerRandomizer.h */,
+				405D4D761497326E00E1B79F /* AnswerRandomizer.m */,
 				B1DD66DB1452C348000F397F /* GameCompletionMessenger.h */,
-				B1DD66DB1452C348000F397E /* GameCompleteController.h */,
-				B1DD66DB1452C348000F397C /* GameCompleteController.m */,
-				B1DD66DB1452C348000F397E /* GameCompleteController.h */,
-				B1DD66DB1452C348000F397C /* GameCompleteController.m */,
-				B1DD66DB1452C348000F397A /* Constants.h */,
+				405D4D781497331F00E1B79F /* GameCompleteController.h */,
+				405D4D791497331F00E1B79F /* GameCompleteController.m */,
 				40BE1C4814840C27005DB17A /* Model */,
 				B15EC0251452B53400772308 /* FakeMessagerConsumer.h */,
 				B15EC0251452B53400772306 /* FakeMessagerConsumer.m */,
@@ -359,7 +359,6 @@
 				B15EBFE91452B3DE00772300 /* InfoPlist.strings in Resources */,
 				B15EBFF21452B3DF00772300 /* MainWindow.xib in Resources */,
 				B15EBFF81452B3DF00772300 /* PunisherViewController.xib in Resources */,
-				B1DD66DB1452C348000F397B /* Constants.h in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,9 +399,9 @@
 				B15EC0251452B53400772303 /* WebSocketMessageConsumer.m in Sources */,
 				B15EC0251452B53400772307 /* FakeMessagerConsumer.m in Sources */,
 				B1DD66DB1452C348000F396E /* MiniGame.m in Sources */,
-				B1DD66DB1452C348000F3978 /* AnswerRandomizer.m in Sources */,
-				B1DD66DB1452C348000F397D /* GameCompleteController.m in Sources */,
 				B1DD66DB1452C348000F3982 /* GameCompletionMessengerStub.m in Sources */,
+				405D4D771497326E00E1B79F /* AnswerRandomizer.m in Sources */,
+				405D4D7A1497331F00E1B79F /* GameCompleteController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

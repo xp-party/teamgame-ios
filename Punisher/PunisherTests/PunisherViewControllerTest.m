@@ -17,8 +17,8 @@
     gameCompletionMessengerStub = [[GameCompletionMessengerStub alloc] init];
 
     controller = [[PunisherViewController alloc] initWithNibName:@"PunisherViewController" bundle:NULL];
-    controller.gameOverMessenger = gameCompletionMessengerStub;
     [controller.view setNeedsDisplay];
+    controller.gameOverMessenger = gameCompletionMessengerStub;
 }
 
 - (void)tearDown {
