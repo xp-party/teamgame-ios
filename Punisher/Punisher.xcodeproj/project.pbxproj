@@ -35,6 +35,7 @@
 		B1DD66DB1452C348000F3973 /* LTAsynchronousTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F3972 /* LTAsynchronousTest.m */; };
 		B1DD66DB1452C348000F3975 /* AnswerRandomizerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F3974 /* AnswerRandomizerTest.m */; };
 		B1DD66DB1452C348000F3982 /* GameCompletionMessengerStub.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F3981 /* GameCompletionMessengerStub.m */; };
+		B1DD66DB1452C348000F3985 /* ZTWebSocketDelegateImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F3984 /* ZTWebSocketDelegateImpl.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +108,8 @@
 		B1DD66DB1452C348000F397F /* GameCompletionMessenger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameCompletionMessenger.h; sourceTree = "<group>"; };
 		B1DD66DB1452C348000F3981 /* GameCompletionMessengerStub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameCompletionMessengerStub.m; sourceTree = "<group>"; };
 		B1DD66DB1452C348000F3983 /* GameCompletionMessengerStub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameCompletionMessengerStub.h; sourceTree = "<group>"; };
+		B1DD66DB1452C348000F3984 /* ZTWebSocketDelegateImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZTWebSocketDelegateImpl.m; sourceTree = "<group>"; };
+		B1DD66DB1452C348000F3986 /* ZTWebSocketDelegateImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZTWebSocketDelegateImpl.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +195,8 @@
 		B15EBFE41452B3DE00772300 /* Punisher */ = {
 			isa = PBXGroup;
 			children = (
+				B1DD66DB1452C348000F3986 /* ZTWebSocketDelegateImpl.h */,
+				B1DD66DB1452C348000F3984 /* ZTWebSocketDelegateImpl.m */,
 				405D4D7B149733D500E1B79F /* Constants.h */,
 				405D4D751497326E00E1B79F /* AnswerRandomizer.h */,
 				405D4D761497326E00E1B79F /* AnswerRandomizer.m */,
@@ -402,6 +407,7 @@
 				405D4D771497326E00E1B79F /* AnswerRandomizer.m in Sources */,
 				405D4D7A1497331F00E1B79F /* GameCompleteController.m in Sources */,
 				405D4D8714973BE500E1B79F /* MiniGame.m in Sources */,
+				B1DD66DB1452C348000F3985 /* ZTWebSocketDelegateImpl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -527,7 +533,7 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "Punisher/Punisher-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/../zimt/src/**";
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/../zimt/src/** \"${PROJECT_DIR}/../zimt/src/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -558,7 +564,7 @@
 				INFOPLIST_FILE = "PunisherTests/PunisherTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/../zimt/src/** \"${PROJECT_DIR}/../zimt/src/** \"${PROJECT_DIR}/../zimt/src/** \"${PROJECT_DIR}/../zimt/src/** \"${PROJECT_DIR}/../zimt/src/** \"${PROJECT_DIR}/../zimt/src/**";
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/../zimt/src/** \"${PROJECT_DIR}/../zimt/src/** \"${PROJECT_DIR}/../zimt/src/** \"${PROJECT_DIR}/../zimt/src/** \"${PROJECT_DIR}/../zimt/src/** \"${PROJECT_DIR}/../zimt/src/** \"${PROJECT_DIR}/../zimt/src/**";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
