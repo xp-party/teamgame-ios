@@ -17,5 +17,7 @@
 
 - (id)initWithConnection:(id <PrettyURLConnection>)connection;
 
-- (NSString *)sendRequest:(NSString *)string;
+- (NSString *)postMessage:(NSString *)message;
+
+- (NSString *)getMyPlayerNumber;
 @end

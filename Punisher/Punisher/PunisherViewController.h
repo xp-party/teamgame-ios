@@ -27,14 +27,12 @@ extern NSString *const HELLO_MESSAGE;
 	MiniGame *theGame;
 }
 
-- (IBAction)zeroButtonClicked;
-
-- (IBAction)oneButtonClicked;
-
 @property(nonatomic, retain) IBOutlet UIButton *zeroButton;
 @property(nonatomic, retain) IBOutlet UIButton *oneButton;
 @property(nonatomic, retain) IBOutlet UILabel *debugLabel;
 @property(nonatomic, retain) IBOutlet UILabel *partnerResultLabel;
+@property(nonatomic, retain) IBOutlet UILabel *statusLabel;
+@property(nonatomic, retain) IBOutlet UIActivityIndicatorView *spinner;
 
 @property(retain, nonatomic) IBOutlet MiniGame *theGame;
 
@@ -42,5 +40,12 @@ extern NSString *const HELLO_MESSAGE;
 
 @property(nonatomic, retain) IBOutlet RequestSender *requestSender;
 @property(nonatomic, retain) IBOutlet ServerURLsGenerator *serverURLsGenerator;
+
+- (IBAction)zeroButtonClicked;
+
+- (IBAction)oneButtonClicked;
+
+- (IBAction)startGame;
+
 
 @end

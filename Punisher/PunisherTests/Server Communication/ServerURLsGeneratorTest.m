@@ -46,6 +46,12 @@ NSString *FAKE_SERVER_ADDRESS = @"my_host.com:9090";
 	[defaultServerInfo release];
 }
 
+- (void)test_giveMyTeam_url_formed_properly {
+	NSString *giveMyTeamURL = [serverInfo generateGiveMyTeamRequestURL];
+	NSString *expectedURL = [NSString stringWithFormat:@"http://%@/giveMyTeam", FAKE_SERVER_ADDRESS];
+	STAssertEqualObjects(giveMyTeamURL, expectedURL, @"URL for giveMyTeam request formed incorrectly");
+}
+
 - (void)dealloc {
 	[serverInfo release];
 	[super dealloc];

@@ -24,28 +24,14 @@ NSString *const HELLO_MESSAGE = @"Press the button, please. ^_^";
 @synthesize partnerResultLabel;
 @synthesize requestSender = _requestSender;
 @synthesize serverURLsGenerator = _serverURLsGenerator;
+@synthesize spinner = _spinner;
+@synthesize statusLabel = _statusLabel;
 
 
 - (void)didReceiveMemoryWarning {
 	// Releases the view if it doesn't have a superview.
 	[super didReceiveMemoryWarning];
 	// Release any cached data, images, etc that aren't in use.
-}
-
-#pragma mark - Realization
-
-- (IBAction)zeroButtonClicked {
-	NSLog(@"You clicked 0");
-	debugLabel.text = @"0";
-	[self.requestSender sendRequest:debugLabel.text];
-	[theGame chooseAnswer:ZERO];
-}
-
-- (IBAction)oneButtonClicked {
-	NSLog(@"You clicked 1");
-	debugLabel.text = @"1";
-	[self.requestSender sendRequest:debugLabel.text];
-	[theGame chooseAnswer:ONE];
 }
 
 #pragma mark - View lifecycle
@@ -55,8 +41,6 @@ NSString *const HELLO_MESSAGE = @"Press the button, please. ^_^";
 	[super viewDidLoad];
 	resultLabel.text = HELLO_MESSAGE;
 	[self.theGame addObserver:self];
-
-	[self.requestSender sendRequest:@"giveAnyTeam"];
 }
 
 - (void)viewDidUnload {
@@ -95,6 +79,8 @@ NSString *const HELLO_MESSAGE = @"Press the button, please. ^_^";
 
 	self.requestSender = nil;
 	self.serverURLsGenerator = nil;
+	self.spinner = nil;
+	self.statusLabel = nil;
 	[super dealloc];
 }
 
@@ -103,6 +89,30 @@ NSString *const HELLO_MESSAGE = @"Press the button, please. ^_^";
 
 - (void)consumeMessage:(NSString *)message {
 	NSLog(@"Punisher view contoller received message: %@", message);
+}
+
+#pragma mark - Game Action
+
+- (IBAction)zeroButtonClicked {
+	NSLog(@"You clicked 0");
+	debugLabel.text = @"0";
+	[self.requestSender postMessage:debugLabel.text];
+	[theGame chooseAnswer:ZERO];
+}
+
+- (IBAction)oneButtonClicked {
+	NSLog(@"You clicked 1");
+	debugLabel.text = @"1";
+	[self.requestSender postMessage:debugLabel.text];
+	[theGame chooseAnswer:ONE];
+}
+
+- (IBAction)startGame {
+	NSString *playerNumber = [self.requestSender getMyPlayerNumber];
+	NSLog(@"Obtained My player number: %@", playerNumber);
+
+	[self.spinner startAnimating];
+	self.statusLabel.text = @"ждём второго игрока";
 }
 
 @end

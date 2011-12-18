@@ -23,19 +23,38 @@
 	return self;
 }
 
-- (NSString *)sendRequest:(NSString *)requestText {
-	if (!self.serverURLsGenerator) {
-		[NSException raise:@"ServerURLsGenerator isn't initialized"
-					format:@"RequestSender.serverURLsGenerator is NULL, initialize it properly!"];
-	}
-	NSURL *postURL = [NSURL URLWithString:[self.serverURLsGenerator generatePostMessageURLWithText:requestText]];
+- (NSString *)sendRequestToURL:(NSString *)url {
+	NSURL *postURL = [NSURL URLWithString:url];
 	NSURLRequest *request = [NSURLRequest requestWithURL:postURL];
+	[NSURLRequest requestWithURL:postURL];
 	NSError **error = nil;
 
 	NSString *answer = [self.connection sendSynchronousRequest:request returningResponse:NULL error:error];
 	if (error) {
 		NSLog(@"Error occured: %@", *error);
 	}
+	return answer;
+}
+
+- (void)checkAvailabilityOfServerURLGenerator {
+	if (!self.serverURLsGenerator) {
+		[NSException raise:@"ServerURLsGenerator isn't initialized"
+					format:@"RequestSender.serverURLsGenerator is NULL, initialize it properly!"];
+	}
+}
+
+- (NSString *)postMessage:(NSString *)message {
+	[self checkAvailabilityOfServerURLGenerator];
+	NSString *url = [self.serverURLsGenerator generatePostMessageURLWithText:message];
+	NSString *answer = [self sendRequestToURL:url];
+
+	return answer;
+}
+
+- (NSString *)getMyPlayerNumber {
+	[self checkAvailabilityOfServerURLGenerator];
+	NSString *url = [self.serverURLsGenerator generateGiveMyTeamRequestURL];
+	NSString *answer = [self sendRequestToURL:url];
 
 	return answer;
 }

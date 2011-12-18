@@ -17,6 +17,7 @@ NSString *DEFAULT_SERVER_URL = @"localhost:9000";
 @synthesize webSocketURL = _webSocketURL;
 @synthesize serverAddress = _serverAddress;
 @synthesize parametrizedPostMessageURL = _parametrizedPostMessageURL;
+@synthesize giveMyTeamURL = _giveMyTeamURL;
 
 
 - (id)init {
@@ -30,6 +31,7 @@ NSString *DEFAULT_SERVER_URL = @"localhost:9000";
 - (ServerURLsGenerator *)initWithServerAddress:(NSString *)serverAddress {
 	self.serverAddress = serverAddress;
 	self.webSocketURL = [NSString stringWithFormat:@"ws://%@/socket/listen", serverAddress];
+	self.giveMyTeamURL = [NSString stringWithFormat:@"http://%@/giveMyTeam", serverAddress];
 	self.parametrizedPostMessageURL = [NSString stringWithFormat:@"http://%@/socket/post?message=%@", serverAddress, @"%@"];
 	return self;
 }
@@ -39,6 +41,7 @@ NSString *DEFAULT_SERVER_URL = @"localhost:9000";
 	self.webSocketURL = NULL;
 	self.parametrizedPostMessageURL = NULL;
 
+	self.giveMyTeamURL = nil;
 	[super dealloc];
 }
 
@@ -48,5 +51,9 @@ NSString *DEFAULT_SERVER_URL = @"localhost:9000";
 
 - (NSString *)generatePostMessageURLWithText:(NSString *)message {
 	return [NSString stringWithFormat:self.parametrizedPostMessageURL, message];
+}
+
+- (NSString *)generateGiveMyTeamRequestURL {
+	return self.giveMyTeamURL;
 }
 @end

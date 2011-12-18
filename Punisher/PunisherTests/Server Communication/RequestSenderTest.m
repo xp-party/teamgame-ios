@@ -31,11 +31,11 @@
 - (void)test_throws_exception_when_no_server_url_generator_setted {
 	requestSender.serverURLsGenerator = NULL;
 
-	STAssertThrows([requestSender sendRequest:@""], @"when no ServerURLGenerator setted exception should be thrown");
+	STAssertThrows([requestSender postMessage:@""], @"when no ServerURLGenerator setted exception should be thrown");
 }
 
 - (void)test_send_request {
-	NSString *responseText = [requestSender sendRequest:@"blubla"];
+	NSString *responseText = [requestSender postMessage:@"blubla"];
 
 	STAssertEqualObjects(responseText, answer, @"Received text not equals expected answer");
 }
