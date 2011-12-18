@@ -14,6 +14,7 @@
 @class MiniGame;
 @class GameCompletionMessengerStub;
 @class RequestSender;
+@class ServerURLsGenerator;
 
 extern NSString *const HELLO_MESSAGE;
 
@@ -43,5 +44,6 @@ extern NSString *const HELLO_MESSAGE;
 @property(nonatomic, retain) IBOutlet ZTWebSocket *listeningWebSocket;
 
 @property(nonatomic, retain) IBOutlet RequestSender *requestSender;
+@property(nonatomic, retain) IBOutlet ServerURLsGenerator *serverURLsGenerator;
 
 @end

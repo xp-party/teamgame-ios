@@ -9,6 +9,7 @@
 #import "PunisherViewController.h"
 #import "RequestSender.h"
 #import "WebSocketListener.h"
+#import "ServerURLsGenerator.h"
 
 NSString *const HELLO_MESSAGE = @"Press the button, please. ^_^";
 
@@ -26,6 +27,7 @@ NSString *const HELLO_MESSAGE = @"Press the button, please. ^_^";
 @synthesize partnerResultLabel;
 @synthesize listeningWebSocket = _listeningWebSocket;
 @synthesize requestSender = _requestSender;
+@synthesize serverURLsGenerator = _serverURLsGenerator;
 
 
 - (void)didReceiveMemoryWarning {
@@ -59,7 +61,7 @@ NSString *const HELLO_MESSAGE = @"Press the button, please. ^_^";
 	[self.theGame addObserver:self];
 
 	_webSocketListener = [[WebSocketListener alloc] initWithMessageConsumer:self];
-	_listeningWebSocket = [[ZTWebSocket alloc] initWithURLString:@"ws://localhost:9000/socket/listen"
+	_listeningWebSocket = [[ZTWebSocket alloc] initWithURLString:[self.serverURLsGenerator webSocketURL]
 														delegate:_webSocketListener];
 	[self.listeningWebSocket open];
 
@@ -105,6 +107,7 @@ NSString *const HELLO_MESSAGE = @"Press the button, please. ^_^";
 	[_webSocketListener release], _webSocketListener = nil;
 
 	self.requestSender = nil;
+	self.serverURLsGenerator = nil;
 	[super dealloc];
 }
 

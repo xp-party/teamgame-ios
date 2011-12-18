@@ -203,13 +203,13 @@
 			<object class="IBUICustomObject" id="554236166">
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 			</object>
-			<object class="IBUICustomObject" id="644194969">
+			<object class="IBUICustomObject" id="974455926">
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 			</object>
-			<object class="IBUICustomObject" id="1031268573">
+			<object class="IBUICustomObject" id="879071064">
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 			</object>
-			<object class="IBUICustomObject" id="683368989">
+			<object class="IBUICustomObject" id="381615798">
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 			</object>
 		</object>
@@ -276,9 +276,17 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">requestSender</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="1031268573"/>
+						<reference key="destination" ref="879071064"/>
 					</object>
 					<int key="connectionID">32</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">serverURLsGenerator</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="381615798"/>
+					</object>
+					<int key="connectionID">33</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
@@ -301,16 +309,16 @@
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">connection</string>
-						<reference key="source" ref="1031268573"/>
-						<reference key="destination" ref="644194969"/>
+						<reference key="source" ref="879071064"/>
+						<reference key="destination" ref="974455926"/>
 					</object>
 					<int key="connectionID">29</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">serverURLsGenerator</string>
-						<reference key="source" ref="1031268573"/>
-						<reference key="destination" ref="683368989"/>
+						<reference key="source" ref="879071064"/>
+						<reference key="destination" ref="381615798"/>
 					</object>
 					<int key="connectionID">31</int>
 				</object>
@@ -388,17 +396,17 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">27</int>
-						<reference key="object" ref="644194969"/>
+						<reference key="object" ref="974455926"/>
 						<reference key="parent" ref="0"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">28</int>
-						<reference key="object" ref="1031268573"/>
+						<reference key="object" ref="879071064"/>
 						<reference key="parent" ref="0"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">30</int>
-						<reference key="object" ref="683368989"/>
+						<reference key="object" ref="381615798"/>
 						<reference key="parent" ref="0"/>
 					</object>
 				</object>
@@ -464,7 +472,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">32</int>
+			<int key="maxID">33</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -538,6 +546,7 @@
 							<string>oneButton</string>
 							<string>partnerResultLabel</string>
 							<string>requestSender</string>
+							<string>serverURLsGenerator</string>
 							<string>theGame</string>
 							<string>zeroButton</string>
 						</object>
@@ -549,6 +558,7 @@
 							<string>UIButton</string>
 							<string>UILabel</string>
 							<string>RequestSender</string>
+							<string>ServerURLsGenerator</string>
 							<string>MiniGame</string>
 							<string>UIButton</string>
 						</object>
@@ -563,6 +573,7 @@
 							<string>oneButton</string>
 							<string>partnerResultLabel</string>
 							<string>requestSender</string>
+							<string>serverURLsGenerator</string>
 							<string>theGame</string>
 							<string>zeroButton</string>
 						</object>
@@ -591,6 +602,10 @@
 							<object class="IBToOneOutletInfo">
 								<string key="name">requestSender</string>
 								<string key="candidateClassName">RequestSender</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">serverURLsGenerator</string>
+								<string key="candidateClassName">ServerURLsGenerator</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">theGame</string>
