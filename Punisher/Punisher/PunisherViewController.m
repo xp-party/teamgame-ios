@@ -7,14 +7,15 @@
 //
 
 #import "PunisherViewController.h"
-#import "WebSocketMessageConsumer.h"
 #import "ZTWebSocketDelegateImpl.h"
+#import "RequestSender.h"
+#import "PrettyURLConnectionImpl.h"
 
 NSString *const HELLO_MESSAGE = @"Press the button, please. ^_^";
 
 @implementation PunisherViewController {
 @private
-    id <GameCompletionMessenger> _gameOverMessenger;
+	id <GameCompletionMessenger> _gameOverMessenger;
 	id <ZTWebSocketDelegate> _listeningDelegate;
 }
 @synthesize zeroButton;
@@ -28,39 +29,32 @@ NSString *const HELLO_MESSAGE = @"Press the button, please. ^_^";
 
 
 - (void)didReceiveMemoryWarning {
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    // Release any cached data, images, etc that aren't in use.
+	// Releases the view if it doesn't have a superview.
+	[super didReceiveMemoryWarning];
+	// Release any cached data, images, etc that aren't in use.
 }
 
 #pragma mark - Realization
 
 - (void)postMessage:(NSString *)message {
-	NSURL *postURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://192.168.1.2:9000/socket/post?message=%@", message]];
-	NSError **error = nil;
-	[NSURLConnection sendSynchronousRequest:[NSURLRequest requestWithURL:postURL] returningResponse:nil error:error];
-	if (error) {
-		NSLog(@"Error occured: %@", *error);
-	}
+	id <PrettyURLConnection> connection = [PrettyURLConnectionImpl alloc];
+	RequestSender *requestSender = [[RequestSender alloc] initWithConnection:connection];
+	[requestSender sendRequest:message];
 
-//	id<ZTWebSocketDelegate> postingDelegate = [ZTWebSocketDelegateImpl alloc];
-//	ZTWebSocket *postingSocket = [[ZTWebSocket alloc] initWithURLString:@"ws://192.168.1.2:9000/socket/post" delegate:postingDelegate];
-//	[postingSocket open];
-//	[postingSocket send:message];
-//	[postingSocket close];
-//	[postingDelegate release];
+	[connection release];
+	[requestSender release];
 }
 
 - (IBAction)zeroButtonClicked {
-    NSLog(@"You clicked 0");
-    debugLabel.text = @"0";
+	NSLog(@"You clicked 0");
+	debugLabel.text = @"0";
 	[self postMessage:debugLabel.text];
-    [theGame chooseAnswer:ZERO];
+	[theGame chooseAnswer:ZERO];
 }
 
 - (IBAction)oneButtonClicked {
-    NSLog(@"You clicked 1");
-    debugLabel.text = @"1";
+	NSLog(@"You clicked 1");
+	debugLabel.text = @"1";
 	[self postMessage:debugLabel.text];
 	[theGame chooseAnswer:ONE];
 }
@@ -69,24 +63,26 @@ NSString *const HELLO_MESSAGE = @"Press the button, please. ^_^";
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    resultLabel.text = HELLO_MESSAGE;
-    [self.theGame addObserver:self];
+	[super viewDidLoad];
+	resultLabel.text = HELLO_MESSAGE;
+	[self.theGame addObserver:self];
 
 	_listeningDelegate = [[ZTWebSocketDelegateImpl alloc] init];
-	_listeningWebSocket = [[ZTWebSocket alloc] initWithURLString:@"ws://192.168.1.2:9000/socket/listen"
-															 delegate:_listeningDelegate];
+	_listeningWebSocket = [[ZTWebSocket alloc] initWithURLString:@"ws://169.254.6.84:9000/socket/listen"
+														delegate:_listeningDelegate];
 	[self.listeningWebSocket open];
+
+	[self postMessage:@"giveAnyTeam"];
 }
 
 - (void)viewDidUnload {
-    [super viewDidUnload];
+	[super viewDidUnload];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-    return ((interfaceOrientation == UIInterfaceOrientationPortrait) ||
-            (interfaceOrientation == UIInterfaceOrientationPortraitUpsideDown));
+	// Return YES for supported orientations
+	return ((interfaceOrientation == UIInterfaceOrientationPortrait) ||
+			(interfaceOrientation == UIInterfaceOrientationPortraitUpsideDown));
 }
 
 
