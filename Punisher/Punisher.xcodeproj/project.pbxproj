@@ -37,11 +37,13 @@
 		B1DD66DB1452C348000F398E /* RequestSender.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F398D /* RequestSender.m */; };
 		B1DD66DB1452C348000F3991 /* PrettyURLConnectionImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F3990 /* PrettyURLConnectionImpl.m */; };
 		B1DD66DB1452C348000F3994 /* PrettyURLConnectionStub.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F3993 /* PrettyURLConnectionStub.m */; };
-		B1DD66DB1452C348000F3999 /* WebSocketListenerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F3998 /* WebSocketListenerTest.m */; };
+		B1DD66DB1452C348000F3999 /* WebSocketDelegateTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F3998 /* WebSocketDelegateTest.m */; };
 		B1DD66DB1452C348000F399B /* FakeEventPublisher.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F399A /* FakeEventPublisher.m */; };
-		B1DD66DB1452C348000F399E /* WebSocketListener.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F399D /* WebSocketListener.m */; };
+		B1DD66DB1452C348000F399E /* WebSocketDelegateImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F399D /* WebSocketDelegateImpl.m */; };
 		B1DD66DB1452C348000F39A4 /* ServerURLsGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F39A3 /* ServerURLsGenerator.m */; };
 		B1DD66DB1452C348000F39A7 /* ServerURLsGeneratorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F39A6 /* ServerURLsGeneratorTest.m */; };
+		B1DD66DB1452C348000F39AB /* WebSocketListenerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F39AA /* WebSocketListenerTest.m */; };
+		B1DD66DB1452C348000F39AD /* WebSocketListener.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F39AC /* WebSocketListener.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,16 +121,20 @@
 		B1DD66DB1452C348000F3993 /* PrettyURLConnectionStub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrettyURLConnectionStub.m; sourceTree = "<group>"; };
 		B1DD66DB1452C348000F3995 /* PrettyURLConnectionStub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrettyURLConnectionStub.h; sourceTree = "<group>"; };
 		B1DD66DB1452C348000F3996 /* PrettyURLConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrettyURLConnection.h; sourceTree = "<group>"; };
-		B1DD66DB1452C348000F3997 /* WebSocketListenerTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebSocketListenerTest.h; sourceTree = "<group>"; };
-		B1DD66DB1452C348000F3998 /* WebSocketListenerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebSocketListenerTest.m; sourceTree = "<group>"; };
+		B1DD66DB1452C348000F3997 /* WebSocketDelegateTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebSocketDelegateTest.h; sourceTree = "<group>"; };
+		B1DD66DB1452C348000F3998 /* WebSocketDelegateTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebSocketDelegateTest.m; sourceTree = "<group>"; };
 		B1DD66DB1452C348000F399A /* FakeEventPublisher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakeEventPublisher.m; sourceTree = "<group>"; };
 		B1DD66DB1452C348000F399C /* FakeEventPublisher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeEventPublisher.h; sourceTree = "<group>"; };
-		B1DD66DB1452C348000F399D /* WebSocketListener.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebSocketListener.m; sourceTree = "<group>"; };
-		B1DD66DB1452C348000F399F /* WebSocketListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebSocketListener.h; sourceTree = "<group>"; };
+		B1DD66DB1452C348000F399D /* WebSocketDelegateImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebSocketDelegateImpl.m; sourceTree = "<group>"; };
+		B1DD66DB1452C348000F399F /* WebSocketDelegateImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebSocketDelegateImpl.h; sourceTree = "<group>"; };
 		B1DD66DB1452C348000F39A3 /* ServerURLsGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerURLsGenerator.m; sourceTree = "<group>"; };
 		B1DD66DB1452C348000F39A5 /* ServerURLsGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerURLsGenerator.h; sourceTree = "<group>"; };
 		B1DD66DB1452C348000F39A6 /* ServerURLsGeneratorTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerURLsGeneratorTest.m; sourceTree = "<group>"; };
 		B1DD66DB1452C348000F39A8 /* ServerURLsGeneratorTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerURLsGeneratorTest.h; sourceTree = "<group>"; };
+		B1DD66DB1452C348000F39A9 /* WebSocketListenerTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebSocketListenerTest.h; sourceTree = "<group>"; };
+		B1DD66DB1452C348000F39AA /* WebSocketListenerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebSocketListenerTest.m; sourceTree = "<group>"; };
+		B1DD66DB1452C348000F39AC /* WebSocketListener.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebSocketListener.m; sourceTree = "<group>"; };
+		B1DD66DB1452C348000F39AE /* WebSocketListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebSocketListener.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -296,10 +302,12 @@
 		B1DD66DB1452C348000F398B /* Server Communication */ = {
 			isa = PBXGroup;
 			children = (
+				B1DD66DB1452C348000F39AE /* WebSocketListener.h */,
+				B1DD66DB1452C348000F39AC /* WebSocketListener.m */,
 				B1DD66DB1452C348000F39A5 /* ServerURLsGenerator.h */,
 				B1DD66DB1452C348000F39A3 /* ServerURLsGenerator.m */,
-				B1DD66DB1452C348000F399F /* WebSocketListener.h */,
-				B1DD66DB1452C348000F399D /* WebSocketListener.m */,
+				B1DD66DB1452C348000F399F /* WebSocketDelegateImpl.h */,
+				B1DD66DB1452C348000F399D /* WebSocketDelegateImpl.m */,
 				B1DD66DB1452C348000F3996 /* PrettyURLConnection.h */,
 				B1DD66DB1452C348000F3992 /* PrettyURLConnectionImpl.h */,
 				B1DD66DB1452C348000F3990 /* PrettyURLConnectionImpl.m */,
@@ -312,10 +320,12 @@
 		B1DD66DB1452C348000F398C /* Server Communication */ = {
 			isa = PBXGroup;
 			children = (
+				B1DD66DB1452C348000F39AA /* WebSocketListenerTest.m */,
+				B1DD66DB1452C348000F39A9 /* WebSocketListenerTest.h */,
 				B1DD66DB1452C348000F39A8 /* ServerURLsGeneratorTest.h */,
 				B1DD66DB1452C348000F39A6 /* ServerURLsGeneratorTest.m */,
-				B1DD66DB1452C348000F3998 /* WebSocketListenerTest.m */,
-				B1DD66DB1452C348000F3997 /* WebSocketListenerTest.h */,
+				B1DD66DB1452C348000F3998 /* WebSocketDelegateTest.m */,
+				B1DD66DB1452C348000F3997 /* WebSocketDelegateTest.h */,
 				B1DD66DB1452C348000F3989 /* RequestSenderTest.m */,
 				B1DD66DB1452C348000F3988 /* RequestSenderTest.h */,
 			);
@@ -455,8 +465,9 @@
 				405D4D8714973BE500E1B79F /* MiniGame.m in Sources */,
 				B1DD66DB1452C348000F398E /* RequestSender.m in Sources */,
 				B1DD66DB1452C348000F3991 /* PrettyURLConnectionImpl.m in Sources */,
-				B1DD66DB1452C348000F399E /* WebSocketListener.m in Sources */,
+				B1DD66DB1452C348000F399E /* WebSocketDelegateImpl.m in Sources */,
 				B1DD66DB1452C348000F39A4 /* ServerURLsGenerator.m in Sources */,
+				B1DD66DB1452C348000F39AD /* WebSocketListener.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,9 +481,10 @@
 				B1DD66DB1452C348000F3975 /* AnswerRandomizerTest.m in Sources */,
 				B1DD66DB1452C348000F398A /* RequestSenderTest.m in Sources */,
 				B1DD66DB1452C348000F3994 /* PrettyURLConnectionStub.m in Sources */,
-				B1DD66DB1452C348000F3999 /* WebSocketListenerTest.m in Sources */,
+				B1DD66DB1452C348000F3999 /* WebSocketDelegateTest.m in Sources */,
 				B1DD66DB1452C348000F399B /* FakeEventPublisher.m in Sources */,
 				B1DD66DB1452C348000F39A7 /* ServerURLsGeneratorTest.m in Sources */,
+				B1DD66DB1452C348000F39AB /* WebSocketListenerTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -550,7 +562,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "../zimt/src/**";
-				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -571,7 +583,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "../zimt/src/**";
-				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
@@ -618,7 +630,7 @@
 				INFOPLIST_FILE = "PunisherTests/PunisherTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/../zimt/src/** \"${PROJECT_DIR}/../zimt/src/** \"${PROJECT_DIR}/../zimt/src/** \"${PROJECT_DIR}/../zimt/src/** \"${PROJECT_DIR}/../zimt/src/** \"${PROJECT_DIR}/../zimt/src/** \"${PROJECT_DIR}/../zimt/src/** \"${PROJECT_DIR}/../zimt/src/**";
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/../zimt/src/** \"${PROJECT_DIR}/../zimt/src/** \"${PROJECT_DIR}/../zimt/src/** \"${PROJECT_DIR}/../zimt/src/** \"${PROJECT_DIR}/../zimt/src/** \"${PROJECT_DIR}/../zimt/src/** \"${PROJECT_DIR}/../zimt/src/** \"${PROJECT_DIR}/../zimt/src/** \"${PROJECT_DIR}/../zimt/src/** \"${PROJECT_DIR}/../zimt/src/**";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;

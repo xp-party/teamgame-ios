@@ -8,15 +8,12 @@
 
 #import "PunisherViewController.h"
 #import "RequestSender.h"
-#import "WebSocketListener.h"
-#import "ServerURLsGenerator.h"
 
 NSString *const HELLO_MESSAGE = @"Press the button, please. ^_^";
 
 @implementation PunisherViewController {
 @private
 	id <GameCompletionMessenger> _gameOverMessenger;
-	WebSocketListener *_webSocketListener;
 }
 @synthesize zeroButton;
 @synthesize oneButton;
@@ -25,7 +22,6 @@ NSString *const HELLO_MESSAGE = @"Press the button, please. ^_^";
 @synthesize theGame;
 @synthesize gameOverMessenger = _gameOverMessenger;
 @synthesize partnerResultLabel;
-@synthesize listeningWebSocket = _listeningWebSocket;
 @synthesize requestSender = _requestSender;
 @synthesize serverURLsGenerator = _serverURLsGenerator;
 
@@ -59,11 +55,6 @@ NSString *const HELLO_MESSAGE = @"Press the button, please. ^_^";
 	[super viewDidLoad];
 	resultLabel.text = HELLO_MESSAGE;
 	[self.theGame addObserver:self];
-
-	_webSocketListener = [[WebSocketListener alloc] initWithMessageConsumer:self];
-	_listeningWebSocket = [[ZTWebSocket alloc] initWithURLString:[self.serverURLsGenerator webSocketURL]
-														delegate:_webSocketListener];
-	[self.listeningWebSocket open];
 
 	[self.requestSender sendRequest:@"giveAnyTeam"];
 }
@@ -101,10 +92,6 @@ NSString *const HELLO_MESSAGE = @"Press the button, please. ^_^";
 	[resultLabel release];
 	[_gameOverMessenger release];
 	[partnerResultLabel release], partnerResultLabel = nil;
-
-	[_listeningWebSocket close];
-	[_listeningWebSocket release], _listeningWebSocket = nil;
-	[_webSocketListener release], _webSocketListener = nil;
 
 	self.requestSender = nil;
 	self.serverURLsGenerator = nil;

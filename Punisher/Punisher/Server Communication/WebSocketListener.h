@@ -6,14 +6,17 @@
 
 
 #import <Foundation/Foundation.h>
-#import "ZTWebSocket.h"
 
-@protocol MessageConsumer;
+@class ZTWebSocket;
+@class ServerURLsGenerator;
+@protocol ZTWebSocketDelegate;
 
+@interface WebSocketListener : NSObject
+@property(nonatomic, retain) ZTWebSocket *webSocket;
 
-@interface WebSocketListener : NSObject <ZTWebSocketDelegate>
-@property(nonatomic, retain) id <MessageConsumer> messageConsumer;
+@property(nonatomic, retain) IBOutlet ServerURLsGenerator *serverURLsGenerator;
+@property(nonatomic, retain) IBOutlet id <ZTWebSocketDelegate> webSocketDelegate;
 
-- (WebSocketListener *)initWithMessageConsumer:(id <MessageConsumer>)messageConsumer;
+- (void)startListening;
 
 @end

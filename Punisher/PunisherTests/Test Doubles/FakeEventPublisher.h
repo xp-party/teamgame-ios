@@ -7,14 +7,14 @@
 
 #import <Foundation/Foundation.h>
 
-@class WebSocketListener;
+@class WebSocketDelegateImpl;
 
 
 @interface FakeEventPublisher : NSObject
 
-@property(nonatomic, retain) WebSocketListener *listner;
+@property(nonatomic, retain) WebSocketDelegateImpl *listner;
 
 - (void)publish:(NSString *)string;
 
-- (FakeEventPublisher *)initWithListner:(WebSocketListener *)listener;
+- (FakeEventPublisher *)initWithListner:(WebSocketDelegateImpl *)listener;
 @end

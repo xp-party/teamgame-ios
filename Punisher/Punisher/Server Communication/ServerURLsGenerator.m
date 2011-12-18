@@ -20,7 +20,7 @@ NSString *DEFAULT_SERVER_URL = @"localhost:9000";
 
 
 - (id)init {
-	[super init];
+	self = [super init];
 	[self initWithServerAddress:DEFAULT_SERVER_URL];
 
 	return self;

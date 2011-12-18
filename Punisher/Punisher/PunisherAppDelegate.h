@@ -8,12 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@class WebSocketListener;
 @class PunisherViewController;
 
 @interface PunisherAppDelegate : NSObject <UIApplicationDelegate>
 
-@property (nonatomic, retain) IBOutlet UIWindow *window;
+@property(nonatomic, retain) IBOutlet UIWindow *window;
 
-@property (nonatomic, retain) IBOutlet PunisherViewController *viewController;
+@property(nonatomic, retain) IBOutlet PunisherViewController *viewController;
+
+@property(nonatomic, retain) IBOutlet WebSocketListener *webSocketListner;
 
 @end

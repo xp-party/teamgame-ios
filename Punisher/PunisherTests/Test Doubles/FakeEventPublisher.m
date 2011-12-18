@@ -6,7 +6,7 @@
 
 
 #import "FakeEventPublisher.h"
-#import "WebSocketListener.h"
+#import "../../Punisher/Server Communication/WebSocketDelegateImpl.h"
 
 
 @implementation FakeEventPublisher {
@@ -15,7 +15,7 @@
 
 @synthesize listner = _listner;
 
-- (FakeEventPublisher *)initWithListner:(WebSocketListener *)listener {
+- (FakeEventPublisher *)initWithListner:(WebSocketDelegateImpl *)listener {
 	self.listner = listener;
 	return self;
 

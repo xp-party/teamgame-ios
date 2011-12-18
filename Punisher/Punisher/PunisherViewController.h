@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "GameCompletionMessenger.h"
-#import "ZTWebSocket.h"
 #import "MessageConsumer.h"
 
 @class MiniGame;
@@ -40,8 +39,6 @@ extern NSString *const HELLO_MESSAGE;
 @property(retain, nonatomic) IBOutlet MiniGame *theGame;
 
 @property(nonatomic, retain) IBOutlet id <GameCompletionMessenger> gameOverMessenger;
-
-@property(nonatomic, retain) IBOutlet ZTWebSocket *listeningWebSocket;
 
 @property(nonatomic, retain) IBOutlet RequestSender *requestSender;
 @property(nonatomic, retain) IBOutlet ServerURLsGenerator *serverURLsGenerator;

@@ -1,5 +1,5 @@
 //
-//  WebSocketListenerTest.m
+//  WebSocketListnerTest.m
 //  Punisher
 //
 //  Created by Vanger on 12/18/11.
@@ -7,26 +7,16 @@
 //
 
 #import "WebSocketListenerTest.h"
-#import "FakeEventPublisher.h"
-#import "WebSocketListener.h"
 
 @implementation WebSocketListenerTest
 
-@synthesize receivedMessage = _receivedMessage;
-
-- (void)test_receiving_of_published_message {
-	WebSocketListener *listener = [[WebSocketListener alloc] initWithMessageConsumer:self];
-	FakeEventPublisher *fakePublisher = [[FakeEventPublisher alloc] initWithListner:listener];
-
-	NSString *message = @"some message";
-	[fakePublisher publish:message];
-	STAssertEqualObjects(self.receivedMessage, message, @"Doesn't receive published message");
-	[fakePublisher release];
-	[listener release];
-}
-
-- (void)consumeMessage:(NSString *)message {
-	self.receivedMessage = message;
+- (void)test_web_socket_created {
+//	WebSocketListener *webSocketLisetener = [[WebSocketListener alloc] init];
+//	ServerURLsGenerator *urlGenerator = [[ServerURLsGenerator alloc] init];
+//	webSocketLisetener.serverURLsGenerator = urlGenerator;
+//	STAssertNotNil(webSocketLisetener.webSocket, @"WebSocket in not created");
+//	[webSocketLisetener release];
+//	[urlGenerator release];
 }
 
 @end
