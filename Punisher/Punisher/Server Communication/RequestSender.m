@@ -7,6 +7,7 @@
 
 #import "RequestSender.h"
 #import "PrettyURLConnection.h"
+#import "ServerURLsGenerator.h"
 
 
 @implementation RequestSender {
@@ -14,14 +15,20 @@
 }
 
 @synthesize connection = _connection;
+@synthesize serverURLsGenerator = _serverURLsGenerator;
+
 
 - (id)initWithConnection:(id <PrettyURLConnection>)connection {
-	_connection = [connection retain];
+	self.connection = connection;
 	return self;
 }
 
-- (NSString *)sendRequest:(NSString *)requestString {
-	NSURL *postURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://169.254.6.84:9000/socket/post?message=%@", requestString]];
+- (NSString *)sendRequest:(NSString *)requestText {
+	if (!self.serverURLsGenerator) {
+		[NSException raise:@"ServerURLsGenerator isn't initialized"
+					format:@"RequestSender.serverURLsGenerator is NULL, initialize it properly!"];
+	}
+	NSURL *postURL = [NSURL URLWithString:[self.serverURLsGenerator generatePostMessageURLWithText:requestText]];
 	NSURLRequest *request = [NSURLRequest requestWithURL:postURL];
 	NSError **error = nil;
 
@@ -34,7 +41,8 @@
 }
 
 - (void)dealloc {
-	[_connection release], _connection = nil;
+	self.serverURLsGenerator = nil;
+	self.connection = nil;
 	[super dealloc];
 }
 @end

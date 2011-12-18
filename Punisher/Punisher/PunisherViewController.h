@@ -13,6 +13,7 @@
 
 @class MiniGame;
 @class GameCompletionMessengerStub;
+@class RequestSender;
 
 extern NSString *const HELLO_MESSAGE;
 
@@ -40,4 +41,7 @@ extern NSString *const HELLO_MESSAGE;
 @property(nonatomic, retain) IBOutlet id <GameCompletionMessenger> gameOverMessenger;
 
 @property(nonatomic, retain) IBOutlet ZTWebSocket *listeningWebSocket;
+
+@property(nonatomic, retain) IBOutlet RequestSender *requestSender;
+
 @end

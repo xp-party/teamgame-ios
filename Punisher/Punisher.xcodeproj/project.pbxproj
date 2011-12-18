@@ -40,6 +40,8 @@
 		B1DD66DB1452C348000F3999 /* WebSocketListenerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F3998 /* WebSocketListenerTest.m */; };
 		B1DD66DB1452C348000F399B /* FakeEventPublisher.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F399A /* FakeEventPublisher.m */; };
 		B1DD66DB1452C348000F399E /* WebSocketListener.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F399D /* WebSocketListener.m */; };
+		B1DD66DB1452C348000F39A4 /* ServerURLsGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F39A3 /* ServerURLsGenerator.m */; };
+		B1DD66DB1452C348000F39A7 /* ServerURLsGeneratorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F39A6 /* ServerURLsGeneratorTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +125,10 @@
 		B1DD66DB1452C348000F399C /* FakeEventPublisher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeEventPublisher.h; sourceTree = "<group>"; };
 		B1DD66DB1452C348000F399D /* WebSocketListener.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebSocketListener.m; sourceTree = "<group>"; };
 		B1DD66DB1452C348000F399F /* WebSocketListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebSocketListener.h; sourceTree = "<group>"; };
+		B1DD66DB1452C348000F39A3 /* ServerURLsGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerURLsGenerator.m; sourceTree = "<group>"; };
+		B1DD66DB1452C348000F39A5 /* ServerURLsGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerURLsGenerator.h; sourceTree = "<group>"; };
+		B1DD66DB1452C348000F39A6 /* ServerURLsGeneratorTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerURLsGeneratorTest.m; sourceTree = "<group>"; };
+		B1DD66DB1452C348000F39A8 /* ServerURLsGeneratorTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerURLsGeneratorTest.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -290,6 +296,8 @@
 		B1DD66DB1452C348000F398B /* Server Communication */ = {
 			isa = PBXGroup;
 			children = (
+				B1DD66DB1452C348000F39A5 /* ServerURLsGenerator.h */,
+				B1DD66DB1452C348000F39A3 /* ServerURLsGenerator.m */,
 				B1DD66DB1452C348000F399F /* WebSocketListener.h */,
 				B1DD66DB1452C348000F399D /* WebSocketListener.m */,
 				B1DD66DB1452C348000F3996 /* PrettyURLConnection.h */,
@@ -304,6 +312,8 @@
 		B1DD66DB1452C348000F398C /* Server Communication */ = {
 			isa = PBXGroup;
 			children = (
+				B1DD66DB1452C348000F39A8 /* ServerURLsGeneratorTest.h */,
+				B1DD66DB1452C348000F39A6 /* ServerURLsGeneratorTest.m */,
 				B1DD66DB1452C348000F3998 /* WebSocketListenerTest.m */,
 				B1DD66DB1452C348000F3997 /* WebSocketListenerTest.h */,
 				B1DD66DB1452C348000F3989 /* RequestSenderTest.m */,
@@ -446,6 +456,7 @@
 				B1DD66DB1452C348000F398E /* RequestSender.m in Sources */,
 				B1DD66DB1452C348000F3991 /* PrettyURLConnectionImpl.m in Sources */,
 				B1DD66DB1452C348000F399E /* WebSocketListener.m in Sources */,
+				B1DD66DB1452C348000F39A4 /* ServerURLsGenerator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,6 +472,7 @@
 				B1DD66DB1452C348000F3994 /* PrettyURLConnectionStub.m in Sources */,
 				B1DD66DB1452C348000F3999 /* WebSocketListenerTest.m in Sources */,
 				B1DD66DB1452C348000F399B /* FakeEventPublisher.m in Sources */,
+				B1DD66DB1452C348000F39A7 /* ServerURLsGeneratorTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,5 +1,5 @@
 //
-//  RequestSenderTest.h
+//  ServerURLsGeneratorTest.h
 //  Punisher
 //
 //  Created by Vanger on 12/18/11.
@@ -11,13 +11,10 @@
 
 #import <SenTestingKit/SenTestingKit.h>
 
-@protocol PrettyURLConnection;
-@class RequestSender;
+@class ServerURLsGenerator;
 
-@interface RequestSenderTest : SenTestCase {
-	id <PrettyURLConnection> connection;
-	RequestSender *requestSender;
-	NSString *answer;
+@interface ServerURLsGeneratorTest : SenTestCase {
+	ServerURLsGenerator *serverInfo;
 }
 
 @end

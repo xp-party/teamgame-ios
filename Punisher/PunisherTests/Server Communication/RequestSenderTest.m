@@ -9,20 +9,42 @@
 #import "RequestSenderTest.h"
 #import "RequestSender.h"
 #import "PrettyURLConnectionStub.h"
+#import "ServerURLsGenerator.h"
 
 @implementation RequestSenderTest
 
-// All code under test must be linked into the Unit Test bundle
-- (void)test_send_request {
-	NSString *answer = @"some answer";
-	id <PrettyURLConnection> connection = [[PrettyURLConnectionStub alloc] initWithAnswer:answer];
-	RequestSender *requestSender = [[RequestSender alloc] initWithConnection:connection];
+- (void)setUp {
+	answer = @"some answer";
+	connection = [[PrettyURLConnectionStub alloc] initWithAnswer:answer];
+	requestSender = [[RequestSender alloc] initWithConnection:connection];
+	requestSender.serverURLsGenerator = [[[ServerURLsGenerator alloc] init] autorelease];
+	[super setUp];
+}
 
+- (void)tearDown {
+	[requestSender release];
+	[connection release];
+
+	[super tearDown];
+}
+
+- (void)test_throws_exception_when_no_server_url_generator_setted {
+	requestSender.serverURLsGenerator = NULL;
+
+	STAssertThrows([requestSender sendRequest:@""], @"when no ServerURLGenerator setted exception should be thrown");
+}
+
+- (void)test_send_request {
 	NSString *responseText = [requestSender sendRequest:@"blubla"];
 
 	STAssertEqualObjects(responseText, answer, @"Received text not equals expected answer");
-	[requestSender release];
-	[connection release];
 }
+
+- (void)dealloc {
+	[connection release];
+	[requestSender release];
+	[super dealloc];
+}
+
 
 @end

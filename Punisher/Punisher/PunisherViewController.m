@@ -8,7 +8,6 @@
 
 #import "PunisherViewController.h"
 #import "RequestSender.h"
-#import "PrettyURLConnectionImpl.h"
 #import "WebSocketListener.h"
 
 NSString *const HELLO_MESSAGE = @"Press the button, please. ^_^";
@@ -26,6 +25,7 @@ NSString *const HELLO_MESSAGE = @"Press the button, please. ^_^";
 @synthesize gameOverMessenger = _gameOverMessenger;
 @synthesize partnerResultLabel;
 @synthesize listeningWebSocket = _listeningWebSocket;
+@synthesize requestSender = _requestSender;
 
 
 - (void)didReceiveMemoryWarning {
@@ -36,26 +36,17 @@ NSString *const HELLO_MESSAGE = @"Press the button, please. ^_^";
 
 #pragma mark - Realization
 
-- (void)postMessage:(NSString *)message {
-	id <PrettyURLConnection> connection = [PrettyURLConnectionImpl alloc];
-	RequestSender *requestSender = [[RequestSender alloc] initWithConnection:connection];
-	[requestSender sendRequest:message];
-
-	[connection release];
-	[requestSender release];
-}
-
 - (IBAction)zeroButtonClicked {
 	NSLog(@"You clicked 0");
 	debugLabel.text = @"0";
-	[self postMessage:debugLabel.text];
+	[self.requestSender sendRequest:debugLabel.text];
 	[theGame chooseAnswer:ZERO];
 }
 
 - (IBAction)oneButtonClicked {
 	NSLog(@"You clicked 1");
 	debugLabel.text = @"1";
-	[self postMessage:debugLabel.text];
+	[self.requestSender sendRequest:debugLabel.text];
 	[theGame chooseAnswer:ONE];
 }
 
@@ -68,11 +59,11 @@ NSString *const HELLO_MESSAGE = @"Press the button, please. ^_^";
 	[self.theGame addObserver:self];
 
 	_webSocketListener = [[WebSocketListener alloc] initWithMessageConsumer:self];
-	_listeningWebSocket = [[ZTWebSocket alloc] initWithURLString:@"ws://169.254.6.84:9000/socket/listen"
+	_listeningWebSocket = [[ZTWebSocket alloc] initWithURLString:@"ws://localhost:9000/socket/listen"
 														delegate:_webSocketListener];
 	[self.listeningWebSocket open];
 
-	[self postMessage:@"giveAnyTeam"];
+	[self.requestSender sendRequest:@"giveAnyTeam"];
 }
 
 - (void)viewDidUnload {
@@ -113,6 +104,7 @@ NSString *const HELLO_MESSAGE = @"Press the button, please. ^_^";
 	[_listeningWebSocket release], _listeningWebSocket = nil;
 	[_webSocketListener release], _webSocketListener = nil;
 
+	self.requestSender = nil;
 	[super dealloc];
 }
 
