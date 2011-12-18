@@ -9,20 +9,21 @@
 #import <UIKit/UIKit.h>
 #import "GameCompletionMessenger.h"
 #import "ZTWebSocket.h"
+#import "MessageConsumer.h"
 
 @class MiniGame;
 @class GameCompletionMessengerStub;
 
 extern NSString *const HELLO_MESSAGE;
 
-@interface PunisherViewController : UIViewController {
+@interface PunisherViewController : UIViewController <MessageConsumer> {
 
-    UIButton *zeroButton;
-    UIButton *oneButton;
-    UILabel *debugLabel;
-    UILabel *resultLabel;
-    
-    MiniGame *theGame;
+	UIButton *zeroButton;
+	UIButton *oneButton;
+	UILabel *debugLabel;
+	UILabel *resultLabel;
+
+	MiniGame *theGame;
 }
 
 - (IBAction)zeroButtonClicked;
@@ -36,7 +37,7 @@ extern NSString *const HELLO_MESSAGE;
 
 @property(retain, nonatomic) IBOutlet MiniGame *theGame;
 
-@property(nonatomic, retain) IBOutlet id<GameCompletionMessenger> gameOverMessenger;
+@property(nonatomic, retain) IBOutlet id <GameCompletionMessenger> gameOverMessenger;
 
 @property(nonatomic, retain) IBOutlet ZTWebSocket *listeningWebSocket;
 @end

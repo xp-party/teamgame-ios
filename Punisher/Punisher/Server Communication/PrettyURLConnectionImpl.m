@@ -12,7 +12,8 @@
 
 }
 
-- (NSData *)sendSynchronousRequest:(NSURLRequest *)request returningResponse:(NSURLResponse **)response error:(NSError **)error {
-	return [NSURLConnection sendSynchronousRequest:request returningResponse:response error:error];
+- (NSString *)sendSynchronousRequest:(NSURLRequest *)request returningResponse:(NSURLResponse **)response error:(NSError **)error {
+	NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:response error:error];
+	return [NSString stringWithUTF8String:[data bytes]];
 }
 @end

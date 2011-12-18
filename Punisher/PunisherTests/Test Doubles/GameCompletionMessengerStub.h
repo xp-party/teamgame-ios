@@ -9,7 +9,7 @@
 #import "GameCompletionMessenger.h"
 
 
-@interface GameCompletionMessengerStub : NSObject<GameCompletionMessenger>
+@interface GameCompletionMessengerStub : NSObject <GameCompletionMessenger>
 
 @property(readonly) BOOL called;
 

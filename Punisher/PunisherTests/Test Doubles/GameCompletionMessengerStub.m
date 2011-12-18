@@ -11,14 +11,14 @@
 @implementation GameCompletionMessengerStub {
 
 @private
-    BOOL _called;
+	BOOL _called;
 }
 
 
 @synthesize called = _called;
 
 - (void)showGameOver:(GameState)gameState {
-    _called = YES;
+	_called = YES;
 }
 
 

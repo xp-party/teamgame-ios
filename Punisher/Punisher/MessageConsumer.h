@@ -7,11 +7,7 @@
 
 #import "ZTWebSocket.h"
 
-@protocol MessageConsumerDelegate;
-
 @protocol MessageConsumer <ZTWebSocketDelegate>
-
-@property (nonatomic, retain) NSObject<MessageConsumerDelegate> *delegate;
 
 - (void)consumeMessage:(NSString *)message;
 

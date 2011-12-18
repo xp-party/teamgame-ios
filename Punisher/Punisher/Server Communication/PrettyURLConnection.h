@@ -6,5 +6,5 @@
 
 
 @protocol PrettyURLConnection <NSObject>
-- (NSData *)sendSynchronousRequest:(NSURLRequest *)request returningResponse:(NSURLResponse **)response error:(NSError **)error;
+- (NSString *)sendSynchronousRequest:(NSURLRequest *)request returningResponse:(NSURLResponse **)response error:(NSError **)error;
 @end

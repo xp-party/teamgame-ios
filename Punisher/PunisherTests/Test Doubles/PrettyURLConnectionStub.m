@@ -21,8 +21,8 @@
 	return self;
 }
 
-- (NSData *)sendSynchronousRequest:(NSURLRequest *)request returningResponse:(NSURLResponse **)response error:(NSError **)error {
-	return [_answer dataUsingEncoding:NSUTF8StringEncoding];
+- (NSString *)sendSynchronousRequest:(NSURLRequest *)request returningResponse:(NSURLResponse **)response error:(NSError **)error {
+	return self.answer;
 }
 
 - (void)dealloc {

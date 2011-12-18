@@ -12,7 +12,6 @@
 @interface PrettyURLConnectionStub : NSObject <PrettyURLConnection>
 - (id)initWithAnswer:(NSString *)answer;
 
-
 @property(nonatomic, retain) NSString *answer;
 
 @end

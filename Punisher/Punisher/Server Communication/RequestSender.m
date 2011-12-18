@@ -25,12 +25,12 @@
 	NSURLRequest *request = [NSURLRequest requestWithURL:postURL];
 	NSError **error = nil;
 
-	NSData *answerData = [self.connection sendSynchronousRequest:request returningResponse:NULL error:error];
+	NSString *answer = [self.connection sendSynchronousRequest:request returningResponse:NULL error:error];
 	if (error) {
 		NSLog(@"Error occured: %@", *error);
 	}
 
-	return [NSString stringWithUTF8String:[answerData bytes]];
+	return answer;
 }
 
 - (void)dealloc {

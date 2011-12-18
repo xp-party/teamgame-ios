@@ -7,16 +7,16 @@
 //
 
 #import "PunisherViewController.h"
-#import "ZTWebSocketDelegateImpl.h"
 #import "RequestSender.h"
 #import "PrettyURLConnectionImpl.h"
+#import "WebSocketListener.h"
 
 NSString *const HELLO_MESSAGE = @"Press the button, please. ^_^";
 
 @implementation PunisherViewController {
 @private
 	id <GameCompletionMessenger> _gameOverMessenger;
-	id <ZTWebSocketDelegate> _listeningDelegate;
+	WebSocketListener *_webSocketListener;
 }
 @synthesize zeroButton;
 @synthesize oneButton;
@@ -67,9 +67,9 @@ NSString *const HELLO_MESSAGE = @"Press the button, please. ^_^";
 	resultLabel.text = HELLO_MESSAGE;
 	[self.theGame addObserver:self];
 
-	_listeningDelegate = [[ZTWebSocketDelegateImpl alloc] init];
+	_webSocketListener = [[WebSocketListener alloc] initWithMessageConsumer:self];
 	_listeningWebSocket = [[ZTWebSocket alloc] initWithURLString:@"ws://169.254.6.84:9000/socket/listen"
-														delegate:_listeningDelegate];
+														delegate:_webSocketListener];
 	[self.listeningWebSocket open];
 
 	[self postMessage:@"giveAnyTeam"];
@@ -111,8 +111,16 @@ NSString *const HELLO_MESSAGE = @"Press the button, please. ^_^";
 
 	[_listeningWebSocket close];
 	[_listeningWebSocket release], _listeningWebSocket = nil;
-	[_listeningDelegate release], _listeningDelegate = nil;
+	[_webSocketListener release], _webSocketListener = nil;
 
 	[super dealloc];
 }
+
+
+#pragma mark - MessageConsumer
+
+- (void)consumeMessage:(NSString *)message {
+	NSLog(@"Punisher view contoller received message: %@", message);
+}
+
 @end
