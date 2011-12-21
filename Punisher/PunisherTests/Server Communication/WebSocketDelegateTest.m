@@ -14,15 +14,13 @@
 
 @synthesize receivedMessage = _receivedMessage;
 
-- (void)test_receiving_of_published_message {
-	WebSocketDelegateImpl *listener = [[WebSocketDelegateImpl alloc] initWithMessageConsumer:self];
-	FakeEventPublisher *fakePublisher = [[FakeEventPublisher alloc] initWithListner:listener];
-
+- (void)test_Should_Receive_Message_From_Web_Socket_Delegate_When_Come_Message_From_Web_Socket {
+    WebSocketDelegateImpl *listener = [[[WebSocketDelegateImpl alloc] initWithMessageConsumer:self] autorelease];
 	NSString *message = @"some message";
-	[fakePublisher publish:message];
+
+	[listener webSocket:NULL didReceiveMessage:message];
+
 	STAssertEqualObjects(self.receivedMessage, message, @"Doesn't receive published message");
-	[fakePublisher release];
-	[listener release];
 }
 
 - (void)consumeMessage:(NSString *)message {
