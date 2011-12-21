@@ -11,11 +11,11 @@
 
 #import <SenTestingKit/SenTestingKit.h>
 
-@protocol PrettyURLConnection;
+@protocol URLConnection;
 @class RequestSender;
 
 @interface RequestSenderTest : SenTestCase {
-	id <PrettyURLConnection> connection;
+	id <URLConnection> connection;
 	RequestSender *requestSender;
 	NSString *answer;
 }

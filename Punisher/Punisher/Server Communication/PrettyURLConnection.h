@@ -5,6 +5,10 @@
 //
 
 
-@protocol PrettyURLConnection <NSObject>
-- (NSString *)sendSynchronousRequest:(NSURLRequest *)request returningResponse:(NSURLResponse **)response error:(NSError **)error;
+#import <Foundation/Foundation.h>
+#import "URLConnection.h"
+
+
+@interface PrettyURLConnection : NSObject <URLConnection>
+
 @end

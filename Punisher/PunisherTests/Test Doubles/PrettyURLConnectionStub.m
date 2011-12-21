@@ -21,7 +21,7 @@
 	return self;
 }
 
-- (NSString *)sendSynchronousRequest:(NSURLRequest *)request returningResponse:(NSURLResponse **)response error:(NSError **)error {
+- (NSString *)sendSynchronousRequest:(NSURLRequest *)request {
 	return self.answer;
 }
 

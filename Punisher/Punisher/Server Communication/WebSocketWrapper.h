@@ -11,12 +11,12 @@
 @class ServerURLsGenerator;
 @protocol ZTWebSocketDelegate;
 
-@interface WebSocketListener : NSObject
+@interface WebSocketWrapper : NSObject
 @property(nonatomic, retain) ZTWebSocket *webSocket;
 
 @property(nonatomic, retain) IBOutlet ServerURLsGenerator *serverURLsGenerator;
 @property(nonatomic, retain) IBOutlet id <ZTWebSocketDelegate> webSocketDelegate;
 
-- (void)startListening;
+- (void)launchSocket;
 
 @end

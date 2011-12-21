@@ -8,14 +8,14 @@
 
 #import "PunisherAppDelegate.h"
 
-#import "WebSocketListener.h"
 #import "PunisherViewController.h"
+#import "WebSocketWrapper.h"
 
 @implementation PunisherAppDelegate
 
 @synthesize window = _window;
 @synthesize viewController = _viewController;
-@synthesize webSocketListner = _webSocketListner;
+@synthesize webSocketWrapper = _webSocketWrapper;
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -23,7 +23,7 @@
 
 	self.window.rootViewController = self.viewController;
 
-	[self.webSocketListner startListening];
+	[self.webSocketWrapper launchSocket];
 
 	[self.window makeKeyAndVisible];
 	return YES;
@@ -66,7 +66,7 @@ See also applicationDidEnterBackground:.
 - (void)dealloc {
 	[_window release];
 	[_viewController release];
-	self.webSocketListner = nil;
+	self.webSocketWrapper = nil;
 	[super dealloc];
 }
 

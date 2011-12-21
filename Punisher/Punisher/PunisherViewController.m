@@ -68,7 +68,7 @@ NSString *const HELLO_MESSAGE = @"Press the button, please. ^_^";
 }
 
 - (void)dealloc {
-	[self.theGame removeObserver:self forKeyPath:STATE_PROPERTY context:nil];
+	[self.theGame removeObserver:self forKeyPath:STATE_PROPERTY];
 	[debugLabel release];
 	[theGame release];
 	[zeroButton release];
@@ -93,18 +93,20 @@ NSString *const HELLO_MESSAGE = @"Press the button, please. ^_^";
 
 #pragma mark - Game Action
 
+- (void)didSelectAnswer:(enum Answer)answer {
+    NSString *stringWithAnswer = [[NSNumber numberWithInt:answer] description];
+    NSLog(@"You clicked %@", stringWithAnswer);
+    debugLabel.text = stringWithAnswer;
+    [self.requestSender postMessage:debugLabel.text];
+    [theGame chooseAnswer:answer];
+}
+
 - (IBAction)zeroButtonClicked {
-	NSLog(@"You clicked 0");
-	debugLabel.text = @"0";
-	[self.requestSender postMessage:debugLabel.text];
-	[theGame chooseAnswer:ZERO];
+    [self didSelectAnswer:ZERO];
 }
 
 - (IBAction)oneButtonClicked {
-	NSLog(@"You clicked 1");
-	debugLabel.text = @"1";
-	[self.requestSender postMessage:debugLabel.text];
-	[theGame chooseAnswer:ONE];
+	[self didSelectAnswer:ONE];
 }
 
 - (IBAction)startGame {

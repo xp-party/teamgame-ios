@@ -110,7 +110,7 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">webSocketListner</string>
+						<string key="label">webSocketWrapper</string>
 						<reference key="source" ref="664661524"/>
 						<reference key="destination" ref="385117204"/>
 					</object>
@@ -275,11 +275,11 @@
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>RequestSender</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-					<string>PrettyURLConnectionImpl</string>
+					<string>PrettyURLConnection</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>PunisherAppDelegate</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-					<string>WebSocketListener</string>
+					<string>WebSocketWrapper</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>WebSocketDelegateImpl</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>

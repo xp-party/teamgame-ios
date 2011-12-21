@@ -7,15 +7,15 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol PrettyURLConnection;
+@protocol URLConnection;
 @class ServerURLsGenerator;
 
 @interface RequestSender : NSObject
 
-@property(nonatomic, retain) IBOutlet id <PrettyURLConnection> connection;
+@property(nonatomic, retain) IBOutlet id <URLConnection> connection;
 @property(nonatomic, retain) IBOutlet ServerURLsGenerator *serverURLsGenerator;
 
-- (id)initWithConnection:(id <PrettyURLConnection>)connection;
+- (id)initWithConnection:(id <URLConnection>)connection;
 
 - (NSString *)postMessage:(NSString *)message;
 

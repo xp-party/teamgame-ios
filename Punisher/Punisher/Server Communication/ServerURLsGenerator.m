@@ -41,8 +41,8 @@ NSString *DEFAULT_SERVER_URL = @"localhost:9000";
 	self.webSocketURL = NULL;
 	self.parametrizedPostMessageURL = NULL;
 
-	self.giveMyTeamURL = nil;
-	[super dealloc];
+	self.giveMyTeamURL = NULL;
+    [super dealloc];
 }
 
 - (NSString *)generateWebSocketURL {

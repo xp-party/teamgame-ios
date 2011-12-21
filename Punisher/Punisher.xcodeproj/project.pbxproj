@@ -35,7 +35,7 @@
 		B1DD66DB1452C348000F3982 /* GameCompletionMessengerStub.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F3981 /* GameCompletionMessengerStub.m */; };
 		B1DD66DB1452C348000F398A /* RequestSenderTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F3989 /* RequestSenderTest.m */; };
 		B1DD66DB1452C348000F398E /* RequestSender.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F398D /* RequestSender.m */; };
-		B1DD66DB1452C348000F3991 /* PrettyURLConnectionImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F3990 /* PrettyURLConnectionImpl.m */; };
+		B1DD66DB1452C348000F3991 /* PrettyURLConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F3990 /* PrettyURLConnection.m */; };
 		B1DD66DB1452C348000F3994 /* PrettyURLConnectionStub.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F3993 /* PrettyURLConnectionStub.m */; };
 		B1DD66DB1452C348000F3999 /* WebSocketDelegateTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F3998 /* WebSocketDelegateTest.m */; };
 		B1DD66DB1452C348000F399B /* FakeEventPublisher.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F399A /* FakeEventPublisher.m */; };
@@ -43,7 +43,7 @@
 		B1DD66DB1452C348000F39A4 /* ServerURLsGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F39A3 /* ServerURLsGenerator.m */; };
 		B1DD66DB1452C348000F39A7 /* ServerURLsGeneratorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F39A6 /* ServerURLsGeneratorTest.m */; };
 		B1DD66DB1452C348000F39AB /* WebSocketListenerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F39AA /* WebSocketListenerTest.m */; };
-		B1DD66DB1452C348000F39AD /* WebSocketListener.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F39AC /* WebSocketListener.m */; };
+		B1DD66DB1452C348000F39AD /* WebSocketWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F39AC /* WebSocketWrapper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,7 +101,6 @@
 		B15EC0181452B40900772300 /* Zimt.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Zimt.xcodeproj; path = ../zimt/src/Zimt.xcodeproj; sourceTree = "<group>"; };
 		B15EC0221452B43800772300 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		B15EC0251452B53400772301 /* MessageConsumer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageConsumer.h; sourceTree = "<group>"; };
-		B15EC0251452B53400772305 /* MessageConsumerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageConsumerDelegate.h; sourceTree = "<group>"; };
 		B1DD66DA1452C348000F3969 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		B1DD66DB1452C348000F396A /* MiniGameTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniGameTest.h; sourceTree = "<group>"; };
 		B1DD66DB1452C348000F396B /* MiniGameTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MiniGameTest.m; sourceTree = "<group>"; };
@@ -116,11 +115,11 @@
 		B1DD66DB1452C348000F3989 /* RequestSenderTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestSenderTest.m; sourceTree = "<group>"; };
 		B1DD66DB1452C348000F398D /* RequestSender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestSender.m; sourceTree = "<group>"; };
 		B1DD66DB1452C348000F398F /* RequestSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestSender.h; sourceTree = "<group>"; };
-		B1DD66DB1452C348000F3990 /* PrettyURLConnectionImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrettyURLConnectionImpl.m; sourceTree = "<group>"; };
-		B1DD66DB1452C348000F3992 /* PrettyURLConnectionImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrettyURLConnectionImpl.h; sourceTree = "<group>"; };
+		B1DD66DB1452C348000F3990 /* PrettyURLConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrettyURLConnection.m; sourceTree = "<group>"; };
+		B1DD66DB1452C348000F3992 /* PrettyURLConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrettyURLConnection.h; sourceTree = "<group>"; };
 		B1DD66DB1452C348000F3993 /* PrettyURLConnectionStub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrettyURLConnectionStub.m; sourceTree = "<group>"; };
 		B1DD66DB1452C348000F3995 /* PrettyURLConnectionStub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrettyURLConnectionStub.h; sourceTree = "<group>"; };
-		B1DD66DB1452C348000F3996 /* PrettyURLConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrettyURLConnection.h; sourceTree = "<group>"; };
+		B1DD66DB1452C348000F3996 /* URLConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLConnection.h; sourceTree = "<group>"; };
 		B1DD66DB1452C348000F3997 /* WebSocketDelegateTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebSocketDelegateTest.h; sourceTree = "<group>"; };
 		B1DD66DB1452C348000F3998 /* WebSocketDelegateTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebSocketDelegateTest.m; sourceTree = "<group>"; };
 		B1DD66DB1452C348000F399A /* FakeEventPublisher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakeEventPublisher.m; sourceTree = "<group>"; };
@@ -133,8 +132,8 @@
 		B1DD66DB1452C348000F39A8 /* ServerURLsGeneratorTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerURLsGeneratorTest.h; sourceTree = "<group>"; };
 		B1DD66DB1452C348000F39A9 /* WebSocketListenerTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebSocketListenerTest.h; sourceTree = "<group>"; };
 		B1DD66DB1452C348000F39AA /* WebSocketListenerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebSocketListenerTest.m; sourceTree = "<group>"; };
-		B1DD66DB1452C348000F39AC /* WebSocketListener.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebSocketListener.m; sourceTree = "<group>"; };
-		B1DD66DB1452C348000F39AE /* WebSocketListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebSocketListener.h; sourceTree = "<group>"; };
+		B1DD66DB1452C348000F39AC /* WebSocketWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebSocketWrapper.m; sourceTree = "<group>"; };
+		B1DD66DB1452C348000F39AE /* WebSocketWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebSocketWrapper.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,7 +226,6 @@
 				405D4D781497331F00E1B79F /* GameCompleteController.h */,
 				405D4D791497331F00E1B79F /* GameCompleteController.m */,
 				40BE1C4814840C27005DB17A /* Model */,
-				B15EC0251452B53400772305 /* MessageConsumerDelegate.h */,
 				B15EC0251452B53400772301 /* MessageConsumer.h */,
 				B15EBFED1452B3DF00772300 /* PunisherAppDelegate.h */,
 				B15EBFEE1452B3DF00772300 /* PunisherAppDelegate.m */,
@@ -302,15 +300,15 @@
 		B1DD66DB1452C348000F398B /* Server Communication */ = {
 			isa = PBXGroup;
 			children = (
-				B1DD66DB1452C348000F39AE /* WebSocketListener.h */,
-				B1DD66DB1452C348000F39AC /* WebSocketListener.m */,
+				B1DD66DB1452C348000F39AE /* WebSocketWrapper.h */,
+				B1DD66DB1452C348000F39AC /* WebSocketWrapper.m */,
 				B1DD66DB1452C348000F39A5 /* ServerURLsGenerator.h */,
 				B1DD66DB1452C348000F39A3 /* ServerURLsGenerator.m */,
 				B1DD66DB1452C348000F399F /* WebSocketDelegateImpl.h */,
 				B1DD66DB1452C348000F399D /* WebSocketDelegateImpl.m */,
-				B1DD66DB1452C348000F3996 /* PrettyURLConnection.h */,
-				B1DD66DB1452C348000F3992 /* PrettyURLConnectionImpl.h */,
-				B1DD66DB1452C348000F3990 /* PrettyURLConnectionImpl.m */,
+				B1DD66DB1452C348000F3996 /* URLConnection.h */,
+				B1DD66DB1452C348000F3992 /* PrettyURLConnection.h */,
+				B1DD66DB1452C348000F3990 /* PrettyURLConnection.m */,
 				B1DD66DB1452C348000F398F /* RequestSender.h */,
 				B1DD66DB1452C348000F398D /* RequestSender.m */,
 			);
@@ -464,10 +462,10 @@
 				405D4D7A1497331F00E1B79F /* GameCompleteController.m in Sources */,
 				405D4D8714973BE500E1B79F /* MiniGame.m in Sources */,
 				B1DD66DB1452C348000F398E /* RequestSender.m in Sources */,
-				B1DD66DB1452C348000F3991 /* PrettyURLConnectionImpl.m in Sources */,
+				B1DD66DB1452C348000F3991 /* PrettyURLConnection.m in Sources */,
 				B1DD66DB1452C348000F399E /* WebSocketDelegateImpl.m in Sources */,
 				B1DD66DB1452C348000F39A4 /* ServerURLsGenerator.m in Sources */,
-				B1DD66DB1452C348000F39AD /* WebSocketListener.m in Sources */,
+				B1DD66DB1452C348000F39AD /* WebSocketWrapper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

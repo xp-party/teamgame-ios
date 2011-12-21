@@ -5,19 +5,19 @@
 //
 
 
-#import "WebSocketListener.h"
+#import "WebSocketWrapper.h"
 #import "ZTWebSocket.h"
 #import "ServerURLsGenerator.h"
 
 
-@implementation WebSocketListener {
+@implementation WebSocketWrapper {
 
 }
 @synthesize webSocket = _webSocket;
 @synthesize serverURLsGenerator = _serverURLsGenerator;
 @synthesize webSocketDelegate = _webSocketDelegate;
 
-- (void)startListening {
+- (void)launchSocket {
 	ZTWebSocket *webSocket = [[ZTWebSocket alloc] initWithURLString:[self.serverURLsGenerator generateWebSocketURL]
 														   delegate:self.webSocketDelegate];
 	self.webSocket = webSocket;
@@ -27,7 +27,8 @@
 }
 
 - (void)dealloc {
-	self.webSocket = nil;
+    [self.webSocket close];
+    self.webSocket = nil;
 	self.serverURLsGenerator = nil;
 	self.webSocketDelegate = nil;
 	[super dealloc];

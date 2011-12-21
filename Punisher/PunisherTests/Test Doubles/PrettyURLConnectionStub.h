@@ -6,10 +6,10 @@
 
 
 #import <Foundation/Foundation.h>
-#import "PrettyURLConnection.h"
+#import "../../Punisher/Server Communication/URLConnection.h"
 
 
-@interface PrettyURLConnectionStub : NSObject <PrettyURLConnection>
+@interface PrettyURLConnectionStub : NSObject <URLConnection>
 - (id)initWithAnswer:(NSString *)answer;
 
 @property(nonatomic, retain) NSString *answer;

@@ -6,7 +6,7 @@
 
 
 #import "RequestSender.h"
-#import "PrettyURLConnection.h"
+#import "URLConnection.h"
 #import "ServerURLsGenerator.h"
 
 
@@ -18,7 +18,7 @@
 @synthesize serverURLsGenerator = _serverURLsGenerator;
 
 
-- (id)initWithConnection:(id <PrettyURLConnection>)connection {
+- (id)initWithConnection:(id <URLConnection>)connection {
 	self.connection = connection;
 	return self;
 }
@@ -27,12 +27,7 @@
 	NSURL *postURL = [NSURL URLWithString:url];
 	NSURLRequest *request = [NSURLRequest requestWithURL:postURL];
 	[NSURLRequest requestWithURL:postURL];
-	NSError **error = nil;
-
-	NSString *answer = [self.connection sendSynchronousRequest:request returningResponse:NULL error:error];
-	if (error) {
-		NSLog(@"Error occured: %@", *error);
-	}
+	NSString *answer = [self.connection sendSynchronousRequest:request];
 	return answer;
 }
 
