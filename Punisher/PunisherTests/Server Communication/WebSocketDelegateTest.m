@@ -7,7 +7,6 @@
 //
 
 #import "WebSocketDelegateTest.h"
-#import "FakeEventPublisher.h"
 #import "WebSocketDelegateImpl.h"
 
 @implementation WebSocketDelegateTest
@@ -16,15 +15,15 @@
 
 - (void)test_Should_Receive_Message_From_Web_Socket_Delegate_When_Come_Message_From_Web_Socket {
     WebSocketDelegateImpl *listener = [[[WebSocketDelegateImpl alloc] initWithMessageConsumer:self] autorelease];
-	NSString *message = @"some message";
+    NSString *message = @"some message";
 
-	[listener webSocket:NULL didReceiveMessage:message];
+    [listener webSocket:NULL didReceiveMessage:message];
 
-	STAssertEqualObjects(self.receivedMessage, message, @"Doesn't receive published message");
+    STAssertEqualObjects(self.receivedMessage, message, @"Doesn't receive published message");
 }
 
 - (void)consumeMessage:(NSString *)message {
-	self.receivedMessage = message;
+    self.receivedMessage = message;
 }
 
 @end
