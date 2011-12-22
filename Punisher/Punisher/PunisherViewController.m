@@ -113,6 +113,7 @@ NSString *const HELLO_MESSAGE = @"Press the button, please. ^_^";
 	NSString *playerNumber = [self.requestSender getMyPlayerNumber];
 	NSLog(@"Obtained My player number: %@", playerNumber);
 
+    self.spinner.hidden = NO;
 	[self.spinner startAnimating];
 	self.statusLabel.text = @"ждём второго игрока";
 }
