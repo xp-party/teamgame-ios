@@ -8,6 +8,7 @@
 
 #import "PunisherViewController.h"
 #import "RequestSender.h"
+#import "TGUserNameGenerator.h"
 
 NSString *const HELLO_MESSAGE = @"Press the button, please. ^_^";
 
@@ -26,6 +27,7 @@ NSString *const HELLO_MESSAGE = @"Press the button, please. ^_^";
 @synthesize serverURLsGenerator = _serverURLsGenerator;
 @synthesize spinner = _spinner;
 @synthesize statusLabel = _statusLabel;
+@synthesize userNameGenerator = _userNameGenerator;
 
 
 - (void)didReceiveMemoryWarning {
@@ -81,6 +83,7 @@ NSString *const HELLO_MESSAGE = @"Press the button, please. ^_^";
 	self.serverURLsGenerator = nil;
 	self.spinner = nil;
 	self.statusLabel = nil;
+	self.userNameGenerator = nil;
 	[super dealloc];
 }
 
@@ -89,6 +92,8 @@ NSString *const HELLO_MESSAGE = @"Press the button, please. ^_^";
 
 - (void)consumeMessage:(NSDictionary *)message {
 	NSLog(@"Punisher view contoller received message: %@", message);
+
+	[self.spinner stopAnimating];
 }
 
 #pragma mark - Game Action
@@ -110,9 +115,14 @@ NSString *const HELLO_MESSAGE = @"Press the button, please. ^_^";
 }
 
 - (IBAction)startGame {
-	[self.requestSender sendConnectToTeamMessage];
+	NSDictionary *teamInfo = [self.requestSender registerAndGetTeamInformation];
+	NSLog(@"Obtained teamInfo: \n%@", teamInfo);
+	
+	int playerId = [[teamInfo valueForKey:PLAYER_ID_PARAMETER_NAME] intValue];
+	
+	[self.requestSender sayHelloMessageFromPlayerWithId:playerId andName:[self.userNameGenerator userName]];
 
-    self.spinner.hidden = NO;
+	self.spinner.hidden = NO;
 	[self.spinner startAnimating];
 	self.statusLabel.text = @"ждём второго игрока";
 }

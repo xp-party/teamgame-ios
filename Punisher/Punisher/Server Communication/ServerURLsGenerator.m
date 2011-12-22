@@ -7,7 +7,8 @@
 
 #import "ServerURLsGenerator.h"
 
-NSString *DEFAULT_SERVER_URL = @"localhost:9000";
+NSString *const DEFAULT_SERVER_URL = @"localhost:9000";
+NSString *const USER_NAME_PARAMETER_NAME = @"userName";
 
 
 @implementation ServerURLsGenerator {
@@ -31,7 +32,7 @@ NSString *DEFAULT_SERVER_URL = @"localhost:9000";
 - (ServerURLsGenerator *)initWithServerAddress:(NSString *)serverAddress {
 	self.serverAddress = serverAddress;
 	self.webSocketURL = [NSString stringWithFormat:@"ws://%@/socket/listen", serverAddress];
-	self.giveMyTeamURL = [NSString stringWithFormat:@"http://%@/giveMyTeam", serverAddress];
+	self.giveMyTeamURL = [NSString stringWithFormat:@"http://%@/giveMyTeam?%@=%@", serverAddress, USER_NAME_PARAMETER_NAME, @"%@"];
 	self.parametrizedPostMessageURL = [NSString stringWithFormat:@"http://%@/socket/post?message=%@", serverAddress, @"%@"];
 	return self;
 }
@@ -53,7 +54,7 @@ NSString *DEFAULT_SERVER_URL = @"localhost:9000";
 	return [NSString stringWithFormat:self.parametrizedPostMessageURL, message];
 }
 
-- (NSString *)generateGiveMyTeamRequestURL {
-	return self.giveMyTeamURL;
+- (NSString *)generateGiveMyTeamRequestURLForUserName:(NSString *)userName {
+	return [NSString stringWithFormat:self.giveMyTeamURL, userName];
 }
 @end

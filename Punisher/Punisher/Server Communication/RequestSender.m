@@ -8,7 +8,10 @@
 #import "RequestSender.h"
 #import "URLConnection.h"
 #import "ServerURLsGenerator.h"
+#import "JSONKit.h"
 
+NSString *const PLAYER_ID_PARAMETER_NAME = @"playerId";
+NSString *const PLAYER_NAME_PARAMETER_NAME = @"playerName";
 
 @implementation RequestSender {
 
@@ -25,6 +28,7 @@
 
 - (NSString *)sendRequestToURL:(NSString *)url {
 	NSURL *postURL = [NSURL URLWithString:url];
+	NSLog(@"Sending request: %@", url);
 	NSURLRequest *request = [NSURLRequest requestWithURL:postURL];
 	[NSURLRequest requestWithURL:postURL];
 	NSString *answer = [self.connection sendSynchronousRequest:request];
@@ -46,13 +50,22 @@
 	return answer;
 }
 
-- (void)sendConnectToTeamMessage {
+- (NSDictionary *)registerAndGetTeamInformation {
 	[self checkAvailabilityOfServerURLGenerator];
-	NSString *url = [self.serverURLsGenerator generateGiveMyTeamRequestURL];
+	NSString *url = [self.serverURLsGenerator generateGiveMyTeamRequestURLForUserName:nil];
 	NSString *answer = [self sendRequestToURL:url];
 
-	return answer;
+	return [answer objectFromJSONString];
 }
+
+- (void)sayHelloMessageFromPlayerWithId:(int)playerId andName:(NSString *)playerName {
+	NSArray *values = [NSArray arrayWithObjects:[NSNumber numberWithInt:playerId], playerName, NULL];
+	NSArray *keys = [NSArray arrayWithObjects:PLAYER_ID_PARAMETER_NAME, PLAYER_NAME_PARAMETER_NAME, NULL];
+	NSDictionary *messageParams = [NSDictionary dictionaryWithObjects:values
+															  forKeys:keys];
+	[self postMessage:[messageParams JSONString]];
+}
+
 
 - (void)dealloc {
 	self.serverURLsGenerator = nil;

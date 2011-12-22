@@ -14,6 +14,7 @@
 @class GameCompletionMessengerStub;
 @class RequestSender;
 @class ServerURLsGenerator;
+@class TGUserNameGenerator;
 
 extern NSString *const HELLO_MESSAGE;
 
@@ -40,6 +41,7 @@ extern NSString *const HELLO_MESSAGE;
 
 @property(nonatomic, retain) IBOutlet RequestSender *requestSender;
 @property(nonatomic, retain) IBOutlet ServerURLsGenerator *serverURLsGenerator;
+@property(nonatomic, retain) IBOutlet TGUserNameGenerator *userNameGenerator;
 
 - (IBAction)zeroButtonClicked;
 

@@ -277,6 +277,9 @@
 			<object class="IBUICustomObject" id="554236166">
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 			</object>
+			<object class="IBUICustomObject" id="345400295">
+				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+			</object>
 		</object>
 		<object class="IBObjectContainer" key="IBDocument.Objects">
 			<object class="NSMutableArray" key="connectionRecords">
@@ -352,6 +355,14 @@
 						<reference key="destination" ref="384811112"/>
 					</object>
 					<int key="connectionID">41</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">userNameGenerator</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="345400295"/>
+					</object>
+					<int key="connectionID">47</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
@@ -476,6 +487,11 @@
 						<reference key="object" ref="1013847409"/>
 						<reference key="parent" ref="774585933"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">46</int>
+						<reference key="object" ref="345400295"/>
+						<reference key="parent" ref="0"/>
+					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -497,6 +513,8 @@
 					<string>39.IBPluginDependency</string>
 					<string>44.IBPluginDependency</string>
 					<string>45.IBPluginDependency</string>
+					<string>46.CustomClassName</string>
+					<string>46.IBPluginDependency</string>
 					<string>6.IBPluginDependency</string>
 					<string>8.IBPluginDependency</string>
 					<string>9.IBPluginDependency</string>
@@ -518,6 +536,8 @@
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+					<string>TGUserNameGenerator</string>
+					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -535,7 +555,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">45</int>
+			<int key="maxID">47</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -611,6 +631,7 @@
 							<string>spinner</string>
 							<string>statusLabel</string>
 							<string>theGame</string>
+							<string>userNameGenerator</string>
 							<string>zeroButton</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
@@ -624,6 +645,7 @@
 							<string>UIActivityIndicatorView</string>
 							<string>UILabel</string>
 							<string>MiniGame</string>
+							<string>TGUserNameGenerator</string>
 							<string>UIButton</string>
 						</object>
 					</object>
@@ -640,6 +662,7 @@
 							<string>spinner</string>
 							<string>statusLabel</string>
 							<string>theGame</string>
+							<string>userNameGenerator</string>
 							<string>zeroButton</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
@@ -679,6 +702,10 @@
 							<object class="IBToOneOutletInfo">
 								<string key="name">theGame</string>
 								<string key="candidateClassName">MiniGame</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">userNameGenerator</string>
+								<string key="candidateClassName">TGUserNameGenerator</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">zeroButton</string>
@@ -737,6 +764,14 @@
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">./Classes/ServerURLsGenerator.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">TGUserNameGenerator</string>
+					<string key="superclassName">NSObject</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/TGUserNameGenerator.h</string>
 					</object>
 				</object>
 			</object>

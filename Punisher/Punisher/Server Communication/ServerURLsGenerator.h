@@ -7,7 +7,8 @@
 
 #import <Foundation/Foundation.h>
 
-extern NSString *DEFAULT_SERVER_URL;
+extern NSString *const DEFAULT_SERVER_URL;
+extern NSString *const USER_NAME_PARAMETER_NAME;
 
 @interface ServerURLsGenerator : NSObject
 @property(nonatomic, retain) NSString *serverAddress;
@@ -21,5 +22,5 @@ extern NSString *DEFAULT_SERVER_URL;
 
 - (NSString *)generateWebSocketURL;
 
-- (NSString *)generateGiveMyTeamRequestURL;
+- (NSString *)generateGiveMyTeamRequestURLForUserName:(NSString *)userName;
 @end

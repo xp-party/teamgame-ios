@@ -7,6 +7,10 @@
 
 #import <Foundation/Foundation.h>
 
+extern NSString *const PLAYER_ID_PARAMETER_NAME;
+extern NSString *const PLAYER_NAME_PARAMETER_NAME;
+
+
 @protocol URLConnection;
 @class ServerURLsGenerator;
 
@@ -19,5 +23,7 @@
 
 - (NSString *)postMessage:(NSString *)message;
 
-- (void)sendConnectToTeamMessage;
+- (NSDictionary *)registerAndGetTeamInformation;
+
+- (void)sayHelloMessageFromPlayerWithId:(int)playerId andName:(NSString *)playerName;
 @end
