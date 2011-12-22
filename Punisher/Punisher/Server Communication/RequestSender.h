@@ -19,5 +19,5 @@
 
 - (NSString *)postMessage:(NSString *)message;
 
-- (NSString *)getMyPlayerNumber;
+- (void)sendConnectToTeamMessage;
 @end

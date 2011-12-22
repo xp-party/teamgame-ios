@@ -11,19 +11,22 @@
 
 @implementation WebSocketDelegateTest
 
-@synthesize receivedMessage = _receivedMessage;
+@synthesize receivedDictionary = _receivedDictionary;
 
 - (void)test_Should_Receive_Message_From_Web_Socket_Delegate_When_Come_Message_From_Web_Socket {
     WebSocketDelegateImpl *listener = [[[WebSocketDelegateImpl alloc] initWithMessageConsumer:self] autorelease];
-    NSString *message = @"some message";
+	NSString *originalMessage = @"some message";
+	NSString *fieldName = @"msg";
+	NSString *jsonMessage = [NSString stringWithFormat:@"{\"%@\": \"%@\"}", fieldName, originalMessage];
+	[listener webSocket:NULL didReceiveMessage:jsonMessage];
 
-    [listener webSocket:NULL didReceiveMessage:message];
+	NSString *receivedMessage = [self.receivedDictionary valueForKey:fieldName];
 
-    STAssertEqualObjects(self.receivedMessage, message, @"Doesn't receive published message");
+    STAssertEqualObjects(receivedMessage, originalMessage, @"Doesn't receive published message");
 }
 
-- (void)consumeMessage:(NSString *)message {
-    self.receivedMessage = message;
+- (void)consumeMessage:(NSDictionary *)message {
+    self.receivedDictionary = message;
 }
 
 @end

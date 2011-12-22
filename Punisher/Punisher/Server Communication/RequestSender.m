@@ -46,7 +46,7 @@
 	return answer;
 }
 
-- (NSString *)getMyPlayerNumber {
+- (void)sendConnectToTeamMessage {
 	[self checkAvailabilityOfServerURLGenerator];
 	NSString *url = [self.serverURLsGenerator generateGiveMyTeamRequestURL];
 	NSString *answer = [self sendRequestToURL:url];

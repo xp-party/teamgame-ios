@@ -14,6 +14,6 @@
 
 @interface WebSocketDelegateTest : SenTestCase <MessageConsumer>
 
-@property(nonatomic, assign) NSString *receivedMessage;
+@property(nonatomic, assign) NSDictionary *receivedDictionary;
 
 @end

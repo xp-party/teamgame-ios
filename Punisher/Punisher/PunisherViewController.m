@@ -87,7 +87,7 @@ NSString *const HELLO_MESSAGE = @"Press the button, please. ^_^";
 
 #pragma mark - MessageConsumer
 
-- (void)consumeMessage:(NSString *)message {
+- (void)consumeMessage:(NSDictionary *)message {
 	NSLog(@"Punisher view contoller received message: %@", message);
 }
 
@@ -110,8 +110,7 @@ NSString *const HELLO_MESSAGE = @"Press the button, please. ^_^";
 }
 
 - (IBAction)startGame {
-	NSString *playerNumber = [self.requestSender getMyPlayerNumber];
-	NSLog(@"Obtained My player number: %@", playerNumber);
+	[self.requestSender sendConnectToTeamMessage];
 
     self.spinner.hidden = NO;
 	[self.spinner startAnimating];

@@ -7,6 +7,7 @@
 
 #import "WebSocketDelegateImpl.h"
 #import "MessageConsumer.h"
+#import "JSONKit.h"
 
 
 @implementation WebSocketDelegateImpl {
@@ -27,7 +28,8 @@
 
 - (void)webSocket:(ZTWebSocket *)webSocket didReceiveMessage:(NSString *)message {
 	NSLog(@"WebSocket %@ received message:\n%@", webSocket.url, message);
-	[self.messageConsumer consumeMessage:message];
+
+	[self.messageConsumer consumeMessage:[message objectFromJSONString]];
 }
 
 - (void)webSocket:(ZTWebSocket *)webSocket didFailWithError:(NSError *)error {
