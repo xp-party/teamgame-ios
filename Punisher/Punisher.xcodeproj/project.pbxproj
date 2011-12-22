@@ -43,6 +43,8 @@
 		B1DD66DB1452C348000F39A7 /* ServerURLsGeneratorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F39A6 /* ServerURLsGeneratorTest.m */; };
 		B1DD66DB1452C348000F39AB /* WebSocketListenerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F39AA /* WebSocketListenerTest.m */; };
 		B1DD66DB1452C348000F39AD /* WebSocketWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F39AC /* WebSocketWrapper.m */; };
+		B1DD66DB1452C348000F39B1 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F39B0 /* JSONKit.m */; };
+		B1DD66DB1452C348000F39B5 /* JSONSerializationTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F39B4 /* JSONSerializationTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +133,10 @@
 		B1DD66DB1452C348000F39AA /* WebSocketListenerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebSocketListenerTest.m; sourceTree = "<group>"; };
 		B1DD66DB1452C348000F39AC /* WebSocketWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebSocketWrapper.m; sourceTree = "<group>"; };
 		B1DD66DB1452C348000F39AE /* WebSocketWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebSocketWrapper.h; sourceTree = "<group>"; };
+		B1DD66DB1452C348000F39B0 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSONKit.m; path = libs/JSONKit/JSONKit.m; sourceTree = "<group>"; };
+		B1DD66DB1452C348000F39B2 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONKit.h; path = libs/JSONKit/JSONKit.h; sourceTree = "<group>"; };
+		B1DD66DB1452C348000F39B3 /* JSONSerializationTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONSerializationTest.h; sourceTree = "<group>"; };
+		B1DD66DB1452C348000F39B4 /* JSONSerializationTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONSerializationTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +215,7 @@
 				B15EBFE01452B3DE00772300 /* Foundation.framework */,
 				B15EBFE21452B3DE00772300 /* CoreGraphics.framework */,
 				B15EBFFF1452B3DF00772300 /* SenTestingKit.framework */,
+				B1DD66DB1452C348000F39AF /* JSONKit */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -313,6 +320,8 @@
 		B1DD66DB1452C348000F398C /* Server Communication */ = {
 			isa = PBXGroup;
 			children = (
+				B1DD66DB1452C348000F39B4 /* JSONSerializationTest.m */,
+				B1DD66DB1452C348000F39B3 /* JSONSerializationTest.h */,
 				B1DD66DB1452C348000F39AA /* WebSocketListenerTest.m */,
 				B1DD66DB1452C348000F39A9 /* WebSocketListenerTest.h */,
 				B1DD66DB1452C348000F39A8 /* ServerURLsGeneratorTest.h */,
@@ -323,6 +332,15 @@
 				B1DD66DB1452C348000F3988 /* RequestSenderTest.h */,
 			);
 			path = "Server Communication";
+			sourceTree = "<group>";
+		};
+		B1DD66DB1452C348000F39AF /* JSONKit */ = {
+			isa = PBXGroup;
+			children = (
+				B1DD66DB1452C348000F39B2 /* JSONKit.h */,
+				B1DD66DB1452C348000F39B0 /* JSONKit.m */,
+			);
+			name = JSONKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -461,6 +479,7 @@
 				B1DD66DB1452C348000F399E /* WebSocketDelegateImpl.m in Sources */,
 				B1DD66DB1452C348000F39A4 /* ServerURLsGenerator.m in Sources */,
 				B1DD66DB1452C348000F39AD /* WebSocketWrapper.m in Sources */,
+				B1DD66DB1452C348000F39B1 /* JSONKit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,6 +496,7 @@
 				B1DD66DB1452C348000F3999 /* WebSocketDelegateTest.m in Sources */,
 				B1DD66DB1452C348000F39A7 /* ServerURLsGeneratorTest.m in Sources */,
 				B1DD66DB1452C348000F39AB /* WebSocketListenerTest.m in Sources */,
+				B1DD66DB1452C348000F39B5 /* JSONSerializationTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
