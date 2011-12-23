@@ -7,7 +7,7 @@
 
 #import "ServerURLsGenerator.h"
 
-NSString *const DEFAULT_SERVER_URL = @"192.168.1.2:9000";
+NSString *const DEFAULT_SERVER_URL = @"localhost:9000";
 NSString *const USER_NAME_PARAMETER_NAME = @"userName";
 
 

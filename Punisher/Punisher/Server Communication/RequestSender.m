@@ -33,9 +33,9 @@ NSString *const ECHO_HELLO_MESSAGE_TYPE = @"echo-hello!";
 
 - (NSString *)sendRequestToURL:(NSString *)url {
 	NSString *escapedURL = [url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-	NSURL *postURL = [NSURL URLWithString:escapedURL];
-	NSLog(@"Sending request: %@", postURL);
-	NSURLRequest *request = [NSURLRequest requestWithURL:postURL];
+	NSURL *URLToSend = [NSURL URLWithString:escapedURL];
+	NSLog(@"Sending request: %@", URLToSend);
+	NSURLRequest *request = [NSURLRequest requestWithURL:URLToSend];
 	NSString *answer = [self.connection sendSynchronousRequest:request];
 	NSLog(@"Received respone: %@", answer);
 	return answer;
@@ -61,8 +61,6 @@ NSString *const ECHO_HELLO_MESSAGE_TYPE = @"echo-hello!";
 	NSString *url = [self.serverURLsGenerator generateGiveMyTeamRequestURLForUserName:userName];
 	NSString *answer = [self sendRequestToURL:url];
 
-	NSLog(@"Raw answer for team registering: \n%@", answer);
-
 	return [answer objectFromJSONString];
 }
 
@@ -74,18 +72,21 @@ NSString *const ECHO_HELLO_MESSAGE_TYPE = @"echo-hello!";
 	return [NSArray arrayWithObjects:[NSNumber numberWithInt:playerNumber], playerName, helloType, NULL];
 }
 
+//TODO: test it!
 - (void)sendJSONRequestWithValues:(NSArray *)values andKeys:(NSArray *)keys {
 	NSDictionary *messageParams = [NSDictionary dictionaryWithObjects:values
 															  forKeys:keys];
 	[self postMessage:[messageParams JSONString]];
 }
 
+//TODO: test it!
 - (void)sayHelloMessageFromPlayerWithId:(int)playerNumber andName:(NSString *)playerName {
 	NSArray *values = [self helloMessageValuesFromPlayer:playerNumber withName:playerName helloType:HELLO_MESSAGE_TYPE];
 	NSArray *keys = [self helloMessageKeys];
 	[self sendJSONRequestWithValues:values andKeys:keys];
 }
 
+//TODO: test it!
 - (void)sayEchoHelloMessageFromPlayerWithId:(int)playerNumber andName:(NSString *)playerName {
 	NSArray *values = [self helloMessageValuesFromPlayer:playerNumber withName:playerName helloType:ECHO_HELLO_MESSAGE_TYPE];
 	NSArray *keys = [self helloMessageKeys];

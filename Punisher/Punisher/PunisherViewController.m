@@ -105,6 +105,7 @@ NSString *const HELLO_MESSAGE = @"Press the button, please. ^_^";
 	return shouldSendEchoHelloMessage;
 }
 
+//TODO: test it %(
 - (void)consumeMessage:(NSDictionary *)message {
 	NSLog(@"Punisher view contoller received message: %@", message);
 
@@ -120,6 +121,7 @@ NSString *const HELLO_MESSAGE = @"Press the button, please. ^_^";
 
 	if ([self shouldSendEchoHelloMessageInResponeTo:message fromPlayerWithId:playerNumber]) {
 		[self.requestSender sayEchoHelloMessageFromPlayerWithId:myPlayerNumber andName:[self.userNameGenerator userName]];
+		self.statusLabel.text = @"готовы играть!";
 	}
 }
 
@@ -141,6 +143,7 @@ NSString *const HELLO_MESSAGE = @"Press the button, please. ^_^";
 	[self didSelectAnswer:ONE];
 }
 
+//TODO: Test IT!!
 - (IBAction)startGame {
 	NSString *myName = [self.userNameGenerator userName];
 	NSDictionary *teamInfo = [self.requestSender registerAndGetTeamInformation:myName];
@@ -150,10 +153,10 @@ NSString *const HELLO_MESSAGE = @"Press the button, please. ^_^";
 
 	self.myNameLabel.text = [NSString stringWithFormat:@"%@ (%d):", myName, myPlayerNumber];
 
-	[self.requestSender sayHelloMessageFromPlayerWithId:myPlayerNumber andName:[self.userNameGenerator userName]];
-
 	[self.spinner startAnimating];
 	self.statusLabel.text = @"ждём второго игрока";
+
+	[self.requestSender sayHelloMessageFromPlayerWithId:myPlayerNumber andName:[self.userNameGenerator userName]];
 }
 
 @end
