@@ -10,8 +10,13 @@
 #import "ServerURLsGenerator.h"
 #import "JSONKit.h"
 
-NSString *const PLAYER_ID_PARAMETER_NAME = @"playerId";
+NSString *const PLAYER_ID_PARAMETER_NAME = @"playerNumber";
 NSString *const PLAYER_NAME_PARAMETER_NAME = @"playerName";
+
+NSString *const TYPE_PARAMETER_NAME = @"type";
+NSString *const HELLO_MESSAGE_TYPE = @"hello!";
+NSString *const ECHO_HELLO_MESSAGE_TYPE = @"echo-hello!";
+
 
 @implementation RequestSender {
 
@@ -27,11 +32,12 @@ NSString *const PLAYER_NAME_PARAMETER_NAME = @"playerName";
 }
 
 - (NSString *)sendRequestToURL:(NSString *)url {
-	NSURL *postURL = [NSURL URLWithString:url];
-	NSLog(@"Sending request: %@", url);
+	NSString *escapedURL = [url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+	NSURL *postURL = [NSURL URLWithString:escapedURL];
+	NSLog(@"Sending request: %@", postURL);
 	NSURLRequest *request = [NSURLRequest requestWithURL:postURL];
-	[NSURLRequest requestWithURL:postURL];
 	NSString *answer = [self.connection sendSynchronousRequest:request];
+	NSLog(@"Received respone: %@", answer);
 	return answer;
 }
 
@@ -50,26 +56,47 @@ NSString *const PLAYER_NAME_PARAMETER_NAME = @"playerName";
 	return answer;
 }
 
-- (NSDictionary *)registerAndGetTeamInformation {
+- (NSDictionary *)registerAndGetTeamInformation:(NSString *)userName {
 	[self checkAvailabilityOfServerURLGenerator];
-	NSString *url = [self.serverURLsGenerator generateGiveMyTeamRequestURLForUserName:nil];
+	NSString *url = [self.serverURLsGenerator generateGiveMyTeamRequestURLForUserName:userName];
 	NSString *answer = [self sendRequestToURL:url];
+
+	NSLog(@"Raw answer for team registering: \n%@", answer);
 
 	return [answer objectFromJSONString];
 }
 
-- (void)sayHelloMessageFromPlayerWithId:(int)playerId andName:(NSString *)playerName {
-	NSArray *values = [NSArray arrayWithObjects:[NSNumber numberWithInt:playerId], playerName, NULL];
-	NSArray *keys = [NSArray arrayWithObjects:PLAYER_ID_PARAMETER_NAME, PLAYER_NAME_PARAMETER_NAME, NULL];
+- (NSArray *)helloMessageKeys {
+	return [NSArray arrayWithObjects:PLAYER_ID_PARAMETER_NAME, PLAYER_NAME_PARAMETER_NAME, TYPE_PARAMETER_NAME, NULL];
+}
+
+- (NSArray *)helloMessageValuesFromPlayer:(int)playerNumber withName:(NSString *)playerName helloType:(NSString *)helloType {
+	return [NSArray arrayWithObjects:[NSNumber numberWithInt:playerNumber], playerName, helloType, NULL];
+}
+
+- (void)sendJSONRequestWithValues:(NSArray *)values andKeys:(NSArray *)keys {
 	NSDictionary *messageParams = [NSDictionary dictionaryWithObjects:values
 															  forKeys:keys];
 	[self postMessage:[messageParams JSONString]];
 }
 
+- (void)sayHelloMessageFromPlayerWithId:(int)playerNumber andName:(NSString *)playerName {
+	NSArray *values = [self helloMessageValuesFromPlayer:playerNumber withName:playerName helloType:HELLO_MESSAGE_TYPE];
+	NSArray *keys = [self helloMessageKeys];
+	[self sendJSONRequestWithValues:values andKeys:keys];
+}
+
+- (void)sayEchoHelloMessageFromPlayerWithId:(int)playerNumber andName:(NSString *)playerName {
+	NSArray *values = [self helloMessageValuesFromPlayer:playerNumber withName:playerName helloType:ECHO_HELLO_MESSAGE_TYPE];
+	NSArray *keys = [self helloMessageKeys];
+	[self sendJSONRequestWithValues:values andKeys:keys];
+
+}
 
 - (void)dealloc {
 	self.serverURLsGenerator = nil;
 	self.connection = nil;
 	[super dealloc];
 }
+
 @end

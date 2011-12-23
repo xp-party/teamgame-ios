@@ -15,6 +15,7 @@ NSString *const HELLO_MESSAGE = @"Press the button, please. ^_^";
 @implementation PunisherViewController {
 @private
 	id <GameCompletionMessenger> _gameOverMessenger;
+	int myPlayerNumber;
 }
 @synthesize zeroButton;
 @synthesize oneButton;
@@ -28,6 +29,8 @@ NSString *const HELLO_MESSAGE = @"Press the button, please. ^_^";
 @synthesize spinner = _spinner;
 @synthesize statusLabel = _statusLabel;
 @synthesize userNameGenerator = _userNameGenerator;
+@synthesize myNameLabel = _myNameLabel;
+@synthesize partnersNameLabel = _partnersNameLabel;
 
 
 - (void)didReceiveMemoryWarning {
@@ -43,6 +46,7 @@ NSString *const HELLO_MESSAGE = @"Press the button, please. ^_^";
 	[super viewDidLoad];
 	resultLabel.text = HELLO_MESSAGE;
 	[self.theGame addObserver:self];
+	myPlayerNumber = 0;
 }
 
 - (void)viewDidUnload {
@@ -84,30 +88,53 @@ NSString *const HELLO_MESSAGE = @"Press the button, please. ^_^";
 	self.spinner = nil;
 	self.statusLabel = nil;
 	self.userNameGenerator = nil;
+	self.myNameLabel = nil;
+	self.partnersNameLabel = nil;
 	[super dealloc];
 }
 
 
 #pragma mark - MessageConsumer
 
+- (BOOL)shouldSendEchoHelloMessageInResponeTo:(NSDictionary *)message fromPlayerWithId:(int) playerNumber {
+	NSString *messageType = [message valueForKey:TYPE_PARAMETER_NAME];
+	BOOL shouldSendEchoHelloMessage =
+			(myPlayerNumber != 0)
+			&&(playerNumber != myPlayerNumber)
+			&& ([messageType isEqualToString:HELLO_MESSAGE_TYPE]);
+	return shouldSendEchoHelloMessage;
+}
+
 - (void)consumeMessage:(NSDictionary *)message {
 	NSLog(@"Punisher view contoller received message: %@", message);
 
-	[self.spinner stopAnimating];
+	int playerNumber = [[message valueForKey:PLAYER_ID_PARAMETER_NAME] intValue];
+	NSString *messageType = [message valueForKey:TYPE_PARAMETER_NAME];
+
+	if (playerNumber != myPlayerNumber && myPlayerNumber != 0 && ([messageType isEqualToString:HELLO_MESSAGE_TYPE] || [messageType isEqualToString:ECHO_HELLO_MESSAGE_TYPE])) {
+		NSString *partnerName = [message valueForKey:PLAYER_NAME_PARAMETER_NAME];
+		self.partnersNameLabel.text = [NSString stringWithFormat:@"%@ (%d):", partnerName, playerNumber];
+		[self.spinner stopAnimating];
+	}
+
+
+	if ([self shouldSendEchoHelloMessageInResponeTo:message fromPlayerWithId:playerNumber]) {
+		[self.requestSender sayEchoHelloMessageFromPlayerWithId:myPlayerNumber andName:[self.userNameGenerator userName]];
+	}
 }
 
 #pragma mark - Game Action
 
 - (void)didSelectAnswer:(enum Answer)answer {
-    NSString *stringWithAnswer = [[NSNumber numberWithInt:answer] description];
-    NSLog(@"You clicked %@", stringWithAnswer);
-    debugLabel.text = stringWithAnswer;
-    [self.requestSender postMessage:debugLabel.text];
-    [theGame chooseAnswer:answer];
+	NSString *stringWithAnswer = [[NSNumber numberWithInt:answer] description];
+	NSLog(@"You clicked %@", stringWithAnswer);
+	debugLabel.text = stringWithAnswer;
+	[self.requestSender postMessage:debugLabel.text];
+	[theGame chooseAnswer:answer];
 }
 
 - (IBAction)zeroButtonClicked {
-    [self didSelectAnswer:ZERO];
+	[self didSelectAnswer:ZERO];
 }
 
 - (IBAction)oneButtonClicked {
@@ -115,14 +142,16 @@ NSString *const HELLO_MESSAGE = @"Press the button, please. ^_^";
 }
 
 - (IBAction)startGame {
-	NSDictionary *teamInfo = [self.requestSender registerAndGetTeamInformation];
+	NSString *myName = [self.userNameGenerator userName];
+	NSDictionary *teamInfo = [self.requestSender registerAndGetTeamInformation:myName];
 	NSLog(@"Obtained teamInfo: \n%@", teamInfo);
-	
-	int playerId = [[teamInfo valueForKey:PLAYER_ID_PARAMETER_NAME] intValue];
-	
-	[self.requestSender sayHelloMessageFromPlayerWithId:playerId andName:[self.userNameGenerator userName]];
 
-	self.spinner.hidden = NO;
+	myPlayerNumber = [[teamInfo valueForKey:PLAYER_ID_PARAMETER_NAME] intValue];
+
+	self.myNameLabel.text = [NSString stringWithFormat:@"%@ (%d):", myName, myPlayerNumber];
+
+	[self.requestSender sayHelloMessageFromPlayerWithId:myPlayerNumber andName:[self.userNameGenerator userName]];
+
 	[self.spinner startAnimating];
 	self.statusLabel.text = @"ждём второго игрока";
 }

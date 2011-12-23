@@ -136,7 +136,7 @@
 					<object class="IBUILabel" id="881812321">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{100, 433}, {19, 19}}</string>
+						<string key="NSFrame">{{253, 344}, {19, 21}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="1013847409"/>
@@ -159,7 +159,7 @@
 					<object class="IBUILabel" id="460072100">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{296, 434}, {19, 18}}</string>
+						<string key="NSFrame">{{253, 375}, {19, 21}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView"/>
@@ -179,13 +179,12 @@
 					<object class="IBUIActivityIndicatorView" id="1046663158">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">-2147483356</int>
-						<string key="NSFrame">{{142, 79}, {37, 37}}</string>
+						<string key="NSFrame">{{143, 78}, {37, 37}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="384811112"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<bool key="IBUIHidesWhenStopped">NO</bool>
 						<int key="IBUIStyle">0</int>
 					</object>
 					<object class="IBUIButton" id="448803946">
@@ -216,7 +215,7 @@
 					<object class="IBUILabel" id="342874141">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{0, 429}, {101, 26}}</string>
+						<string key="NSFrame">{{0, 339}, {180, 26}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="881812321"/>
@@ -237,7 +236,7 @@
 					<object class="IBUILabel" id="1013847409">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{155, 429}, {138, 26}}</string>
+						<string key="NSFrame">{{0, 373}, {180, 26}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="460072100"/>
@@ -334,14 +333,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">partnerResultLabel</string>
-						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="460072100"/>
-					</object>
-					<int key="connectionID">25</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">spinner</string>
 						<reference key="source" ref="372490531"/>
 						<reference key="destination" ref="1046663158"/>
@@ -363,6 +354,30 @@
 						<reference key="destination" ref="345400295"/>
 					</object>
 					<int key="connectionID">47</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">myNameLabel</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="342874141"/>
+					</object>
+					<int key="connectionID">51</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">partnersNameLabel</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="1013847409"/>
+					</object>
+					<int key="connectionID">52</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">partnerResultLabel</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="460072100"/>
+					</object>
+					<int key="connectionID">53</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
@@ -425,9 +440,9 @@
 							<reference ref="448803946"/>
 							<reference ref="384811112"/>
 							<reference ref="342874141"/>
+							<reference ref="1013847409"/>
 							<reference ref="881812321"/>
 							<reference ref="460072100"/>
-							<reference ref="1013847409"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -555,7 +570,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">47</int>
+			<int key="maxID">53</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -624,8 +639,10 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>debugLabel</string>
 							<string>gameOverMessenger</string>
+							<string>myNameLabel</string>
 							<string>oneButton</string>
 							<string>partnerResultLabel</string>
+							<string>partnersNameLabel</string>
 							<string>requestSender</string>
 							<string>serverURLsGenerator</string>
 							<string>spinner</string>
@@ -638,7 +655,9 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>UILabel</string>
 							<string>id</string>
+							<string>UILabel</string>
 							<string>UIButton</string>
+							<string>UILabel</string>
 							<string>UILabel</string>
 							<string>RequestSender</string>
 							<string>ServerURLsGenerator</string>
@@ -655,8 +674,10 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>debugLabel</string>
 							<string>gameOverMessenger</string>
+							<string>myNameLabel</string>
 							<string>oneButton</string>
 							<string>partnerResultLabel</string>
+							<string>partnersNameLabel</string>
 							<string>requestSender</string>
 							<string>serverURLsGenerator</string>
 							<string>spinner</string>
@@ -676,11 +697,19 @@
 								<string key="candidateClassName">id</string>
 							</object>
 							<object class="IBToOneOutletInfo">
+								<string key="name">myNameLabel</string>
+								<string key="candidateClassName">UILabel</string>
+							</object>
+							<object class="IBToOneOutletInfo">
 								<string key="name">oneButton</string>
 								<string key="candidateClassName">UIButton</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">partnerResultLabel</string>
+								<string key="candidateClassName">UILabel</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">partnersNameLabel</string>
 								<string key="candidateClassName">UILabel</string>
 							</object>
 							<object class="IBToOneOutletInfo">

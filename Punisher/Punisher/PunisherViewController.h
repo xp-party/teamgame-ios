@@ -33,6 +33,11 @@ extern NSString *const HELLO_MESSAGE;
 @property(nonatomic, retain) IBOutlet UILabel *debugLabel;
 @property(nonatomic, retain) IBOutlet UILabel *partnerResultLabel;
 @property(nonatomic, retain) IBOutlet UILabel *statusLabel;
+
+@property(nonatomic, retain) IBOutlet UILabel *myNameLabel;
+@property(nonatomic, retain) IBOutlet UILabel *partnersNameLabel;
+
+
 @property(nonatomic, retain) IBOutlet UIActivityIndicatorView *spinner;
 
 @property(retain, nonatomic) IBOutlet MiniGame *theGame;

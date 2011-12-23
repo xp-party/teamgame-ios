@@ -10,6 +10,10 @@
 extern NSString *const PLAYER_ID_PARAMETER_NAME;
 extern NSString *const PLAYER_NAME_PARAMETER_NAME;
 
+extern NSString *const TYPE_PARAMETER_NAME;
+extern NSString *const HELLO_MESSAGE_TYPE;
+extern NSString *const ECHO_HELLO_MESSAGE_TYPE;
+
 
 @protocol URLConnection;
 @class ServerURLsGenerator;
@@ -23,7 +27,9 @@ extern NSString *const PLAYER_NAME_PARAMETER_NAME;
 
 - (NSString *)postMessage:(NSString *)message;
 
-- (NSDictionary *)registerAndGetTeamInformation;
+- (NSDictionary *)registerAndGetTeamInformation:(NSString *)userName;
 
-- (void)sayHelloMessageFromPlayerWithId:(int)playerId andName:(NSString *)playerName;
+- (void)sayHelloMessageFromPlayerWithId:(int)playerNumber andName:(NSString *)playerName;
+
+- (void)sayEchoHelloMessageFromPlayerWithId:(int)playerNumber andName:(NSString *)playerName;
 @end

@@ -14,10 +14,14 @@
 
 - (NSString *)sendSynchronousRequest:(NSURLRequest *)request {
     NSError *error = nil;
-	NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:&error];
+	NSURLResponse *response = NULL;
+	NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
     if (error) {
         NSLog(@"Error occured during send synchronous request %@", error);
     }
-	return [NSString stringWithUTF8String:[data bytes]];
+
+
+	NSString *answer = [[[NSString alloc] initWithBytes:[data bytes] length:[data length] encoding:NSUTF8StringEncoding] autorelease];
+	return answer;
 }
 @end
