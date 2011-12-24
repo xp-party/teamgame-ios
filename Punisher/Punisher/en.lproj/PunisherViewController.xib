@@ -82,7 +82,7 @@
 					<object class="IBUIButton" id="257831453">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{176, 211}, {96, 37}}</string>
+						<string key="NSFrame">{{176, 210}, {96, 37}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="342874141"/>
@@ -293,22 +293,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">oneButton</string>
-						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="257831453"/>
-					</object>
-					<int key="connectionID">10</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">zeroButton</string>
-						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="562305864"/>
-					</object>
-					<int key="connectionID">12</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">debugLabel</string>
 						<reference key="source" ref="372490531"/>
 						<reference key="destination" ref="881812321"/>
@@ -349,14 +333,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">userNameGenerator</string>
-						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="345400295"/>
-					</object>
-					<int key="connectionID">47</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">myNameLabel</string>
 						<reference key="source" ref="372490531"/>
 						<reference key="destination" ref="342874141"/>
@@ -378,6 +354,14 @@
 						<reference key="destination" ref="460072100"/>
 					</object>
 					<int key="connectionID">53</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">userNameGenerator</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="345400295"/>
+					</object>
+					<int key="connectionID">47</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
@@ -570,7 +554,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">53</int>
+			<int key="maxID">54</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -640,7 +624,6 @@
 							<string>debugLabel</string>
 							<string>gameOverMessenger</string>
 							<string>myNameLabel</string>
-							<string>oneButton</string>
 							<string>partnerResultLabel</string>
 							<string>partnersNameLabel</string>
 							<string>requestSender</string>
@@ -649,14 +632,12 @@
 							<string>statusLabel</string>
 							<string>theGame</string>
 							<string>userNameGenerator</string>
-							<string>zeroButton</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>UILabel</string>
 							<string>id</string>
 							<string>UILabel</string>
-							<string>UIButton</string>
 							<string>UILabel</string>
 							<string>UILabel</string>
 							<string>RequestSender</string>
@@ -665,7 +646,6 @@
 							<string>UILabel</string>
 							<string>MiniGame</string>
 							<string>TGUserNameGenerator</string>
-							<string>UIButton</string>
 						</object>
 					</object>
 					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
@@ -675,7 +655,6 @@
 							<string>debugLabel</string>
 							<string>gameOverMessenger</string>
 							<string>myNameLabel</string>
-							<string>oneButton</string>
 							<string>partnerResultLabel</string>
 							<string>partnersNameLabel</string>
 							<string>requestSender</string>
@@ -684,7 +663,6 @@
 							<string>statusLabel</string>
 							<string>theGame</string>
 							<string>userNameGenerator</string>
-							<string>zeroButton</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
@@ -699,10 +677,6 @@
 							<object class="IBToOneOutletInfo">
 								<string key="name">myNameLabel</string>
 								<string key="candidateClassName">UILabel</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">oneButton</string>
-								<string key="candidateClassName">UIButton</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">partnerResultLabel</string>
@@ -735,10 +709,6 @@
 							<object class="IBToOneOutletInfo">
 								<string key="name">userNameGenerator</string>
 								<string key="candidateClassName">TGUserNameGenerator</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">zeroButton</string>
-								<string key="candidateClassName">UIButton</string>
 							</object>
 						</object>
 					</object>

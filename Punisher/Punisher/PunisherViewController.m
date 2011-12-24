@@ -17,8 +17,7 @@ NSString *const HELLO_MESSAGE = @"Press the button, please. ^_^";
 	id <GameCompletionMessenger> _gameOverMessenger;
 	int myPlayerNumber;
 }
-@synthesize zeroButton;
-@synthesize oneButton;
+
 @synthesize debugLabel;
 
 @synthesize theGame;
@@ -77,8 +76,6 @@ NSString *const HELLO_MESSAGE = @"Press the button, please. ^_^";
 	[self.theGame removeObserver:self forKeyPath:STATE_PROPERTY];
 	[debugLabel release];
 	[theGame release];
-	[zeroButton release];
-	[oneButton release];
 	[resultLabel release];
 	[_gameOverMessenger release];
 	[partnerResultLabel release], partnerResultLabel = nil;
@@ -113,15 +110,16 @@ NSString *const HELLO_MESSAGE = @"Press the button, please. ^_^";
 	NSString *messageType = [message valueForKey:TYPE_PARAMETER_NAME];
 
 	if (playerNumber != myPlayerNumber && myPlayerNumber != 0 && ([messageType isEqualToString:HELLO_MESSAGE_TYPE] || [messageType isEqualToString:ECHO_HELLO_MESSAGE_TYPE])) {
+		// значит мы получили информацию о партнёре по игре
 		NSString *partnerName = [message valueForKey:PLAYER_NAME_PARAMETER_NAME];
 		self.partnersNameLabel.text = [NSString stringWithFormat:@"%@ (%d):", partnerName, playerNumber];
 		[self.spinner stopAnimating];
+		self.statusLabel.text = @"готовы играть!";
 	}
 
 
 	if ([self shouldSendEchoHelloMessageInResponeTo:message fromPlayerWithId:playerNumber]) {
 		[self.requestSender sayEchoHelloMessageFromPlayerWithId:myPlayerNumber andName:[self.userNameGenerator userName]];
-		self.statusLabel.text = @"готовы играть!";
 	}
 }
 
@@ -156,7 +154,7 @@ NSString *const HELLO_MESSAGE = @"Press the button, please. ^_^";
 	[self.spinner startAnimating];
 	self.statusLabel.text = @"ждём второго игрока";
 
-	[self.requestSender sayHelloMessageFromPlayerWithId:myPlayerNumber andName:[self.userNameGenerator userName]];
+	[self.requestSender sayHelloMessageFromPlayerWithId:myPlayerNumber andName:myName];
 }
 
 @end

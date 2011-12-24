@@ -28,6 +28,7 @@ NSString *const ECHO_HELLO_MESSAGE_TYPE = @"echo-hello!";
 
 - (id)initWithConnection:(id <URLConnection>)connection {
 	self.connection = connection;
+	
 	return self;
 }
 
@@ -81,6 +82,7 @@ NSString *const ECHO_HELLO_MESSAGE_TYPE = @"echo-hello!";
 
 //TODO: test it!
 - (void)sayHelloMessageFromPlayerWithId:(int)playerNumber andName:(NSString *)playerName {
+	//TODO: extract it to Data Transfer Object
 	NSArray *values = [self helloMessageValuesFromPlayer:playerNumber withName:playerName helloType:HELLO_MESSAGE_TYPE];
 	NSArray *keys = [self helloMessageKeys];
 	[self sendJSONRequestWithValues:values andKeys:keys];
@@ -88,6 +90,7 @@ NSString *const ECHO_HELLO_MESSAGE_TYPE = @"echo-hello!";
 
 //TODO: test it!
 - (void)sayEchoHelloMessageFromPlayerWithId:(int)playerNumber andName:(NSString *)playerName {
+	//TODO: extract it to Data Transfer Object
 	NSArray *values = [self helloMessageValuesFromPlayer:playerNumber withName:playerName helloType:ECHO_HELLO_MESSAGE_TYPE];
 	NSArray *keys = [self helloMessageKeys];
 	[self sendJSONRequestWithValues:values andKeys:keys];

@@ -19,17 +19,12 @@
 extern NSString *const HELLO_MESSAGE;
 
 @interface PunisherViewController : UIViewController <MessageConsumer> {
-
-	UIButton *zeroButton;
-	UIButton *oneButton;
 	UILabel *debugLabel;
 	UILabel *resultLabel;
 
 	MiniGame *theGame;
 }
 
-@property(nonatomic, retain) IBOutlet UIButton *zeroButton;
-@property(nonatomic, retain) IBOutlet UIButton *oneButton;
 @property(nonatomic, retain) IBOutlet UILabel *debugLabel;
 @property(nonatomic, retain) IBOutlet UILabel *partnerResultLabel;
 @property(nonatomic, retain) IBOutlet UILabel *statusLabel;
