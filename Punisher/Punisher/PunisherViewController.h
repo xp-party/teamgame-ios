@@ -21,7 +21,7 @@ extern NSString *const HELLO_MESSAGE;
 @interface PunisherViewController : UIViewController <MessageConsumer> {
 	UILabel *debugLabel;
 	UILabel *resultLabel;
-
+//TODO: сделать инъекцию CollaborationProtocol
 	MiniGame *theGame;
 }
 
@@ -31,7 +31,6 @@ extern NSString *const HELLO_MESSAGE;
 
 @property(nonatomic, retain) IBOutlet UILabel *myNameLabel;
 @property(nonatomic, retain) IBOutlet UILabel *partnersNameLabel;
-
 
 @property(nonatomic, retain) IBOutlet UIActivityIndicatorView *spinner;
 

@@ -47,6 +47,8 @@
 		B1DD66DB1452C348000F39B5 /* JSONSerializationTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F39B4 /* JSONSerializationTest.m */; };
 		B1DD66DB1452C348000F39B7 /* TGUserNameGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F39B6 /* TGUserNameGenerator.m */; };
 		B1DD66DB1452C348000F39BB /* TGUserNmeGeneratorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F39BA /* TGUserNmeGeneratorTest.m */; };
+		B1DD66DB1452C348000F39BD /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F39BC /* Player.m */; };
+		B1DD66DB1452C348000F39C0 /* CollaborationProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F39BF /* CollaborationProtocol.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,6 +145,10 @@
 		B1DD66DB1452C348000F39B8 /* TGUserNameGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGUserNameGenerator.h; sourceTree = "<group>"; };
 		B1DD66DB1452C348000F39B9 /* TGUserNmeGeneratorTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGUserNmeGeneratorTest.h; sourceTree = "<group>"; };
 		B1DD66DB1452C348000F39BA /* TGUserNmeGeneratorTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGUserNmeGeneratorTest.m; sourceTree = "<group>"; };
+		B1DD66DB1452C348000F39BC /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
+		B1DD66DB1452C348000F39BE /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		B1DD66DB1452C348000F39BF /* CollaborationProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollaborationProtocol.m; sourceTree = "<group>"; };
+		B1DD66DB1452C348000F39C1 /* CollaborationProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollaborationProtocol.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +183,10 @@
 		40BE1C4814840C27005DB17A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B1DD66DB1452C348000F39C1 /* CollaborationProtocol.h */,
+				B1DD66DB1452C348000F39BF /* CollaborationProtocol.m */,
+				B1DD66DB1452C348000F39BE /* Player.h */,
+				B1DD66DB1452C348000F39BC /* Player.m */,
 				405D4D8514973BE500E1B79F /* MiniGame.h */,
 				405D4D8614973BE500E1B79F /* MiniGame.m */,
 			);
@@ -491,6 +501,8 @@
 				B1DD66DB1452C348000F39AD /* WebSocketWrapper.m in Sources */,
 				B1DD66DB1452C348000F39B1 /* JSONKit.m in Sources */,
 				B1DD66DB1452C348000F39B7 /* TGUserNameGenerator.m in Sources */,
+				B1DD66DB1452C348000F39BD /* Player.m in Sources */,
+				B1DD66DB1452C348000F39C0 /* CollaborationProtocol.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -102,7 +102,7 @@ NSString *const HELLO_MESSAGE = @"Press the button, please. ^_^";
 	return shouldSendEchoHelloMessage;
 }
 
-//TODO: test it %(
+//TODO: test it %(вынести в CollaborationProtocol
 - (void)consumeMessage:(NSDictionary *)message {
 	NSLog(@"Punisher view contoller received message: %@", message);
 
