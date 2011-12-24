@@ -13,6 +13,6 @@
 
 - (Answer)getNextPossibleAnswer {
     uint upperBound = (uint)ONE + 1;
-    return (Answer)arc4random_uniform(upperBound);
+    return (Answer)arc4random() % upperBound;
 }
 @end
