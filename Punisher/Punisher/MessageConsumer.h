@@ -4,10 +4,7 @@
 //
 //
 
-
-#import "ZTWebSocket.h"
-
-@protocol MessageConsumer <ZTWebSocketDelegate>
+@protocol MessageConsumer
 
 - (void)consumeMessage:(NSDictionary *)message;
 

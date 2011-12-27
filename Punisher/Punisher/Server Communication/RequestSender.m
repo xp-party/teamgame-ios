@@ -42,6 +42,7 @@ NSString *const ECHO_HELLO_MESSAGE_TYPE = @"echo-hello!";
 	return answer;
 }
 
+//TODO: move it to Application Tests
 - (void)checkAvailabilityOfServerURLGenerator {
 	if (!self.serverURLsGenerator) {
 		[NSException raise:@"ServerURLsGenerator isn't initialized"
