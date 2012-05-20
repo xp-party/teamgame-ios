@@ -7,14 +7,6 @@
 
 #import <Foundation/Foundation.h>
 
-extern NSString *const PLAYER_ID_PARAMETER_NAME;
-extern NSString *const PLAYER_NAME_PARAMETER_NAME;
-
-extern NSString *const TYPE_PARAMETER_NAME;
-extern NSString *const HELLO_MESSAGE_TYPE;
-extern NSString *const ECHO_HELLO_MESSAGE_TYPE;
-
-
 @protocol URLConnection;
 @class ServerURLsGenerator;
 

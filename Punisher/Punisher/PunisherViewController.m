@@ -9,6 +9,7 @@
 #import "PunisherViewController.h"
 #import "RequestSender.h"
 #import "TGUserNameGenerator.h"
+#import "TGMessage.h"
 
 NSString *const HELLO_MESSAGE = @"Press the button, please. ^_^";
 
@@ -96,8 +97,8 @@ NSString *const HELLO_MESSAGE = @"Press the button, please. ^_^";
 
 #pragma mark - MessageConsumer
 
-- (BOOL)shouldSendEchoHelloMessageInResponeTo:(NSDictionary *)message fromPlayerWithId:(int) playerNumber {
-	NSString *messageType = [message valueForKey:TYPE_PARAMETER_NAME];
+- (BOOL)shouldSendEchoHelloMessageInResponeTo:(TGMessage *)message fromPlayerWithId:(int) playerNumber {
+	NSString *messageType = message.messageType;
 	BOOL shouldSendEchoHelloMessage =
 			(myPlayerNumber != 0)
 			&&(playerNumber != myPlayerNumber)
@@ -105,24 +106,43 @@ NSString *const HELLO_MESSAGE = @"Press the button, please. ^_^";
 	return shouldSendEchoHelloMessage;
 }
 
-//TODO: test it %(
-- (void)consumeMessage:(NSDictionary *)message {
-	NSLog(@"Punisher view contoller received message: %@", message);
+- (void)showPlayerNumber:(int)playerNumber name:(NSString *)partnerName {
+	self.partnersNameLabel.text = [NSString stringWithFormat:@"%@ (%d):", partnerName, playerNumber];
+}
 
-	int playerNumber = [[message valueForKey:PLAYER_ID_PARAMETER_NAME] intValue];
-	NSString *messageType = [message valueForKey:TYPE_PARAMETER_NAME];
+- (void)stopWaitingIndicator {
+	[self.spinner stopAnimating];
+}
 
-	if (playerNumber != myPlayerNumber && myPlayerNumber != 0 && ([messageType isEqualToString:HELLO_MESSAGE_TYPE] || [messageType isEqualToString:ECHO_HELLO_MESSAGE_TYPE])) {
-		NSString *partnerName = [message valueForKey:PLAYER_NAME_PARAMETER_NAME];
-		self.partnersNameLabel.text = [NSString stringWithFormat:@"%@ (%d):", partnerName, playerNumber];
-		[self.spinner stopAnimating];
+- (void)processMessage:(TGMessage *)message {
+	int playerNumber = message.playerNumber;
+	NSString *messageType = message.messageType;
+
+	const BOOL isHelloMessageFromPartner = playerNumber != myPlayerNumber && myPlayerNumber != 0
+			&& ([messageType isEqualToString:HELLO_MESSAGE_TYPE] || [messageType isEqualToString:ECHO_HELLO_MESSAGE_TYPE]);
+
+	if (isHelloMessageFromPartner) {
+		NSString *partnerName = message.fromPlayerName;
+		[self showPlayerNumber:playerNumber name:partnerName];
+		[self stopWaitingIndicator];
 	}
 
 
-	if ([self shouldSendEchoHelloMessageInResponeTo:message fromPlayerWithId:playerNumber]) {
+	const BOOL shouldSendEchoHelloMEssage = [self shouldSendEchoHelloMessageInResponeTo:message fromPlayerWithId:playerNumber];
+	if (shouldSendEchoHelloMEssage) {
 		[self.requestSender sayEchoHelloMessageFromPlayerWithId:myPlayerNumber andName:[self.userNameGenerator userName]];
 		self.statusLabel.text = @"готовы играть!";
 	}
+}
+
+//TODO: test it %(
+- (void)consumeMessage:(NSDictionary *)rawMessage {
+	NSLog(@"Punisher view contoller received message: %@", rawMessage);
+
+	TGMessage *message = [[TGMessage alloc] initWithRawMessage:rawMessage];
+
+	[self processMessage:message];
+	[message release];
 }
 
 #pragma mark - Game Action

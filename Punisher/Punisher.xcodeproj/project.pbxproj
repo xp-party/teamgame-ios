@@ -10,6 +10,7 @@
 		405D4D771497326E00E1B79F /* AnswerRandomizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 405D4D761497326E00E1B79F /* AnswerRandomizer.m */; };
 		405D4D7A1497331F00E1B79F /* GameCompleteController.m in Sources */ = {isa = PBXBuildFile; fileRef = 405D4D791497331F00E1B79F /* GameCompleteController.m */; };
 		405D4D8714973BE500E1B79F /* MiniGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 405D4D8614973BE500E1B79F /* MiniGame.m */; };
+		40BB8534156969F500DC8A59 /* TGMessageTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 40BB8533156969F500DC8A59 /* TGMessageTest.m */; };
 		40BE1C74148420DA005DB17A /* PunisherViewControllerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 40BE1C73148420DA005DB17A /* PunisherViewControllerTest.m */; };
 		B15EBFDF1452B3DE00772300 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B15EBFDE1452B3DE00772300 /* UIKit.framework */; };
 		B15EBFE11452B3DE00772300 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B15EBFE01452B3DE00772300 /* Foundation.framework */; };
@@ -47,6 +48,8 @@
 		B1DD66DB1452C348000F39B5 /* JSONSerializationTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F39B4 /* JSONSerializationTest.m */; };
 		B1DD66DB1452C348000F39B7 /* TGUserNameGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F39B6 /* TGUserNameGenerator.m */; };
 		B1DD66DB1452C348000F39BB /* TGUserNmeGeneratorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F39BA /* TGUserNmeGeneratorTest.m */; };
+		B1DD66DB1452C348000F39BD /* (null) in Sources */ = {isa = PBXBuildFile; };
+		B1DD66DB1452C348000F39C0 /* TGMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F39BF /* TGMessage.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +84,8 @@
 		405D4D7B149733D500E1B79F /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		405D4D8514973BE500E1B79F /* MiniGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MiniGame.h; path = Model/MiniGame.h; sourceTree = "<group>"; };
 		405D4D8614973BE500E1B79F /* MiniGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MiniGame.m; path = Model/MiniGame.m; sourceTree = "<group>"; };
+		40BB8532156969F500DC8A59 /* TGMessageTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGMessageTest.h; sourceTree = "<group>"; };
+		40BB8533156969F500DC8A59 /* TGMessageTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGMessageTest.m; sourceTree = "<group>"; };
 		40BE1C72148420DA005DB17A /* PunisherViewControllerTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PunisherViewControllerTest.h; sourceTree = "<group>"; };
 		40BE1C73148420DA005DB17A /* PunisherViewControllerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PunisherViewControllerTest.m; sourceTree = "<group>"; };
 		B15EBFDA1452B3DE00772300 /* Punisher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Punisher.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,6 +148,8 @@
 		B1DD66DB1452C348000F39B8 /* TGUserNameGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGUserNameGenerator.h; sourceTree = "<group>"; };
 		B1DD66DB1452C348000F39B9 /* TGUserNmeGeneratorTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGUserNmeGeneratorTest.h; sourceTree = "<group>"; };
 		B1DD66DB1452C348000F39BA /* TGUserNmeGeneratorTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGUserNmeGeneratorTest.m; sourceTree = "<group>"; };
+		B1DD66DB1452C348000F39BF /* TGMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGMessage.m; sourceTree = "<group>"; };
+		B1DD66DB1452C348000F39C1 /* TGMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGMessage.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -308,6 +315,8 @@
 		B1DD66DB1452C348000F398B /* Server Communication */ = {
 			isa = PBXGroup;
 			children = (
+				B1DD66DB1452C348000F39C1 /* TGMessage.h */,
+				B1DD66DB1452C348000F39BF /* TGMessage.m */,
 				B1DD66DB1452C348000F39B8 /* TGUserNameGenerator.h */,
 				B1DD66DB1452C348000F39B6 /* TGUserNameGenerator.m */,
 				B1DD66DB1452C348000F39AE /* WebSocketWrapper.h */,
@@ -328,6 +337,8 @@
 		B1DD66DB1452C348000F398C /* Server Communication */ = {
 			isa = PBXGroup;
 			children = (
+				40BB8532156969F500DC8A59 /* TGMessageTest.h */,
+				40BB8533156969F500DC8A59 /* TGMessageTest.m */,
 				B1DD66DB1452C348000F39BA /* TGUserNmeGeneratorTest.m */,
 				B1DD66DB1452C348000F39B9 /* TGUserNmeGeneratorTest.h */,
 				B1DD66DB1452C348000F39B4 /* JSONSerializationTest.m */,
@@ -491,6 +502,7 @@
 				B1DD66DB1452C348000F39AD /* WebSocketWrapper.m in Sources */,
 				B1DD66DB1452C348000F39B1 /* JSONKit.m in Sources */,
 				B1DD66DB1452C348000F39B7 /* TGUserNameGenerator.m in Sources */,
+				B1DD66DB1452C348000F39C0 /* TGMessage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -509,6 +521,8 @@
 				B1DD66DB1452C348000F39AB /* WebSocketListenerTest.m in Sources */,
 				B1DD66DB1452C348000F39B5 /* JSONSerializationTest.m in Sources */,
 				B1DD66DB1452C348000F39BB /* TGUserNmeGeneratorTest.m in Sources */,
+				B1DD66DB1452C348000F39BD /* (null) in Sources */,
+				40BB8534156969F500DC8A59 /* TGMessageTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

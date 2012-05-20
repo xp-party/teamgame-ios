@@ -10,13 +10,7 @@
 #import "ServerURLsGenerator.h"
 #import "JSONKit.h"
 
-NSString *const PLAYER_ID_PARAMETER_NAME = @"playerNumber";
-NSString *const PLAYER_NAME_PARAMETER_NAME = @"playerName";
-
-NSString *const TYPE_PARAMETER_NAME = @"type";
-NSString *const HELLO_MESSAGE_TYPE = @"hello!";
-NSString *const ECHO_HELLO_MESSAGE_TYPE = @"echo-hello!";
-
+#import "TGMessage.h"
 
 @implementation RequestSender {
 

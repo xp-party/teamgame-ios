@@ -9,6 +9,6 @@
 
 @protocol MessageConsumer <ZTWebSocketDelegate>
 
-- (void)consumeMessage:(NSDictionary *)message;
+- (void)consumeMessage:(NSDictionary *)rawMessage;
 
 @end
