@@ -9,16 +9,19 @@
 #import <UIKit/UIKit.h>
 #import "GameCompletionMessenger.h"
 #import "MessageConsumer.h"
+#import "TGWatingIndicatorController.h"
+#import "TGViewDataController.h"
 
 @class MiniGame;
 @class GameCompletionMessengerStub;
 @class RequestSender;
 @class ServerURLsGenerator;
 @class TGUserNameGenerator;
+@protocol TGMessageProcessor;
 
 extern NSString *const HELLO_MESSAGE;
 
-@interface PunisherViewController : UIViewController <MessageConsumer> {
+@interface PunisherViewController : UIViewController <MessageConsumer, TGWatingIndicatorController, TGViewDataController> {
 
 	UIButton *zeroButton;
 	UIButton *oneButton;
@@ -44,9 +47,14 @@ extern NSString *const HELLO_MESSAGE;
 
 @property(nonatomic, retain) IBOutlet id <GameCompletionMessenger> gameOverMessenger;
 
+@property(nonatomic, retain) IBOutlet id <TGMessageProcessor> messageProcessor;
+
 @property(nonatomic, retain) IBOutlet RequestSender *requestSender;
 @property(nonatomic, retain) IBOutlet ServerURLsGenerator *serverURLsGenerator;
 @property(nonatomic, retain) IBOutlet TGUserNameGenerator *userNameGenerator;
+
+
+@property(nonatomic) int myPlayerNumber;
 
 - (IBAction)zeroButtonClicked;
 

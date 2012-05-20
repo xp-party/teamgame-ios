@@ -10,13 +10,13 @@
 #import "RequestSender.h"
 #import "TGUserNameGenerator.h"
 #import "TGMessage.h"
+#import "TGMessageProcessor.h"
 
 NSString *const HELLO_MESSAGE = @"Press the button, please. ^_^";
 
 @implementation PunisherViewController {
 @private
 	id <GameCompletionMessenger> _gameOverMessenger;
-	int myPlayerNumber;
 }
 @synthesize zeroButton;
 @synthesize oneButton;
@@ -32,6 +32,8 @@ NSString *const HELLO_MESSAGE = @"Press the button, please. ^_^";
 @synthesize userNameGenerator = _userNameGenerator;
 @synthesize myNameLabel = _myNameLabel;
 @synthesize partnersNameLabel = _partnersNameLabel;
+@synthesize myPlayerNumber = _myPlayerNumber;
+@synthesize messageProcessor = _messageProcessor;
 
 
 - (void)didReceiveMemoryWarning {
@@ -47,7 +49,7 @@ NSString *const HELLO_MESSAGE = @"Press the button, please. ^_^";
 	[super viewDidLoad];
 	resultLabel.text = HELLO_MESSAGE;
 	[self.theGame addObserver:self];
-	myPlayerNumber = 0;
+	self.myPlayerNumber = 0;
 }
 
 - (void)viewDidUnload {
@@ -91,47 +93,40 @@ NSString *const HELLO_MESSAGE = @"Press the button, please. ^_^";
 	self.userNameGenerator = nil;
 	self.myNameLabel = nil;
 	self.partnersNameLabel = nil;
+	self.messageProcessor = nil;
 	[super dealloc];
 }
 
-
 #pragma mark - MessageConsumer
 
-- (BOOL)shouldSendEchoHelloMessageInResponeTo:(TGMessage *)message fromPlayerWithId:(int) playerNumber {
+- (BOOL)shouldSendEchoHelloMessageInResponeTo:(TGMessage *)message fromPlayerWithId:(int)playerNumber {
 	NSString *messageType = message.messageType;
+	const int myNumber = self.myPlayerNumber;
 	BOOL shouldSendEchoHelloMessage =
-			(myPlayerNumber != 0)
-			&&(playerNumber != myPlayerNumber)
-			&& ([messageType isEqualToString:HELLO_MESSAGE_TYPE]);
+			(myNumber != 0)
+					&& (playerNumber != myNumber)
+					&& ([messageType isEqualToString:HELLO_MESSAGE_TYPE]);
 	return shouldSendEchoHelloMessage;
-}
-
-- (void)showPlayerNumber:(int)playerNumber name:(NSString *)partnerName {
-	self.partnersNameLabel.text = [NSString stringWithFormat:@"%@ (%d):", partnerName, playerNumber];
-}
-
-- (void)stopWaitingIndicator {
-	[self.spinner stopAnimating];
 }
 
 - (void)processMessage:(TGMessage *)message {
 	int playerNumber = message.playerNumber;
 	NSString *messageType = message.messageType;
 
-	const BOOL isHelloMessageFromPartner = playerNumber != myPlayerNumber && myPlayerNumber != 0
+	const int myNumber = self.myPlayerNumber;
+	const BOOL isHelloMessageFromPartner = playerNumber != myNumber && myNumber != 0
 			&& ([messageType isEqualToString:HELLO_MESSAGE_TYPE] || [messageType isEqualToString:ECHO_HELLO_MESSAGE_TYPE]);
 
 	if (isHelloMessageFromPartner) {
 		NSString *partnerName = message.fromPlayerName;
 		[self showPlayerNumber:playerNumber name:partnerName];
-		[self stopWaitingIndicator];
+		[self stopIndicator];
 	}
-
 
 	const BOOL shouldSendEchoHelloMEssage = [self shouldSendEchoHelloMessageInResponeTo:message fromPlayerWithId:playerNumber];
 	if (shouldSendEchoHelloMEssage) {
-		[self.requestSender sayEchoHelloMessageFromPlayerWithId:myPlayerNumber andName:[self.userNameGenerator userName]];
-		self.statusLabel.text = @"готовы играть!";
+		[self.requestSender sayEchoHelloMessageFromPlayerWithId:myNumber andName:[self.userNameGenerator userName]];
+		[self showReadyToPlay];
 	}
 }
 
@@ -139,8 +134,9 @@ NSString *const HELLO_MESSAGE = @"Press the button, please. ^_^";
 - (void)consumeMessage:(NSDictionary *)rawMessage {
 	NSLog(@"Punisher view contoller received message: %@", rawMessage);
 
-	TGMessage *message = [[TGMessage alloc] initWithRawMessage:rawMessage];
+	TGMessage *message = [TGMessage messageWithRawMessage:rawMessage];
 
+	[self.messageProcessor processMessage:message];
 	[self processMessage:message];
 	[message release];
 }
@@ -169,14 +165,30 @@ NSString *const HELLO_MESSAGE = @"Press the button, please. ^_^";
 	NSDictionary *teamInfo = [self.requestSender registerAndGetTeamInformation:myName];
 	NSLog(@"Obtained teamInfo: \n%@", teamInfo);
 
-	myPlayerNumber = [[teamInfo valueForKey:PLAYER_ID_PARAMETER_NAME] intValue];
+	self.myPlayerNumber = [[teamInfo valueForKey:PLAYER_ID_PARAMETER_NAME] intValue];
 
-	self.myNameLabel.text = [NSString stringWithFormat:@"%@ (%d):", myName, myPlayerNumber];
+	self.myNameLabel.text = [NSString stringWithFormat:@"%@ (%d):", myName, self.myPlayerNumber];
 
 	[self.spinner startAnimating];
 	self.statusLabel.text = @"ждём второго игрока";
 
-	[self.requestSender sayHelloMessageFromPlayerWithId:myPlayerNumber andName:[self.userNameGenerator userName]];
+	[self.requestSender sayHelloMessageFromPlayerWithId:self.myPlayerNumber andName:[self.userNameGenerator userName]];
+}
+
+#pragma mark - TGWatingIndicatorDelegate
+
+- (void)stopIndicator {
+	[self.spinner stopAnimating];
+}
+
+#pragma mark - TGViewDataController
+
+- (void)showPlayerNumber:(int)playerNumber name:(NSString *)playerName {
+	self.partnersNameLabel.text = [NSString stringWithFormat:@"%@ (%d):", playerName, playerNumber];
+}
+
+- (void)showReadyToPlay {
+	self.statusLabel.text = @"готовы играть!";
 }
 
 @end

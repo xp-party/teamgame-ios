@@ -17,9 +17,9 @@ extern NSString *const ECHO_HELLO_MESSAGE_TYPE;
 
 @interface TGMessage : NSObject
 
-@property (nonatomic) int playerNumber;
-@property (retain, nonatomic) NSString *messageType;
-@property (retain, nonatomic) NSString *fromPlayerName;
+@property(nonatomic, readonly) int playerNumber;
+@property(retain, nonatomic, readonly) NSString *messageType;
+@property(retain, nonatomic, readonly) NSString *fromPlayerName;
 
-- (id)initWithRawMessage:(NSDictionary *)dictionary;
++ (TGMessage *)messageWithRawMessage:(NSDictionary *)rawMessage;
 @end

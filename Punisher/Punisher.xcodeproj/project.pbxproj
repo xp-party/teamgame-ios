@@ -50,6 +50,8 @@
 		B1DD66DB1452C348000F39BB /* TGUserNmeGeneratorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F39BA /* TGUserNmeGeneratorTest.m */; };
 		B1DD66DB1452C348000F39BD /* (null) in Sources */ = {isa = PBXBuildFile; };
 		B1DD66DB1452C348000F39C0 /* TGMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F39BF /* TGMessage.m */; };
+		B1DD66DB1452C348000F39C6 /* TGMessageProcessorImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F39C5 /* TGMessageProcessorImpl.m */; };
+		B1DD66DB1452C348000F39CA /* MessageProcessorImplTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F39C9 /* MessageProcessorImplTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -150,6 +152,13 @@
 		B1DD66DB1452C348000F39BA /* TGUserNmeGeneratorTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGUserNmeGeneratorTest.m; sourceTree = "<group>"; };
 		B1DD66DB1452C348000F39BF /* TGMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGMessage.m; sourceTree = "<group>"; };
 		B1DD66DB1452C348000F39C1 /* TGMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGMessage.h; sourceTree = "<group>"; };
+		B1DD66DB1452C348000F39C2 /* TGWatingIndicatorController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGWatingIndicatorController.h; sourceTree = "<group>"; };
+		B1DD66DB1452C348000F39C3 /* TGViewDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGViewDataController.h; sourceTree = "<group>"; };
+		B1DD66DB1452C348000F39C4 /* TGMessageProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGMessageProcessor.h; sourceTree = "<group>"; };
+		B1DD66DB1452C348000F39C5 /* TGMessageProcessorImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGMessageProcessorImpl.m; sourceTree = "<group>"; };
+		B1DD66DB1452C348000F39C7 /* TGMessageProcessorImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGMessageProcessorImpl.h; sourceTree = "<group>"; };
+		B1DD66DB1452C348000F39C8 /* MessageProcessorImplTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageProcessorImplTest.h; sourceTree = "<group>"; };
+		B1DD66DB1452C348000F39C9 /* MessageProcessorImplTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageProcessorImplTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,6 +245,11 @@
 		B15EBFE41452B3DE00772300 /* Punisher */ = {
 			isa = PBXGroup;
 			children = (
+				B1DD66DB1452C348000F39C7 /* TGMessageProcessorImpl.h */,
+				B1DD66DB1452C348000F39C5 /* TGMessageProcessorImpl.m */,
+				B1DD66DB1452C348000F39C4 /* TGMessageProcessor.h */,
+				B1DD66DB1452C348000F39C3 /* TGViewDataController.h */,
+				B1DD66DB1452C348000F39C2 /* TGWatingIndicatorController.h */,
 				405D4D7B149733D500E1B79F /* Constants.h */,
 				405D4D751497326E00E1B79F /* AnswerRandomizer.h */,
 				405D4D761497326E00E1B79F /* AnswerRandomizer.m */,
@@ -270,6 +284,8 @@
 		B15EC0061452B3DF00772300 /* PunisherTests */ = {
 			isa = PBXGroup;
 			children = (
+				B1DD66DB1452C348000F39C9 /* MessageProcessorImplTest.m */,
+				B1DD66DB1452C348000F39C8 /* MessageProcessorImplTest.h */,
 				B1DD66DB1452C348000F3976 /* AnswerRandomizerTest.h */,
 				B1DD66DB1452C348000F3974 /* AnswerRandomizerTest.m */,
 				40BE1C4914840FBB005DB17A /* Model */,
@@ -503,6 +519,7 @@
 				B1DD66DB1452C348000F39B1 /* JSONKit.m in Sources */,
 				B1DD66DB1452C348000F39B7 /* TGUserNameGenerator.m in Sources */,
 				B1DD66DB1452C348000F39C0 /* TGMessage.m in Sources */,
+				B1DD66DB1452C348000F39C6 /* TGMessageProcessorImpl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -523,6 +540,7 @@
 				B1DD66DB1452C348000F39BB /* TGUserNmeGeneratorTest.m in Sources */,
 				B1DD66DB1452C348000F39BD /* (null) in Sources */,
 				40BB8534156969F500DC8A59 /* TGMessageTest.m in Sources */,
+				B1DD66DB1452C348000F39CA /* MessageProcessorImplTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
