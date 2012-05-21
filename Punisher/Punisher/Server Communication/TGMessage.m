@@ -49,4 +49,15 @@ NSString *const ECHO_HELLO_MESSAGE_TYPE = @"echo-hello!";
 }
 
 
+- (BOOL)isHelloMessageFromPlayerWithNumberOtherThan:(int)otherPlayerNumber {
+	if (![[self messageType] isEqualToString:HELLO_MESSAGE_TYPE]) {
+		return NO;
+	}
+
+	if ([self playerNumber] == otherPlayerNumber) {
+		return NO;
+	}
+
+	return YES;
+}
 @end

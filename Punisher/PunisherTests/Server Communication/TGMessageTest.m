@@ -35,5 +35,31 @@
 	STAssertEqualObjects(message.fromPlayerName, type, @"player name extracted from raw message incorrectly");
 }
 
+- (void)testNonHelloMessageReturnsNo {
+	NSDictionary *rawMessage = [NSDictionary dictionaryWithObject:ECHO_HELLO_MESSAGE_TYPE forKey:TYPE_PARAMETER_NAME];
+
+	TGMessage *message = [TGMessage messageWithRawMessage:rawMessage];
+	STAssertEquals([message isHelloMessageFromPlayerWithNumberOtherThan:0], NO, @"for non HELLO message should return NO on isHelloMessageFromPlayerWithNumberOtherThan request");
+}
+
+- (void)testHelloMessageFromOtherPlayerfReturnsYes {
+	const int fromMessageNumber = 1;
+	NSArray *const objects = [NSArray arrayWithObjects:[NSNumber numberWithInt:fromMessageNumber], HELLO_MESSAGE_TYPE, nil];
+	NSArray *const keys = [NSArray arrayWithObjects:PLAYER_ID_PARAMETER_NAME, TYPE_PARAMETER_NAME, nil];
+	NSDictionary *rawMessage = [NSDictionary dictionaryWithObjects:objects forKeys:keys];
+
+	TGMessage *message = [TGMessage messageWithRawMessage:rawMessage];
+	STAssertEquals([message isHelloMessageFromPlayerWithNumberOtherThan:0], YES, @"for HELLO message from other player should return YES on isHelloMessageFromPlayerWithNumberOtherThan request");
+}
+
+- (void)testHelloMessageFromMySelfReturnsNo {
+	const int myNumber = 1;
+	NSArray *const objects = [NSArray arrayWithObjects:[NSNumber numberWithInt:myNumber], HELLO_MESSAGE_TYPE, nil];
+	NSArray *const keys = [NSArray arrayWithObjects:PLAYER_ID_PARAMETER_NAME, TYPE_PARAMETER_NAME, nil];
+	NSDictionary *rawMessage = [NSDictionary dictionaryWithObjects:objects forKeys:keys];
+
+	TGMessage *message = [TGMessage messageWithRawMessage:rawMessage];
+	STAssertEquals([message isHelloMessageFromPlayerWithNumberOtherThan:myNumber], NO, @"for HELLO message from myself should return NO on isHelloMessageFromPlayerWithNumberOtherThan request");
+}
 
 @end

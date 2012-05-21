@@ -49,8 +49,8 @@
 		[self.waitingIndicator stopIndicator];
 	}
 
-	const BOOL shouldSendEchoHelloMEssage = [self shouldSendEchoHelloMessageInResponeTo:message fromPlayerWithId:playerNumber];
-	if (shouldSendEchoHelloMEssage) {
+	const BOOL shouldSendEchoHelloMessage = [message isHelloMessageFromPlayerWithNumberOtherThan:[self.gameController myPlayerNumber]];
+	if (shouldSendEchoHelloMessage) {
 		[self.requestSender sayEchoHelloMessageFromPlayerWithId:myNumber andName:[self.userNameGenerator userName]];
 		[self.viewDataController showReadyToPlay];
 	}

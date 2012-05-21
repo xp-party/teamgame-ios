@@ -22,4 +22,6 @@ extern NSString *const ECHO_HELLO_MESSAGE_TYPE;
 @property(retain, nonatomic, readonly) NSString *fromPlayerName;
 
 + (TGMessage *)messageWithRawMessage:(NSDictionary *)rawMessage;
+
+- (BOOL)isHelloMessageFromPlayerWithNumberOtherThan:(int)otherPlayerNumber;
 @end
