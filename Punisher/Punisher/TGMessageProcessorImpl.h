@@ -19,8 +19,8 @@
 
 @property(retain, nonatomic) IBOutlet id <TGWatingIndicatorController> waitingIndicator;
 
-@property(nonatomic, retain) id<TGGameController> gameController;
-@property(nonatomic, retain) id<TGViewDataController> viewDataController;
-@property(nonatomic, retain) id<RequestSender> requestSender;
-@property(nonatomic, readwrite, retain) TGUserNameGenerator *userNameGenerator;
+@property(nonatomic, retain) IBOutlet id<TGGameController> gameController;
+@property(nonatomic, retain) IBOutlet id<TGViewDataController> viewDataController;
+@property(nonatomic, retain) IBOutlet id<RequestSender> requestSender;
+@property(nonatomic, readwrite, retain) IBOutlet TGUserNameGenerator *userNameGenerator;
 @end
