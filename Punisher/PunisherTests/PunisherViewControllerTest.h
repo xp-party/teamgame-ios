@@ -15,7 +15,7 @@
 @class PunisherViewController;
 @class GameCompletionMessengerStub;
 
-@interface PunisherViewControllerTest : SenTestCase <TGMessageProcessor> {
+@interface PunisherViewControllerTest : SenTestCase {
     PunisherViewController *controller;
     GameCompletionMessengerStub *gameCompletionMessengerStub;
 }

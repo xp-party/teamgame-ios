@@ -38,20 +38,4 @@
     STAssertTrue(gameCompletionMessengerStub.called, @"Should show alert");
 }
 
-- (void)testConsume_Message_Passes_Prepared_Message_To_Processor {
-	controller.messageProcessor = self;
-	NSDictionary *dictionary = [NSDictionary dictionary];
-
-	[controller consumeMessage:dictionary];
-
-	STAssertEquals(processMessageCalledWithNotEmptyDictionary, YES, @"processMessage should be called for received raw message");
-}
-
-#pragma - mark TGMessageProcessor
-
-- (void)processMessage:(TGMessage *)message {
-	processMessageCalledWithNotEmptyDictionary = (message != NULL);
-}
-
-
 @end
