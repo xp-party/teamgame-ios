@@ -8,8 +8,13 @@
 
 #import "PunisherViewControllerTest.h"
 #import "PunisherViewController.h"
-#import "MiniGame.h"
 #import "GameCompletionMessengerStub.h"
+
+@interface PunisherViewControllerTest () {
+	BOOL processMessageCalledWithNotEmptyDictionary;
+}
+
+@end
 
 @implementation PunisherViewControllerTest
 
@@ -18,7 +23,8 @@
 
     controller = [[PunisherViewController alloc] initWithNibName:@"PunisherViewController" bundle:NULL];
     [controller.view setNeedsDisplay];
-    controller.gameOverMessenger = gameCompletionMessengerStub;
+
+	processMessageCalledWithNotEmptyDictionary = NO;
 }
 
 - (void)tearDown {
@@ -27,9 +33,25 @@
 }
 
 - (void)testShould_Show_Alert {
+	controller.gameOverMessenger = gameCompletionMessengerStub;
     [controller.theGame chooseAnswer:ONE];
     STAssertTrue(gameCompletionMessengerStub.called, @"Should show alert");
-
 }
+
+- (void)testConsume_Message_Passes_Prepared_Message_To_Processor {
+	controller.messageProcessor = self;
+	NSDictionary *dictionary = [NSDictionary dictionary];
+
+	[controller consumeMessage:dictionary];
+
+	STAssertEquals(processMessageCalledWithNotEmptyDictionary, YES, @"processMessage should be called for received raw message");
+}
+
+#pragma - mark TGMessageProcessor
+
+- (void)processMessage:(TGMessage *)message {
+	processMessageCalledWithNotEmptyDictionary = (message != NULL);
+}
+
 
 @end

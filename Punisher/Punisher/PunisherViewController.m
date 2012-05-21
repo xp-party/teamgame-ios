@@ -99,14 +99,11 @@ NSString *const HELLO_MESSAGE = @"Press the button, please. ^_^";
 
 #pragma mark - MessageConsumer
 
-//TODO: test it %(
 - (void)consumeMessage:(NSDictionary *)rawMessage {
 	NSLog(@"Punisher view contoller received message: %@", rawMessage);
 
 	TGMessage *message = [TGMessage messageWithRawMessage:rawMessage];
-
 	[self.messageProcessor processMessage:message];
-	[message release];
 }
 
 #pragma mark - Game Action
