@@ -8,7 +8,10 @@
 
 #import <SenTestingKit/SenTestingKit.h>
 #import "TGWatingIndicatorController.h"
+#import "TGGameController.h"
+#import "TGViewDataController.h"
+#import "RequestSender.h"
 
-@interface MessageProcessorImplTest : SenTestCase <TGWatingIndicatorController>
+@interface MessageProcessorImplTest : SenTestCase <TGWatingIndicatorController, TGGameController, TGViewDataController, RequestSender>
 
 @end

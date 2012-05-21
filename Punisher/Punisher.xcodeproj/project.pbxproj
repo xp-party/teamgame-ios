@@ -35,7 +35,7 @@
 		B1DD66DB1452C348000F3975 /* AnswerRandomizerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F3974 /* AnswerRandomizerTest.m */; };
 		B1DD66DB1452C348000F3982 /* GameCompletionMessengerStub.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F3981 /* GameCompletionMessengerStub.m */; };
 		B1DD66DB1452C348000F398A /* RequestSenderTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F3989 /* RequestSenderTest.m */; };
-		B1DD66DB1452C348000F398E /* RequestSender.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F398D /* RequestSender.m */; };
+		B1DD66DB1452C348000F398E /* RequestSenderImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F398D /* RequestSenderImpl.m */; };
 		B1DD66DB1452C348000F3991 /* PrettyURLConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F3990 /* PrettyURLConnection.m */; };
 		B1DD66DB1452C348000F3994 /* PrettyURLConnectionStub.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F3993 /* PrettyURLConnectionStub.m */; };
 		B1DD66DB1452C348000F3999 /* WebSocketDelegateTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DD66DB1452C348000F3998 /* WebSocketDelegateTest.m */; };
@@ -123,8 +123,8 @@
 		B1DD66DB1452C348000F3983 /* GameCompletionMessengerStub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameCompletionMessengerStub.h; sourceTree = "<group>"; };
 		B1DD66DB1452C348000F3988 /* RequestSenderTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestSenderTest.h; sourceTree = "<group>"; };
 		B1DD66DB1452C348000F3989 /* RequestSenderTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestSenderTest.m; sourceTree = "<group>"; };
-		B1DD66DB1452C348000F398D /* RequestSender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestSender.m; sourceTree = "<group>"; };
-		B1DD66DB1452C348000F398F /* RequestSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestSender.h; sourceTree = "<group>"; };
+		B1DD66DB1452C348000F398D /* RequestSenderImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestSenderImpl.m; sourceTree = "<group>"; };
+		B1DD66DB1452C348000F398F /* RequestSenderImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestSenderImpl.h; sourceTree = "<group>"; };
 		B1DD66DB1452C348000F3990 /* PrettyURLConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrettyURLConnection.m; sourceTree = "<group>"; };
 		B1DD66DB1452C348000F3992 /* PrettyURLConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrettyURLConnection.h; sourceTree = "<group>"; };
 		B1DD66DB1452C348000F3993 /* PrettyURLConnectionStub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrettyURLConnectionStub.m; sourceTree = "<group>"; };
@@ -159,6 +159,8 @@
 		B1DD66DB1452C348000F39C7 /* TGMessageProcessorImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGMessageProcessorImpl.h; sourceTree = "<group>"; };
 		B1DD66DB1452C348000F39C8 /* MessageProcessorImplTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageProcessorImplTest.h; sourceTree = "<group>"; };
 		B1DD66DB1452C348000F39C9 /* MessageProcessorImplTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageProcessorImplTest.m; sourceTree = "<group>"; };
+		B1DD66DB1452C348000F39CE /* TGGameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGGameController.h; sourceTree = "<group>"; };
+		B1DD66DB1452C348000F39CF /* RequestSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestSender.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,6 +247,7 @@
 		B15EBFE41452B3DE00772300 /* Punisher */ = {
 			isa = PBXGroup;
 			children = (
+				B1DD66DB1452C348000F39CE /* TGGameController.h */,
 				B1DD66DB1452C348000F39C7 /* TGMessageProcessorImpl.h */,
 				B1DD66DB1452C348000F39C5 /* TGMessageProcessorImpl.m */,
 				B1DD66DB1452C348000F39C4 /* TGMessageProcessor.h */,
@@ -331,6 +334,7 @@
 		B1DD66DB1452C348000F398B /* Server Communication */ = {
 			isa = PBXGroup;
 			children = (
+				B1DD66DB1452C348000F39CF /* RequestSender.h */,
 				B1DD66DB1452C348000F39C1 /* TGMessage.h */,
 				B1DD66DB1452C348000F39BF /* TGMessage.m */,
 				B1DD66DB1452C348000F39B8 /* TGUserNameGenerator.h */,
@@ -344,8 +348,8 @@
 				B1DD66DB1452C348000F3996 /* URLConnection.h */,
 				B1DD66DB1452C348000F3992 /* PrettyURLConnection.h */,
 				B1DD66DB1452C348000F3990 /* PrettyURLConnection.m */,
-				B1DD66DB1452C348000F398F /* RequestSender.h */,
-				B1DD66DB1452C348000F398D /* RequestSender.m */,
+				B1DD66DB1452C348000F398F /* RequestSenderImpl.h */,
+				B1DD66DB1452C348000F398D /* RequestSenderImpl.m */,
 			);
 			path = "Server Communication";
 			sourceTree = "<group>";
@@ -511,7 +515,7 @@
 				405D4D771497326E00E1B79F /* AnswerRandomizer.m in Sources */,
 				405D4D7A1497331F00E1B79F /* GameCompleteController.m in Sources */,
 				405D4D8714973BE500E1B79F /* MiniGame.m in Sources */,
-				B1DD66DB1452C348000F398E /* RequestSender.m in Sources */,
+				B1DD66DB1452C348000F398E /* RequestSenderImpl.m in Sources */,
 				B1DD66DB1452C348000F3991 /* PrettyURLConnection.m in Sources */,
 				B1DD66DB1452C348000F399E /* WebSocketDelegateImpl.m in Sources */,
 				B1DD66DB1452C348000F39A4 /* ServerURLsGenerator.m in Sources */,

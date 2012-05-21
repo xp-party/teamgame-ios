@@ -7,7 +7,7 @@
 //
 
 #import "RequestSenderTest.h"
-#import "RequestSender.h"
+#import "RequestSenderImpl.h"
 #import "PrettyURLConnectionStub.h"
 #import "ServerURLsGenerator.h"
 
@@ -16,7 +16,7 @@
 - (void)setUp {
 	answer = @"some answer";
 	connection = [[PrettyURLConnectionStub alloc] initWithAnswer:answer];
-	requestSender = [[RequestSender alloc] initWithConnection:connection];
+	requestSender = [[RequestSenderImpl alloc] initWithConnection:connection];
 	requestSender.serverURLsGenerator = [[[ServerURLsGenerator alloc] init] autorelease];
 	[super setUp];
 }

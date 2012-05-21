@@ -99,37 +99,6 @@ NSString *const HELLO_MESSAGE = @"Press the button, please. ^_^";
 
 #pragma mark - MessageConsumer
 
-- (BOOL)shouldSendEchoHelloMessageInResponeTo:(TGMessage *)message fromPlayerWithId:(int)playerNumber {
-	NSString *messageType = message.messageType;
-	const int myNumber = self.myPlayerNumber;
-	BOOL shouldSendEchoHelloMessage =
-			(myNumber != 0)
-					&& (playerNumber != myNumber)
-					&& ([messageType isEqualToString:HELLO_MESSAGE_TYPE]);
-	return shouldSendEchoHelloMessage;
-}
-
-- (void)processMessage:(TGMessage *)message {
-	int playerNumber = message.playerNumber;
-	NSString *messageType = message.messageType;
-
-	const int myNumber = self.myPlayerNumber;
-	const BOOL isHelloMessageFromPartner = playerNumber != myNumber && myNumber != 0
-			&& ([messageType isEqualToString:HELLO_MESSAGE_TYPE] || [messageType isEqualToString:ECHO_HELLO_MESSAGE_TYPE]);
-
-	if (isHelloMessageFromPartner) {
-		NSString *partnerName = message.fromPlayerName;
-		[self showPlayerNumber:playerNumber name:partnerName];
-		[self stopIndicator];
-	}
-
-	const BOOL shouldSendEchoHelloMEssage = [self shouldSendEchoHelloMessageInResponeTo:message fromPlayerWithId:playerNumber];
-	if (shouldSendEchoHelloMEssage) {
-		[self.requestSender sayEchoHelloMessageFromPlayerWithId:myNumber andName:[self.userNameGenerator userName]];
-		[self showReadyToPlay];
-	}
-}
-
 //TODO: test it %(
 - (void)consumeMessage:(NSDictionary *)rawMessage {
 	NSLog(@"Punisher view contoller received message: %@", rawMessage);
@@ -137,7 +106,6 @@ NSString *const HELLO_MESSAGE = @"Press the button, please. ^_^";
 	TGMessage *message = [TGMessage messageWithRawMessage:rawMessage];
 
 	[self.messageProcessor processMessage:message];
-	[self processMessage:message];
 	[message release];
 }
 

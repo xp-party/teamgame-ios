@@ -12,11 +12,11 @@
 #import <SenTestingKit/SenTestingKit.h>
 
 @protocol URLConnection;
-@class RequestSender;
+@class RequestSenderImpl;
 
 @interface RequestSenderTest : SenTestCase {
 	id <URLConnection> connection;
-	RequestSender *requestSender;
+	RequestSenderImpl *requestSender;
 	NSString *answer;
 }
 

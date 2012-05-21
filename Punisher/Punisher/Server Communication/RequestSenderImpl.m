@@ -5,14 +5,14 @@
 //
 
 
-#import "RequestSender.h"
+#import "RequestSenderImpl.h"
 #import "URLConnection.h"
 #import "ServerURLsGenerator.h"
 #import "JSONKit.h"
 
 #import "TGMessage.h"
 
-@implementation RequestSender {
+@implementation RequestSenderImpl {
 
 }
 

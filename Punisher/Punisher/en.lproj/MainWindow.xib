@@ -273,7 +273,7 @@
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>ServerURLsGenerator</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-					<string>RequestSender</string>
+					<string>RequestSenderImpl</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>PrettyURLConnection</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
